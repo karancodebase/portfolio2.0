@@ -81,7 +81,7 @@ export function Sidebar({ closeSidebar }: { closeSidebar?: () => void }) {
             <Link href="/" onClick={closeSidebar}>
                 <div className="flex items-center rounded-lg space-x-3 px-4 mt-4 py-2 text-gray-50 hover:bg-gray-300 duration-300 hover:text-gray-800">
                     <Image
-                        src="/vercel.svg"
+                        src="/avatar.png"
                         alt="name"
                         width={40}
                         height={40}

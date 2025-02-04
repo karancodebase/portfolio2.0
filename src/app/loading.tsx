@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useState, useEffect, JSX } from "react";
+import React, { useState, useEffect, JSX, useCallback } from "react";
 import { MultiStepLoader as Loader } from "../components/ui/multi-step-loader";
 
 interface LoadingState {
@@ -19,14 +19,20 @@ export function LoaderAnimation(): JSX.Element {
     const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
 
+
+    const pushHome = useCallback(() => {
+        router.push("/");
+    }, [router]);
+
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-            router.push("/");
+            pushHome();
         }, 7500);
 
         return () => clearTimeout(timer); // Cleanup timer
-    }, []);
+    }, [pushHome]);
 
     if (!loading) return <></>; // ✅ Fix: Use Fragment instead of returning null
 

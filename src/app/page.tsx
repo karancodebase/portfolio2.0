@@ -15,7 +15,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="flex justify-center md:justify-start">
           <Image
-            src="/vercel.svg"
+            src="/avatar.png"
             alt="avatar"
             width={200}
             height={200}
@@ -42,7 +42,7 @@ export default function Home() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 1 }}
             className="text-zinc-400 mb-8 leading-relaxed">
-            I'm a CSE student (2026) who thrives on the full-stack
+            I&apos;m a CSE student (2026) who thrives on the full-stack
             grind—from sleek UIs to scalable backend magic. <br />
 
             I break, fix, and build with JavaScript, React, Node.js &
@@ -89,10 +89,10 @@ export default function Home() {
               <span className="text-2xl">💼</span>
             </div>
             <p className="text-zinc-400 leading-relaxed">
-              Love the traditional web stack, but Web3? That's where things
+              Love the traditional web stack, but Web3? That&apos;s where things
               get next-level. I build Ethereum-powered apps, smart contracts
-              (Solidity), and decentralized storage—merging Web2's speed with
-              Web3's trustlessness for better ownership and accessibility.
+              (Solidity), and decentralized storage—merging Web2&apos;s speed with
+              Web3&apos;s trustlessness for better ownership and accessibility.
             </p>
           </motion.div>
 

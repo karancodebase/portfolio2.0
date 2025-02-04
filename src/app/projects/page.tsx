@@ -1,11 +1,11 @@
 
 import Link from "next/link";
 import {
-    Code,
+    
     Github,
     Globe,
     Gamepad,
-    Database,
+    
     MessageSquare,
     Bot,
     Earth,

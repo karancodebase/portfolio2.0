@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { Menu, X } from "lucide-react";
 import LoaderAnimation from "./loading";
+import router from "next/router";
 // import Loading from "./loading"; // Import the loading component
 
 const geistSans = Geist({
@@ -31,14 +32,18 @@ export default function RootLayout({
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDesktopOpen, setIsDesktopOpen] = useState(true);
 
-  // Simulate a delay before rendering content
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 7500); // 3 seconds delay
+    const timer = setTimeout(() => {
+        setIsLoading(false);
+        router.push("/");
+    }, 7500);
+
     return () => clearTimeout(timer);
-  }, []);
+}, []); // ✅ No `router` in dependencies
+
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
       <body className={`${inter.className} bg-zinc-900`}>
         {/* Mobile Toggle Button */}
         <button
@@ -87,7 +92,7 @@ export default function RootLayout({
           flex items-center justify-center
         `}>
           {isLoading ? (
-            <LoaderAnimation/>
+            <LoaderAnimation />
           ) : (
             <Suspense fallback={<p>Loading content...</p>}>
               {children}

@@ -64,19 +64,24 @@ const ContactPage = () => {
             if (!response.ok) throw new Error(result.message || 'Something went wrong');
             setToast({ message: 'Message sent successfully!', type: 'success' });
             setFormData({ name: '', email: '', message: '' });
-        } catch (error: any) {
-            setToast({ message: error.message || 'Failed to send message', type: 'error' });
-        } finally {
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                setToast({ message: error.message, type: 'error' });
+            } else {
+                setToast({ message: 'An unexpected error occurred', type: 'error' });
+            }
+        }
+        finally {
             setIsLoading(false);
         }
     };
 
     return (
         <main className="flex flex-col items-center justify-center max-w-3xl mx-auto px-4 py-16 text-white min-h-screen">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent">Let's Connect!</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent">Let&apos;s Connect!</h1>
 
             <p className="text-zinc-400 text-center mb-8 text-sm sm:text-base leading-relaxed">
-            Whether you have a burning question, a nifty project, or just want to say hello, I'm always up for a chat.
+                Whether you have a burning question, a nifty project, or just want to say hello, I&apos;m always up for a chat.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
