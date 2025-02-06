@@ -84,17 +84,17 @@ export default function Projects() {
     ];
 
     return (
-        <main className="text-white max-w-6xl mx-auto px-4 py-8 sm:py-12">
+        <main className="text-white max-w-6xl mx-auto py-8 sm:py-12">
             <div className="mb-16">
                 <h1 className="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-gray-900 bg-clip-text text-transparent">
                     Creative Experiments
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-[-1rem] md:ml-0 gap-6">
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="relative group bg-zinc-900 rounded-xl p-6 border border-zinc-800 
+                            className="relative group md:w-full w-[19rem] bg-zinc-900 rounded-xl p-4 border border-zinc-800 
                          hover:border-blue-500 transition-all duration-300 
                          hover:shadow-2xl hover:shadow-blue-900/20"
                         >

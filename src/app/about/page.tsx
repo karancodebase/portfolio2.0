@@ -45,8 +45,8 @@ export default function About() {
                     <div className="flex items-start gap-4">
                         <Code2 className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
-                            <h3 className="text-lg lg:text-xl font-semibold mb-2">Development Philosophy</h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <h3 className="text-lg lg:text-xl font-semibold mb-4">Development Philosophy</h3>
+                            <p className="text-zinc-400 leading-relaxed md:ml-0 ml-[-4rem]">
                                 Believe in building open, transparent systems that empower both
                                 developers and end users. Passionate about crafting user-centric
                                 products, driving innovation through
@@ -59,8 +59,8 @@ export default function About() {
                     <div className="flex items-start gap-4">
                         <Globe className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
-                            <h3 className="text-lg lg:text-xl font-semibold mb-2">What i do ...</h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <h3 className="text-lg lg:text-xl font-semibold mb-4">What i do ...</h3>
+                            <p className="text-zinc-400 leading-relaxed md:ml-0 ml-[-4rem]">
                                 I build sleek UIs and scalable backends—full-stack all the way.
                                 <br />
                                 JavaScript, TypeScript, MERN, Ethereum, Solana—Web2’s speed meets

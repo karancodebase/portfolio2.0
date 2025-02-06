@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="max-w-5xl mx-auto px-4 text-zinc-50">
+    <main className="md:max-w-5xl mx-auto md:px-4 text-zinc-50">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-start">
         <motion.div
           initial={{ scale: 0.8 }}
@@ -15,11 +15,11 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="flex justify-center md:justify-start">
           <Image
-            src="/avatar.png"
+            src="/avatar.jpg"
             alt="avatar"
             width={200}
             height={200}
-            className="rounded-lg object-cover w-full max-w-[200px]"
+            className="rounded-lg object-cover w-full max-h-[300px] max-w-[250px]"
           />
         </motion.div>
 
