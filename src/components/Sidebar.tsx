@@ -47,6 +47,12 @@ export function Sidebar({ closeSidebar }: { closeSidebar?: () => void }) {
                     isActive={pathname === "/projects"}
                     closeSidebar={closeSidebar}
                 />
+                <NavItem 
+                    href="/404"
+                    label="404"
+                    isActive={pathname === "/404"}
+                    closeSidebar={closeSidebar}
+                />
                </Section>
 
                <Section title="Quick Links">
@@ -124,7 +130,7 @@ function NavItem({
     return (
         <Link 
             href={href}
-            className={`flex items-center justify-between text-md px-2 py-1 rounded
+            className={`flex items-center justify-between text-md px-4 py-1 rounded
                 ${
                 isActive
                 ? "bg-gray-700 text-zinc-50 font-medium"

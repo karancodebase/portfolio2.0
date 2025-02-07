@@ -6,8 +6,7 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { Menu, X } from "lucide-react";
 import LoaderAnimation from "./loading";
-import router from "next/router";
-// import Loading from "./loading"; // Import the loading component
+import { usePathname } from 'next/navigation';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,19 +27,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDesktopOpen, setIsDesktopOpen] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-        setIsLoading(false);
-        router.push("/");
-    }, 7500);
-
-    return () => clearTimeout(timer);
-}, []); // ✅ No `router` in dependencies
-
+    if (typeof window !== 'undefined' && pathname === '/') {
+      const hasLoaded = localStorage.getItem('hasLoaded');
+      if (hasLoaded) {
+        setIsFirstLoad(false);
+      } else {
+        const timer = setTimeout(() => {
+          setIsFirstLoad(false);
+          localStorage.setItem('hasLoaded', 'true');
+        }, 7500);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      setIsFirstLoad(false);
+    }
+  }, [pathname]);
 
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
@@ -91,12 +98,14 @@ export default function RootLayout({
           ${isDesktopOpen ? "md:ml-[15vw]" : ""}
           flex items-center justify-center
         `}>
-          {isLoading ? (
-            <LoaderAnimation />
+          
+          {isFirstLoad ? (
+            <LoaderAnimation isLoading={isFirstLoad} />
           ) : (
             <Suspense fallback={<p>Loading content...</p>}>
               {children}
-            </Suspense>)}
+            </Suspense>
+          )}
         </main>
       </body>
     </html>
