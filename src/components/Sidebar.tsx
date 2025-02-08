@@ -1,150 +1,181 @@
 "use client";
-import { ReactNode } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
-export function Sidebar({ closeSidebar }: { closeSidebar?: () => void }) {
-    const pathname = usePathname();
+export function Navbar() {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    return (
-        <div className="space-y-8">
-            <nav className="space-y-4 px-6">
-               <Section title="Explore">
-                <NavItem 
-                    href="/"
-                    label="Dashboard"
-                    isActive={pathname === "/"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/about"
-                    label="About"
-                    isActive={pathname === "/about"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/work"
-                    label="Work"
-                    isActive={pathname === "/work"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/skills"
-                    label="Skills"
-                    isActive={pathname === "/skills"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/contact"
-                    label="Get in touch"
-                    isActive={pathname === "/contact"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/projects"
-                    label="Projects"
-                    isActive={pathname === "/projects"}
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="/404"
-                    label="404"
-                    isActive={pathname === "/404"}
-                    closeSidebar={closeSidebar}
-                />
-               </Section>
+  // Function to close the mobile menu
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-               <Section title="Quick Links">
-                <NavItem 
+  return (
+    <nav className="fixed top-0 left-0 right-0 bg-transparent md:bg-neutral-900/50 backdrop-blur-xl z-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo/Profile Section */}
+          <Link
+            href="/"
+            className="flex items-center space-x-3"
+            onClick={closeMenu}
+          >
+            <Image
+              src="/avatar.png"
+              alt="name"
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
+            <div>
+              <h1 className="font-semibold text-gray-50">Jaydatt Karan</h1>
+              <p className="text-xs text-zinc-400">Web Developer</p>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4">
+            <NavItem
+              href="/"
+              label="Dashboard"
+              isActive={pathname === "/"}
+              onClick={closeMenu}
+            />
+            <NavItem
+              href="/about"
+              label="About"
+              isActive={pathname === "/about"}
+              onClick={closeMenu}
+            />
+            <NavItem
+              href="/projects"
+              label="Projects"
+              isActive={pathname === "/projects"}
+              onClick={closeMenu}
+            />
+            <NavItem
+              href="/contact"
+              label="Contact"
+              isActive={pathname === "/contact"}
+              onClick={closeMenu}
+            />
+            <NavItem
+              href="/work"
+              label="Work"
+              isActive={pathname === "/work"}
+              onClick={closeMenu}
+            />
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-gray-50"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4">
+            <div className="flex flex-col space-y-2">
+              <NavItem
+                href="/"
+                label="Dashboard"
+                isActive={pathname === "/"}
+                onClick={closeMenu}
+              />
+              <NavItem
+                href="/about"
+                label="About"
+                isActive={pathname === "/about"}
+                onClick={closeMenu}
+              />
+              <NavItem
+                href="/projects"
+                label="Projects"
+                isActive={pathname === "/projects"}
+                onClick={closeMenu}
+              />
+
+              <NavItem
+                href="/contact"
+                label="Contact"
+                isActive={pathname === "/contact"}
+                onClick={closeMenu}
+              />
+              <NavItem
+                href="/work"
+                label="Work"
+                isActive={pathname === "/work"}
+                onClick={closeMenu}
+              />
+              <div className="pt-4 border-t border-gray-700">
+                <div className="flex space-x-4">
+                  <NavItem
                     href="https://twitter.com/jaydattkaran"
                     label="Twitter"
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
+                    onClick={closeMenu}
+                  />
+                  <NavItem
                     href="https://github.com/jaydattkaran"
                     label="Github"
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
+                    onClick={closeMenu}
+                  />
+                  <NavItem
                     href="https://www.linkedin.com/in/jaydattkaran"
                     label="LinkedIn"
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="https://bento.me/jaydatt"
-                    label="Bento"
-                    closeSidebar={closeSidebar}
-                />
-                <NavItem 
-                    href="mailto:karanjaydatt03@gmail.com"
-                    label="Email"
-                    closeSidebar={closeSidebar}
-                />
-               </Section>
-            </nav>
-
-            <Link href="/" onClick={closeSidebar}>
-                <div className="flex items-center rounded-lg space-x-3 px-4 mt-4 py-2 text-gray-50 hover:bg-gray-300 duration-300 hover:text-gray-800">
-                    <Image
-                        src="/avatar.png"
-                        alt="name"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                    />
-                    <div>
-                        <h1 className="font-semibold">Jaydatt Karan</h1>
-                        <p className="text-sm text-zinc-400">Web Developer</p>
-                    </div>
+                    onClick={closeMenu}
+                  />
                 </div>
-            </Link>
-        </div>
-    );
-}
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-    return (
-        <div>
-            <h2 className="text-s font-semibold uppercase text-gray-400 mb-2">{title}</h2>
-            <div className="space-y-1">{children}</div>
-        </div>
-    );
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
 }
 
 function NavItem({
-    href,
-    label,
-    newBadge,
-    isActive,
-    closeSidebar
+  href,
+  label,
+  isActive,
+  onClick,
 }: {
-    href: string;
-    label: string;
-    newBadge?: boolean;
-    isActive?: boolean;
-    closeSidebar?: () => void;
+  href: string;
+  label: string;
+  isActive?: boolean;
+  onClick?: () => void;
 }) {
-    const isExternal = href.startsWith("http"); // Detect external links
+  const isExternal = href.startsWith("http");
 
-    return (
-        <Link 
-            href={href}
-            className={`flex items-center justify-between text-md px-4 py-1 rounded
-                ${
-                isActive
-                ? "bg-gray-700 text-zinc-50 font-medium"
-                : "text-gray-50 hover:bg-gray-300 duration-300 hover:text-gray-800"}
-            `}
-            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})} 
-            onClick={closeSidebar} // Close sidebar when a link is clicked
-        >
-            <span>{label}</span>
-            {newBadge && (
-                <span className="text-sm bg-green-700 text-green-50 px-1.5 rounded">new</span>
-            )}
-        </Link>
-    );
+  return (
+    <Link
+      href={href}
+      className={`
+        px-3 py-2 text-sm font-medium relative inline-block
+        ${isActive ? "text-white" : "text-gray-300 hover:text-white"}
+        after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+        after:w-0 after:h-0.5 after:bg-white 
+        after:transition-all after:duration-300
+        hover:after:w-3/4
+      `}
+      onClick={onClick}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {label}
+    </Link>
+  );
 }
 
-export default NavItem;
+export default Navbar;

@@ -102,13 +102,13 @@ const ContactPage = () => {
                     <h2 className="text-lg sm:text-xl font-semibold mb-4">Find me on</h2>
                     <div className="flex space-x-6">
                         <Link href="https://twitter.com/jaydattkaran" target="_blank">
-                            <Twitter className="w-6 h-6 text-blue-300 hover:text-blue-400 transition" />
+                            <Twitter className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
                         </Link>
                         <Link href="https://www.linkedin.com/in/jaydattkaran" target="_blank">
-                            <Linkedin className="w-6 h-6 text-blue-300 hover:text-blue-400 transition" />
+                            <Linkedin className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
                         </Link>
                         <Link href="https://github.com/jaydattkaran" target="_blank">
-                            <Github className="w-6 h-6 text-blue-300 hover:text-blue-400 transition" />
+                            <Github className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
                         </Link>
                     </div>
                 </div>

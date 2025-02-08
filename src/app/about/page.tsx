@@ -42,11 +42,11 @@ export default function About() {
 
 
                 <div className="space-y-8">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row gap-4">
                         <Code2 className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
                             <h3 className="text-lg lg:text-xl font-semibold mb-4">Development Philosophy</h3>
-                            <p className="text-zinc-400 leading-relaxed md:ml-0 ml-[-4rem]">
+                            <p className="text-zinc-400 leading-relaxed">
                                 Believe in building open, transparent systems that empower both
                                 developers and end users. Passionate about crafting user-centric
                                 products, driving innovation through
@@ -56,15 +56,15 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row gap-4">
                         <Globe className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
                             <h3 className="text-lg lg:text-xl font-semibold mb-4">What i do ...</h3>
-                            <p className="text-zinc-400 leading-relaxed md:ml-0 ml-[-4rem]">
+                            <p className="text-zinc-400 leading-relaxed">
                                 I build sleek UIs and scalable backends—full-stack all the way.
                                 <br />
-                                JavaScript, TypeScript, MERN, Ethereum, Solana—Web2’s speed meets
-                                Web3’s trust. Why pick one when you can master both?
+                                JavaScript, TypeScript, MERN, Ethereum, Solana—Web2&apos;s speed meets
+                                Web3&apos;s trust. Why pick one when you can master both?
                                 <br />
                                 From social media clones to AI agents, I craft, break, and rebuild. 
                                 Strong in Git workflows, smart contracts (Solidity), and decentralized 
