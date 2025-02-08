@@ -81,7 +81,7 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="md:text-4xl text-3xl font-bold mb-4"
           >
-            I&apos;m Jaydatt Karan
+            Jaydatt Karan
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}
