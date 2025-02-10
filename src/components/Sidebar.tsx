@@ -15,9 +15,9 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-transparent md:bg-neutral-900/50 backdrop-blur-xl z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-black md:bg-dot-thick-neutral-300 dark:md:bg-dot-thick-neutral-950 md:bg-transparent backdrop-blur-3xl z-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo/Profile Section */}
           <Link
             href="/"
@@ -25,7 +25,7 @@ export function Navbar() {
             onClick={closeMenu}
           >
             <Image
-              src="/avatar.png"
+              src="/globe.svg"
               alt="name"
               width={32}
               height={32}
@@ -86,7 +86,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
+          <div className="md:hidden py-4 bg-black backdrop-blur-3xl">
             <div className="flex flex-col space-y-2">
               <NavItem
                 href="/"
@@ -163,8 +163,8 @@ function NavItem({
     <Link
       href={href}
       className={`
-        px-3 py-2 text-sm font-medium relative inline-block
-        ${isActive ? "text-white" : "text-gray-300 hover:text-white"}
+        px-3 py-2 text-md font-medium relative inline-block
+        ${isActive ? "text-white" : "text-gray-400 hover:text-white duration-200"}
         after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
         after:w-0 after:h-0.5 after:bg-white 
         after:transition-all after:duration-300

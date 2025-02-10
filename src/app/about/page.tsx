@@ -17,7 +17,7 @@ export default function About() {
                         <GraduationCap className="w-6 h-6 text-blue-300" />
                         <h2 className="text-lg lg:text-xl font-semibold">Background</h2>
                     </div>
-                    <p className="text-zinc-400 leading-relaxed">
+                    <p className="text-zinc-400 md:text-lg leading-relaxed">
                         B.E. Computer Science &apos;26 🎓 • AI Enthusiast • Web3 & Web2 Developer • Building projects with JavaScript • Typescript • MERN • Ethereum • Solana
                     </p>
                 </div>
@@ -33,7 +33,7 @@ export default function About() {
                                     className="flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-lg"
                                 >
                                     <Terminal className="w-4 h-4 text-blue-300" />
-                                    <span className="text-sm lg:text-md">{skill}</span>
+                                    <span className="text-sm lg:text-lg">{skill}</span>
                                 </div>
                             )
                         )}
@@ -46,7 +46,7 @@ export default function About() {
                         <Code2 className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
                             <h3 className="text-lg lg:text-xl font-semibold mb-4">Development Philosophy</h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-zinc-400 md:text-lg leading-relaxed">
                                 Believe in building open, transparent systems that empower both
                                 developers and end users. Passionate about crafting user-centric
                                 products, driving innovation through
@@ -60,7 +60,7 @@ export default function About() {
                         <Globe className="w-8 h-8 text-blue-300 flex-shrink-0" />
                         <div>
                             <h3 className="text-lg lg:text-xl font-semibold mb-4">What i do ...</h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-zinc-400 md:text-lg leading-relaxed">
                                 I build sleek UIs and scalable backends—full-stack all the way.
                                 <br />
                                 JavaScript, TypeScript, MERN, Ethereum, Solana—Web2&apos;s speed meets

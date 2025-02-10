@@ -80,7 +80,7 @@ const ContactPage = () => {
         <main className="flex flex-col items-center justify-center max-w-3xl mx-auto px-4 py-16 text-white min-h-screen">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent">Let&apos;s Connect!</h1>
 
-            <p className="text-zinc-400 text-center mb-8 text-sm sm:text-base leading-relaxed">
+            <p className="text-zinc-400 text-center mb-8 text-sm md:text-lg sm:text-base leading-relaxed">
                 Whether you have a burning question, a nifty project, or just want to say hello, I&apos;m always up for a chat.
             </p>
 
@@ -137,7 +137,7 @@ const ContactPage = () => {
                 <Button type="submit" className="w-full" disabled={isLoading}>{isLoading ? 'Sending...' : 'Send Message'}</Button>
             </form>
 
-            <p className="text-zinc-500 mt-12 text-center text-sm sm:text-base leading-relaxed">
+            <p className="text-zinc-500 mt-12 text-center text-sm md:text-lg sm:text-base leading-relaxed">
                 Fun fact: My code runs on coffee &amp; curiosity. Let&apos;s chat about
                 <br />
                 AI, blockchain, or any crazy idea!
