@@ -25,7 +25,7 @@ const page = () => {
         </section>
 
         {/* Middle Third */}
-        <section className="flex md:mt-20  items-center justify-center">
+        <section className="flex md:mt-20 mt-6  items-center justify-center">
           <CoverDemo />
         </section>
         <Drawer>
