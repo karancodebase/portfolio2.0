@@ -98,8 +98,8 @@ export const Cover = ({
         <Beam
           key={index}
           hovered={hovered}
-          duration={Math.random() * 2 + 1}
-          delay={Math.random() * 2 + 1}
+          duration={Math.max(1.5, Math.random() * 2)}
+          delay={Math.max(1, Math.random() * 2)}
           width={containerWidth}
           style={{
             top: `${position}px`,
@@ -108,13 +108,17 @@ export const Cover = ({
       ))}
       <motion.span
         key={String(hovered)}
+        initial={{
+          filter: "blur(0px)", // 🔹 Force blur to always be 0
+        }}
         animate={{
           scale: hovered ? 0.8 : 1,
           x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
           y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+          filter: "blur(0px)", // 🔹 Force no blur during animation
         }}
         exit={{
-          filter: "none",
+          filter: "blur(0px)", // 🔹 Prevent Framer Motion from interpolating negative values
           scale: 1,
           x: 0,
           y: 0,
@@ -134,12 +138,9 @@ export const Cover = ({
           scale: {
             duration: 0.2,
           },
-          filter: {
-            duration: 0.2,
-          },
         }}
         className={cn(
-          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200",
+          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200 filter-none",
           className
         )}
       >
@@ -191,7 +192,7 @@ export const Beam = ({
           gradientUnits="userSpaceOnUse"
           initial={{
             x1: "0%",
-            x2: hovered ? "-10%" : "-5%",
+            x2: hovered ? "0%" : "5%",
             y1: 0,
             y2: 0,
           }}

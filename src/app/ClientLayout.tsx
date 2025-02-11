@@ -39,7 +39,7 @@ export default function ClientLayout({
         setIsFirstLoad(true);
         const timer = setTimeout(() => {
           setIsFirstLoad(false);
-        }, 7500);
+        }, 3500);
         return () => clearTimeout(timer);
       } else {
         setIsFirstLoad(false);

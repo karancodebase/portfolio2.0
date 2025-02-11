@@ -17,7 +17,7 @@ const loadingStates: LoadingState[] = [
 export function LoaderAnimation({ isLoading }: { isLoading: boolean }): React.ReactElement {
     return (
         <div className="w-full h-screen flex items-center justify-center">
-            <Loader loadingStates={loadingStates} loading={isLoading} duration={1500} />
+            <Loader loadingStates={loadingStates} loading={isLoading} duration={700} />
         </div>
     );
 }
