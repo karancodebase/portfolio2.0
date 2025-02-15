@@ -8,6 +8,7 @@ import LoaderAnimation from "./loading";
 import { usePathname } from 'next/navigation';
 import { DotBackground } from "@/components/ui/dot-background";
 import { Footer } from "@/components/Footer";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,7 +72,7 @@ export default function ClientLayout({
         <Footer />
         </DotBackground>
         
-        
+        <Analytics />
       </body>
     </html>
   );
