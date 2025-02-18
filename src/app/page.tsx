@@ -13,20 +13,7 @@ const page = () => {
     <div className="my-16">
       {/* intro */}
       <section className="px-2 py-2">
-        <div className="px-4 py-2 flex flex-row gap-4">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <Image
-              src="/photo_2025-02-18_16-50-40.jpg"
-              alt="/avatar"
-              width={60}
-              height={60}
-              className="rounded-full sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-32 lg:h-32"
-            />
-          </motion.div>
+        <div className="px-2 py-2 flex flex-row gap-4">
           <div className="flex flex-col gap-0 justify-center items-start">
             <motion.div>
               {nameLetters.map((letter, index) => (
