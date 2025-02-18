@@ -20,11 +20,11 @@ const page = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <Image
-              src="/globe.svg"
+              src="/photo_2025-02-18_16-50-40.jpg"
               alt="/avatar"
-              width={100}
-              height={100}
-              className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+              width={60}
+              height={60}
+              className="rounded-full sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-32 lg:h-32"
             />
           </motion.div>
           <div className="flex flex-col gap-0 justify-center items-start">
