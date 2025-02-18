@@ -22,32 +22,32 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const body = await req.json()
+    const { email, message } = body;
 
-    if (!name || !email || !message) {
+    if ( !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
+    console.log("Recieved", body )
 
     const formattedMessage = `
       Dear Jaydatt,
 
       I hope this message finds you well. 
-      You have received a message from ${name}: 
 
       ${message}
 
-      Best regards,  
-      ${name}  
+      Best regards,   
       ${email}
     `;
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: "karanjaydatt03@gmail.com",
-      subject: `New Message from ${name}`,
+      subject: `New Message from ${email}`,
       html: `
         <div style="${emailStyles.container}">
           <div style="${emailStyles.header}">
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
           </div>
           <div style="${emailStyles.messageBox}">
             <div style="${emailStyles.metadata}">
-              <strong>From:</strong> ${name} (${email})
+              <strong>From:</strong> (${email})
             </div>
             <div style="${emailStyles.message}">
               ${formattedMessage}

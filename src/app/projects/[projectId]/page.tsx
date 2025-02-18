@@ -1,7 +1,12 @@
-"use client";
 import * as motion from "motion/react-client";
 
-export default function NotFound() {
+// interface ProjectProps {
+//   params?: { productId: string }; // Optional for hardcoding
+// }
+
+const Page = () => {
+  // Hard-code productId value
+
   return (
     <div className="max-w-5xl">
       <motion.div
@@ -9,7 +14,7 @@ export default function NotFound() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center h-screen text-white"
+        className="flex flex-col items-center justify-center h-screen"
       >
         <motion.h1
           initial={{ scale: 0.8 }}
@@ -17,7 +22,7 @@ export default function NotFound() {
           transition={{ duration: 0.5 }}
           className="text-6xl font-bold mb-4"
         >
-          Oops!!
+          Hold up! 🚧
         </motion.h1>
         <motion.h2
           initial={{ scale: 0.8 }}
@@ -25,24 +30,18 @@ export default function NotFound() {
           transition={{ duration: 0.5 }}
           className="text-xl font-bold mb-4"
         >
-          You’ve taken a wrong turn! 
+          This route isn’t ready yet.
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-lg text-gray-400 mb-6"
+          className="text-lg text-gray-500 mb-6"
         >
-          If this were a Next.js API route, 
-          you’d be getting a 404 error. <br />
-          Oh wait… you just did that! <br />
-          When you try to access a route that 
-          doesn’t exist, Next.js throws this error.  <br />
-          No worries, even the best explorers get lost.
-          While we debug reality, why not check out something else?  
-          
-          </motion.p>
+          Even the best devs hit dead ends. <br />
+          While we’re wiring things up, why not explore something else?
+        </motion.p>
 
         <motion.a
           href="/"
@@ -56,6 +55,6 @@ export default function NotFound() {
       </motion.div>
     </div>
   );
-}
+};
 
-// You look lost, stranger. You know what helps when you’re lost? A piping hot bowl of noodles. Take a seat, we’re frantically at work here cooking up something good. Oh, you need something to read? These might help you:
+export default Page;

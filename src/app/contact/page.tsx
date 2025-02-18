@@ -1,163 +1,276 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { Mail, Twitter, Linkedin, Github, CheckCircle, XCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+"use client";
+import React, { useState, useEffect } from "react";
+import {
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface FormData {
-    name: string;
-    email: string;
-    message: string;
+  email: string;
+  message: string;
 }
 
 interface FormErrors {
-    name?: string;
-    email?: string;
-    message?: string;
+  email?: string;
+  message?: string;
 }
 
-const Toast = ({ message, type }: { message: string; type: 'success' | 'error' }) => (
-    <div className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg border flex items-center gap-2 animate-in slide-in-from-right-full duration-300 ${type === 'success' ? 'bg-green-900 border-green-700 text-white' : 'bg-red-900 border-red-700 text-white'}`}>
-        {type === 'success' ? <CheckCircle className="w-5 h-5 text-green-400" /> : <XCircle className="w-5 h-5 text-red-400" />}
-        <span>{message}</span>
-    </div>
+const Toast = ({
+  message,
+  type,
+}: {
+  message: string;
+  type: "success" | "error";
+}) => (
+  <div
+    className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg border flex items-center gap-2 animate-in slide-in-from-right-full duration-300 ${
+      type === "success"
+        ? "bg-green-900 border-green-700 text-white"
+        : "bg-red-900 border-red-700 text-white"
+    }`}
+  >
+    {type === "success" ? (
+      <CheckCircle className="w-5 h-5 text-green-400" />
+    ) : (
+      <XCircle className="w-5 h-5 text-red-400" />
+    )}
+    <span>{message}</span>
+  </div>
 );
 
-const ContactPage = () => {
-    const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
-    const [errors, setErrors] = useState<FormErrors>({});
-    const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+const Contact = () => {
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
-        if (toast) {
-            timeoutId = setTimeout(() => setToast(null), 5000);
-        }
-        return () => timeoutId && clearTimeout(timeoutId);
-    }, [toast]);
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    if (toast) {
+      timeoutId = setTimeout(() => setToast(null), 5000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [toast]);
 
-    const validateForm = () => {
-        const newErrors: FormErrors = {};
-        if (formData.name.length < 2) newErrors.name = 'If your name’s under 2 letters, so is my reply—0. 👻';
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email? Try again. Empty boxes don’t work! 📭';
-        if (formData.message.length < 10) newErrors.message = 'If you’re this curious, give me atleast 10 words.💬!';
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
+  const validateForm = () => {
+    const newErrors: FormErrors = {};
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      newErrors.email = "Invalid email? Try again. Empty boxes don’t work! 📭";
+    if (formData.message.length < 10)
+      newErrors.message =
+        "If you’re this curious, give me atleast 10 words.💬!";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!validateForm()) return;
-        setIsLoading(true);
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-            const result = await response.json();
-            if (!response.ok) throw new Error(result.message || 'Something went wrong');
-            setToast({ message: 'Message sent successfully!', type: 'success' });
-            setFormData({ name: '', email: '', message: '' });
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                setToast({ message: error.message, type: 'error' });
-            } else {
-                setToast({ message: 'An unexpected error occurred', type: 'error' });
-            }
-        }
-        finally {
-            setIsLoading(false);
-        }
-    };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrors({});
+    if (!validateForm()) return;
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok)
+        throw new Error(result.message ?? "Something went wrong");
+      setToast({ message: "Message sent successfully!", type: "success" });
+      setFormData({ email: "", message: "" });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setToast({ message: error.message, type: "error" });
+      } else {
+        setToast({ message: "An unexpected error occured", type: "error" });
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return (
-        <main className="flex flex-col items-center justify-center max-w-3xl mx-auto px-4 py-16 text-white min-h-screen">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent">Let&apos;s Connect!</h1>
+  return (
+    <div className="border my-16">
+      {/* links */}
+      <section className="px-4 py-4 border-b">
+        <div className="py-2 flex flex-row gap-4 border-b">
+          <div className="flex flex-col gap-0 justify-center items-start">
+            <div className="md:text-4xl text-2xl font-bold">Let’s Connect</div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+          <div>
+            Have an exciting idea? Want to collaborate? Or just up for an
+            interesting convo? I’d love to hear from you.
+          </div>
+          <div>📩 Email: karanjaydatt03@gmail.com</div>
+          <div>
+            🌍 Find me on:{" "}
+            <Link
+              href="https://www.linkedin.com/in/jaydattkaran"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold social-link text-cyan-500 hover:text-cyan-700 transition duration-200"
+            >
+              Linkedin{" "}
+            </Link>
+            |{" "}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/jaydattkaran"
+              className="font-semibold social-link text-cyan-500 hover:text-cyan-700 transition duration-200"
+            >
+              {" "}
+              Twitter{" "}
+            </Link>
+          </div>
+        </div>
+      </section>
 
-            <p className="text-zinc-400 text-center mb-8 text-sm md:text-lg sm:text-base leading-relaxed">
-                Whether you have a burning question, a nifty project, or just want to say hello, I&apos;m always up for a chat.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-
-                <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 hover:border-blue-300 transition-all flex flex-col items-center text-center">
-                    <Mail className="w-8 h-8 text-blue-300 mb-2" />
-                    <h2 className="text-lg sm:text-xl font-semibold mb-2">Email</h2>
-                    <Link
-                        href="mailto:karanjaydatt03@gmail.com"
-                        className="text-gray-400 hover:underline text-sm sm:text-base"
-                    >
-                        karanjaydatt03@gmail.com
-                    </Link>
-                </div>
-
-
-                <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 hover:border-blue-300 transition-all flex flex-col items-center text-center">
-                    <h2 className="text-lg sm:text-xl font-semibold mb-4">Find me on</h2>
-                    <div className="flex space-x-6">
-                        <Link href="https://twitter.com/jaydattkaran" target="_blank">
-                            <Twitter className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
-                        </Link>
-                        <Link href="https://www.linkedin.com/in/jaydattkaran" target="_blank">
-                            <Linkedin className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
-                        </Link>
-                        <Link href="https://github.com/jaydattkaran" target="_blank">
-                            <Github className="w-10 h-10 text-blue-300 hover:text-blue-400 transition" />
-                        </Link>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <form onSubmit={handleSubmit} className="space-y-6 md:w-full w-[20rem] bg-zinc-900 md:p-6 p-6 mt-10 rounded-xl border border-zinc-600">
-                <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-200">Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" />
-                    {errors.name && <p className="text-red-400 text-sm">{errors.name}</p>}
-                </div>
-                <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-200">Email</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" />
-                    {errors.email && <p className="text-red-400 text-sm">{errors.email}</p>}
-                </div>
-                <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-200">Message</label>
-                    <textarea name="message" value={formData.message} onChange={handleChange} rows={4} className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your message here" />
-                    {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
-                </div>
-                <Button type="submit" className="w-full" disabled={isLoading}>{isLoading ? 'Sending...' : 'Send Message'}</Button>
+      {/* form */}
+      <section className="px-4 py-4 border-b">
+        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+          <div>
+            💻 Want to dive into my projects?{" "}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/jaydattkaran"
+              className="font-semibold social-link text-cyan-500 hover:text-cyan-700
+            duration-200"
+            >
+              {" "}
+              Github{" "}
+            </Link>
+            <br />
+            Check out my GitHub for a closer look at what I’m building. 🚀
+          </div>
+          <div>Drop a message below, and let’s make something happen.</div>
+          <div className="md:px-10 md:py-4">
+            <form
+              onSubmit={handleSubmit}
+              className=" glass-box space-y-6 bg-transparent md:p-6 p-6 mt-10 rounded-xl border"
+            >
+              <div className="space-y-2">
+                <label className="block font-medium">Email</label>
+                <Input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                />
+                {errors.email && (
+                  <p className="text-red-400 text-sm">{errors.email}</p>
+                )}
+              </div>
+              <div className="space-y-2">
+                <label className="block font-medium">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-3 py-2 rounded-md border border-input bg-transparent shadow-sm transition-colors file:border-0 file:bg-transparent file:text-md file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="Type your message here"
+                />
+                {errors.message && (
+                  <p className="text-red-400 text-sm">{errors.message}</p>
+                )}
+              </div>
+              <div className="flex justify-center">
+                <Button variant="default" type="submit" disabled={isLoading}>
+                  {isLoading ? "Sending..." : "Send Message"}
+                </Button>
+              </div>
             </form>
+          </div>
+        </div>
+        {toast && <Toast message={toast.message} type={toast.type} />}
+      </section>
 
-            <p className="text-zinc-500 mt-12 text-center text-sm md:text-lg sm:text-base leading-relaxed">
-                Fun fact: My code runs on coffee &amp; curiosity. Let&apos;s chat about
-                <br />
-                AI, blockchain, or any crazy idea!
-            </p>
-
-
-            <div className="mt-12">
-                <Link
-                    href="/"
-                    className="bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-lg transition text-sm sm:text-base"
-                >
-                    &larr; Back to Home
-                </Link>
+      {/* open to */}
+      <section className="px-2 py-4">
+        <div className="py-2 flex flex-row gap-4 border-b">
+          <div className="flex flex-col gap-0 justify-center items-start">
+            <div className="md:text-4xl text-2xl font-bold">
+              💡 What I’m open to:
             </div>
-
-
-
-            {toast && <Toast message={toast.message} type={toast.type} />}
-        </main>
-    );
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-2xl">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Brainstorming bold ideas over coffee ☕
+              </AccordionTrigger>
+              <AccordionContent>
+                Always up for thought-provoking discussions—whether it&apos;s about
+                AI, Web3, or the next big thing. Let&apos;s exchange crazy ideas,
+                challenge perspectives, and spark something new.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Exploring Web3, AI, and everything in between
+              </AccordionTrigger>
+              <AccordionContent>
+                Deep diving into the ever-evolving tech landscape. From smart
+                contracts to AI-driven automation, I love exploring how emerging
+                technologies shape the future. Let’s discuss innovations that
+                redefine industries.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                Collaborations that push the boundaries of innovation
+              </AccordionTrigger>
+              <AccordionContent>
+                Passionate about working on projects that challenge norms and
+                push boundaries. Whether it&apos;s a decentralized app, an AI
+                experiment, or a disruptive startup idea, I&apos;m all in for
+                building something impactful.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>
+                Helping you with tech, startups, or just vibing about life
+              </AccordionTrigger>
+              <AccordionContent>
+                Need guidance on tech stacks, startup strategies, or just a
+                fresh perspective? I enjoy mentoring, sharing insights, and
+                brainstorming solutions that can help you move forward.
+                Sometimes, the best ideas come from casual convos!
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+    </div>
+  );
 };
 
-export default ContactPage;
+export default Contact;
