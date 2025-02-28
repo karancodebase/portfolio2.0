@@ -115,6 +115,22 @@ body::before {
   outline: none;
   box-shadow: 0 0 0 2px theme("colors.red.400"); /* Slightly different in dark mode */
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #505050; 
+  border-radius: 15px;
+
+}
+
 .social-link {
   position: relative;
   /* z-index: 9999; */

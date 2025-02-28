@@ -194,7 +194,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-3 py-2 rounded-md  -input bg-transparent shadow-sm transition-colors file:-0 file:bg-transparent file:text-md file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="w-full px-3 py-2 rounded-md border -input bg-transparent shadow-sm transition-colors file:-0 file:bg-transparent file:text-md file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Type your message here"
                 />
                 {errors.message && (
@@ -221,7 +221,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-xl">
+        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-xl md:max-w-[48vw]">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
