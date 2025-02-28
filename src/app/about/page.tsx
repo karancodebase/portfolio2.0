@@ -1,9 +1,9 @@
 export default function About() {
   return (
-    <div className="border my-16">
+    <div className=" my-16">
       {/* intro */}
-      <section className="border-b px-2">
-        <div className="flex flex-row gap-4 border-b px-2 py-4">
+      <section className="-b px-2">
+        <div className="flex flex-row gap-4 -b px-2 py-4">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">Jaydatt Karan</div>
             <div className="md:text-xl font-semibold text-neutral-500">
@@ -11,24 +11,24 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="md:text-2xl py-4 px-2">
-          I don’t just code—I craft experiences. From full-stack applications to
+        <div className="md:text-xl py-4 px-2 font-normal">
+          I don’t just code—I craft experiences. From <strong>full-stack</strong> applications to
           AI-powered solutions and decentralized systems, I’m all about pushing
           the boundaries of what’s possible. <br />
-          With a strong foundation in Web2, Web3, and AI, I bridge the gap
+          With a strong foundation in <strong>Web2</strong> , <strong>Web3</strong> , and <strong>AI</strong> , I bridge the gap
           between innovation and real-world impact, ensuring that every project
           I build is fast, scalable, and user-centric.
         </div>
       </section>
 
       {/* education */}
-      <section className="px-2 py-4 border-b ">
-        <div className="py-2 flex flex-row gap-4 border-b">
+      <section className="px-2 py-4 -b ">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">Education</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl font-medium">
           <div>
             🎓 Bachelor of Technology (B.Tech) in Computer
             ScienceSpecialization: Artificial Intelligence & Data Science
@@ -40,8 +40,8 @@ export default function About() {
       </section>
 
       {/* tech */}
-      <section className="px-2 py-4 border-b ">
-        <div className="py-2 flex flex-row gap-4 border-b">
+      <section className="px-2 py-4 -b ">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">
               Tech Arsenal ⚡
@@ -69,15 +69,15 @@ export default function About() {
       </section>
 
       {/* philosophy */}
-      <section className="px-2 py-4 border-b ">
-        <div className="py-2 flex flex-row gap-4 border-b">
+      <section className="px-2 py-4 -b ">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">
               My Philosophy 🎯
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-2 mt-4 md:text-xl">
           <div>
             Tech should be seamless, intuitive, and empowering. I believe in:
           </div>
@@ -90,13 +90,13 @@ export default function About() {
       </section>
 
       {/* what */}
-      <section className="px-2 py-4 border-b ">
-        <div className="py-2 flex flex-row gap-4 border-b">
+      <section className="px-2 py-4 -b ">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">What I Do 🛠️</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl">
           <div>
             I specialize in crafting sleek UIs, scalable backends, and
             cutting-edge blockchain & AI projects. Whether it&apos;s AI-driven
@@ -113,12 +113,12 @@ export default function About() {
 
       {/* resume */}
       <section className="px-2 py-4">
-        <div className="py-2 flex flex-row gap-4 border-b">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">Resume</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl">
           <div>
             For a quick overview of my experience & skills:{" "}
             <span

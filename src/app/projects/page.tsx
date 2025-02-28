@@ -24,7 +24,7 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="md:text-2xl"
+          className="md:text-xl"
         >
           A digital innovator on a mission to redefine the web & web3 landscape,
           one line of code at a time. When I’m not bending the digital world to

@@ -32,10 +32,10 @@ const Toast = ({
   type: "success" | "error";
 }) => (
   <div
-    className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg border flex items-center gap-2 animate-in slide-in-from-right-full duration-300 ${
+    className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg  flex items-center gap-2 animate-in slide-in-from-right-full duration-300 ${
       type === "success"
-        ? "bg-green-900 border-green-700 text-white"
-        : "bg-red-900 border-red-700 text-white"
+        ? "bg-green-900 -green-700 text-white"
+        : "bg-red-900 -red-700 text-white"
     }`}
   >
     {type === "success" ? (
@@ -112,15 +112,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="border my-16">
+    <div className=" my-16">
       {/* links */}
-      <section className="px-4 py-4 border-b">
-        <div className="py-2 flex flex-row gap-4 border-b">
+      <section className="px-4 py-4 -b">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">Let’s Connect</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl">
           <div>
             Have an exciting idea? Want to collaborate? Or just up for an
             interesting convo? I’d love to hear from you.
@@ -151,8 +151,8 @@ const Contact = () => {
       </section>
 
       {/* form */}
-      <section className="px-4 py-4 border-b">
-        <div className="flex flex-col gap-4 mt-4 md:text-2xl">
+      <section className="px-4 py-4 -b">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl">
           <div>
             💻 Want to dive into my projects?{" "}
             <Link
@@ -172,7 +172,7 @@ const Contact = () => {
           <div className="md:px-10 md:py-4">
             <form
               onSubmit={handleSubmit}
-              className=" glass-box space-y-6 bg-transparent md:p-6 p-6 mt-10 rounded-xl border"
+              className=" glass-box space-y-6 bg-transparent md:p-6 p-6 mt-10 rounded-xl "
             >
               <div className="space-y-2">
                 <label className="block font-medium">Email</label>
@@ -194,7 +194,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-3 py-2 rounded-md border border-input bg-transparent shadow-sm transition-colors file:border-0 file:bg-transparent file:text-md file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="w-full px-3 py-2 rounded-md  -input bg-transparent shadow-sm transition-colors file:-0 file:bg-transparent file:text-md file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Type your message here"
                 />
                 {errors.message && (
@@ -214,14 +214,14 @@ const Contact = () => {
 
       {/* open to */}
       <section className="px-2 py-4">
-        <div className="py-2 flex flex-row gap-4 border-b">
+        <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">
               💡 What I’m open to:
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-2xl">
+        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-xl">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
