@@ -1,60 +1,67 @@
-import * as motion from "motion/react-client";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { projects } from "@/components/data/projects";
 
-// interface ProjectProps {
-//   params?: { productId: string }; // Optional for hardcoding
-// }
+type Params = Promise<{ projectId: string }>;
 
-const Page = () => {
-  // Hard-code productId value
+export default async function ProjectPage({ params }: { params: Params }) {
+  const { projectId } = await params; // Resolve the promise to get projectId
+
+  const project = projects.find((p) => p.id === projectId) || null;
+
+  if (!project) {
+    return notFound();
+  }
 
   return (
-    <div className="max-w-5xl">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center h-screen"
-      >
-        <motion.h1
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-6xl font-bold mb-4"
-        >
-          Hold up! 🚧
-        </motion.h1>
-        <motion.h2
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-xl font-bold mb-4"
-        >
-          This route isn’t ready yet.
-        </motion.h2>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-3xl font-bold">{project.title}</h1>
+      <Image
+        src={project.image}
+        alt={project.title}
+        width={800}
+        height={400}
+        className="rounded-lg mt-4"
+      />
+      <p className="mt-4">{project.overview}</p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-lg text-gray-500 mb-6"
-        >
-          Even the best devs hit dead ends. <br />
-          While we’re wiring things up, why not explore something else?
-        </motion.p>
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold">Key Features:</h3>
+        <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
+          {project.keyFeatures.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+      </div>
 
-        <motion.a
-          href="/"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="bg-blue-300 social-link text-gray-900 font-bold mt-4 px-6 py-2 rounded-lg hover:bg-blue-400 transition"
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold">Use Cases:</h3>
+        <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
+          {project.useCases.map((useCase, index) => (
+            <li key={index}>{useCase}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-6 flex gap-4">
+        <Link
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-900 text-white px-4 py-2 rounded-lg"
         >
-          Go Back Home
-        </motion.a>
-      </motion.div>
+          GitHub Repo
+        </Link>
+        <Link
+          href={project.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+        >
+          Live Demo
+        </Link>
+      </div>
     </div>
   );
-};
-
-export default Page;
+}

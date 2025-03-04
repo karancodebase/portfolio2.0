@@ -52,21 +52,22 @@ export const projects = [
     description:
       "Music application that allows user to enjoy music and can download to local storage",
     github: "https://github.com/jaydattkaran/musicova",
-    website: "https://github.com/jaydattkaran/musicova",
+    website: "https://musicova.netlify.app/",
   },
   {
-    id: "game",
+    id: "aibot",
     image:"/aibot.jpg",
     title: "AI Powered ChatBot",
     tech: ["TypeScript", "Nextjs", "Gemini", "Tailwind"],
     description:
       "A terminal based game that allows user to experient their info about techs",
-    github: "https://github.com/jaydattkaran",
-    website: "https://www.npmjs.com/package/codegames",
+      github: "https://github.com/jaydattkaran/assistant",
+      website: "https://aeris.jaydatt.xyz/",
   },
 ];
 
 interface SearchResult {
+  id: string;
   title: string;
   tech: string[];
   description: string;
@@ -82,10 +83,11 @@ const Project = ({
   description,
   github,
   website,
-  image
+  image,
+  id
 }: SearchResult) => {
   return (
-    <>
+    <Link href={`/projects/${id}`} key={id}>
       <div className="border cardhover border-neutral-900 hover:border-neutral-400 glass-box duration-200  lg:min-h-[18rem] rounded-lg px-4 py-4">
         <div className="flex flex-row lg:flex-col lg:gap-2 gap-4">
           <Link href={github}>
@@ -108,7 +110,7 @@ const Project = ({
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 
