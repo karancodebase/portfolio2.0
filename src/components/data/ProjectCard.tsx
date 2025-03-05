@@ -15,7 +15,7 @@ interface SearchResult {
 
 const Project = ({ title, tech, description, github, website, image, id }: SearchResult) => {
   return (
-    <div className="relative border cardhover border-neutral-900 hover:border-neutral-400 glass-box duration-200 lg:min-h-[18rem] rounded-lg px-4 py-4 overflow-hidden group">
+    <div className="relative border cardhover border-neutral-900 hover:border-neutral-400 glass-box duration-200 rounded-lg px-4 py-4 overflow-hidden group">
       {/* Background Image (Hidden by Default) */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <Image 
@@ -41,7 +41,7 @@ const Project = ({ title, tech, description, github, website, image, id }: Searc
                 </a>
               </div>
             </div>
-            <div className="md:text-md text-sm mb-2">{description}</div>
+            <div className="md:text-md text-sm mb-4 mt-2">{description}</div>
             {tech.map((techItem) => (
               <Badge key={techItem} variant="default" className="mb-1 mr-2">
                 {techItem}
