@@ -25,7 +25,7 @@ export default function About() {
       <section className="px-2 py-4 -b ">
         <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">Education</div>
+            <div className="md:text-3xl text-2xl font-bold">Education</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 md:text-xl font-medium">
@@ -43,12 +43,12 @@ export default function About() {
       <section className="px-2 py-4 -b ">
         <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">
+            <div className="md:text-3xl text-2xl font-bold">
               Tech Arsenal ⚡
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-2xl">
+        <div className="flex flex-col gap-2 mt-4 md:text-xl">
           <div>
             <span className="font-semibold"> Frontend & UI/UX: </span> Next.js,
             React, TypeScript, Framer Motion
@@ -72,7 +72,7 @@ export default function About() {
       <section className="px-2 py-4 -b ">
         <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">
+            <div className="md:text-3xl text-2xl font-bold">
               My Philosophy 🎯
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function About() {
       <section className="px-2 py-4 -b ">
         <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">What I Do 🛠️</div>
+            <div className="md:text-3xl text-2xl font-bold">What I Do 🛠️</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 md:text-xl">
@@ -115,7 +115,7 @@ export default function About() {
       <section className="px-2 py-4">
         <div className="py-2 flex flex-row gap-4 -b">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">Resume</div>
+            <div className="md:text-3xl text-2xl font-bold">Resume</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 md:text-xl">

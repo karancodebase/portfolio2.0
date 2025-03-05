@@ -221,7 +221,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-xl md:max-w-[48vw]">
+        <div className="flex flex-col gap-2 mt-4 md:px-10 px-4 md:pb-2 md:text-xl md:max-w-[90vw]">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>

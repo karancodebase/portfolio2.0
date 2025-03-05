@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Twitter, MailOpen } from "lucide-react";
 import InfiniteCarousel from "@/components/ui/infinitecarousel";
 import * as motion from "motion/react-client";
-import Project, { projects } from "@/components/data/ProjectCard";
+import Project from "@/components/data/ProjectCard";
+import { projects } from "@/components/data/projects";
+
 
 const page = () => {
   const name = "Jaydatt Karan";
@@ -53,10 +55,10 @@ const page = () => {
           className="md:text-2xl"
         >
           A digital innovator on a mission to redefine the Web & Web3 landscape,
-          one line of code at a time. When I&apos;m not bending the digital world to
-          my will, you&apos;ll find me connecting with visionary creators and
-          designing innovative solutions that push boundaries and redefine
-          what&apos;s possible.
+          one line of code at a time. When I&apos;m not bending the digital
+          world to my will, you&apos;ll find me connecting with visionary
+          creators and designing innovative solutions that push boundaries and
+          redefine what&apos;s possible.
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: -50 }} // Start from opacity 0 and slightly below
@@ -90,11 +92,7 @@ const page = () => {
       {/* featured projects */}
 
       <section>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
+        <div>
           <div className="flex flex-col lg:flex-row justify-between px-2">
             <div className="text-neutral-500 uppercase tracking-[0.2em] font-semibold md:text-2xl text-xxl">
               featured projects
@@ -108,37 +106,20 @@ const page = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-4">
             {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="box"
-                initial={{ opacity: 0}} // Start from opacity 0 and slightly below
-                whileInView={{ opacity: 1 }} // Fade in and slide up
-                transition={{
-                  duration: 0.3, // Speed of animation
-                  delay: index * 0.1, 
-                }}
-              >
+              <div key={index} className="box">
                 {/* <Link href={`/projects/${encodeURIComponent(project.id)}`}> */}
-                <Project key={index} {...project} index={index}></Project>
+                <Project key={index} {...project}></Project>
                 {/* </Link> */}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* say hi */}
       <section className="flex justify-center px-2">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }} // Start from opacity 0 and slightly below
-          whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-          transition={{
-            duration: 0.7, // Speed of animation
-            delay: 0.7, // Delay to stagger animations (0.2s per box)
-            type: "spring", // Makes it feel more natural
-          }}
-          className="md:h-[20em] my-[5em] glass-box border cardhover border-neutral-900 hover:border-neutral-400 duration-200 rounded-xl flex items-center"
-        >
+        <Link href="/contact">
+        <div className="md:h-[20em] my-[5em] glass-box border cardhover border-neutral-900 hover:border-neutral-400 duration-200 rounded-xl flex items-center">
           <div className="flex md:flex-row flex-col-reverse md:px-[4%] px-[5%]">
             <div className="pb-10 md:py-10 flex flex-col gap-4">
               <div className="text-5xl font-bold">Say hi!</div>
@@ -173,7 +154,8 @@ const page = () => {
               className="mx-[10%] md:mx-0"
             />
           </div>
-        </motion.div>
+        </div>
+        </Link>
       </section>
     </div>
   );

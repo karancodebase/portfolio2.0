@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
-import Project, { projects } from "@/components/data/ProjectCard";
+import Project from "@/components/data/ProjectCard";
+import { projects } from "@/components/data/projects";
 
 export default function Projects() {
   return (
@@ -54,7 +55,7 @@ export default function Projects() {
                 // Makes it feel more natural
               }}
             >
-              <Project key={index} {...project} index={index}></Project>
+              <Project key={index} {...project}></Project>
             </motion.div>
           ))}
         </div>
