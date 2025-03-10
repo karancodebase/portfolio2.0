@@ -23,7 +23,7 @@ const Project = ({ title, tech, description, github, website, image, id }: Searc
           alt={`${title} Background`} 
           layout="fill" 
           objectFit="cover" 
-          className="opacity-20"
+          className="opacity-40"
         />
       </div>
 

@@ -38,7 +38,7 @@ export default function RootLayout({
           relative antialiased`}
       >
 
-        <Image src="/oQ65CY9Qk1W3v2c4ykiPXXB3og.avif" width={2000} height={500} alt="/" className="absolute top-0 opacity-70 z-1"/>
+        <Image src="/oQ65CY9Qk1W3v2c4ykiPXXB3og.avif" width={2000} height={500} alt="/" className="absolute top-0 opacity-70 -z-1000"/>
         {/* <img
           src="/oQ65CY9Qk1W3v2c4ykiPXXB3og.avif"
           alt=""

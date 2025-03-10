@@ -27,7 +27,7 @@ body::before {
 }
 
 .glass-box {
-  background: rgba(255, 255, 255, 0.016);
+  background: transparent;
   backdrop-filter: blur(100px); /* Blurry effect */
   -webkit-backdrop-filter: blur(100px); /* Safari support */
   border-radius: 10px; /* Rounded edges */
