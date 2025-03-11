@@ -1,10 +1,11 @@
+"use client"
 import * as motion from "motion/react-client";
 import Project from "@/components/data/ProjectCard";
 import { projects } from "@/components/data/projects";
 
 export default function Projects() {
   return (
-    <div className="my-16">
+    <div>
       {/* intro */}
       <section className="px-2 py-2">
         <div className="pb-6 flex flex-row gap-4 justify-center">

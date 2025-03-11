@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { Twitter, MailOpen, Github, Linkedin } from "lucide-react";
@@ -5,18 +6,20 @@ import * as motion from "motion/react-client";
 import Project from "@/components/data/ProjectCard";
 import { projects } from "@/components/data/projects";
 import { Roboto } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
 })
  
-const page = () => {
+const Page = () => {
+  const router = useRouter();
   const name = "Jaydatt Karan";
   const nameLetters = name.split("");
 
   return (
-    <div className="my-16">
+    <div>
       {/* intro */}
       <section className="px-2 py-2">
         <div className="py-2 flex flex-row gap-4">
@@ -43,7 +46,7 @@ const page = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.5,
-                delay: 1,
+                delay: 0.5,
                 type: "spring",
               }}
               className="md:text-xl font-semibold text-neutral-500"
@@ -70,7 +73,7 @@ const page = () => {
           <div className="mt-4">
             I specialize in{" "}
             <span className="dark:text-neutral-100 text-neutral-950 font-medium">
-              Next.js, TypeScript, PostgreSQL, and blockchain development,
+              React.js, Next.js, JavaScript, TypeScript, PostgreSQL, and blockchain development,
             </span>{" "}
             constantly exploring new ways to optimize and scale systems. I also
             share insights on Web2 & Web3 through{" "}
@@ -149,10 +152,10 @@ const page = () => {
       </section>
 
       {/* say hi */}
-      <section className="flex justify-center px-2">
-        <Link href="/contact">
+      <section className="flex justify-center">
+        <div onClick={() => router.push("/contact")}>
           <div className="md:h-[20em] my-[5em] glass-box border cardhover border-neutral-900 hover:border-neutral-400 duration-200 rounded-xl flex items-center">
-            <div className="flex md:flex-row flex-col-reverse md:px-[4%] px-[5%]">
+            <div className="flex md:flex-row flex-col-reverse">
               <div className="pb-10 md:py-10 flex flex-col gap-4">
                 <div className="text-5xl font-bold">Say hi!</div>
                 <div className="text-lg">
@@ -183,14 +186,15 @@ const page = () => {
                 alt="alt"
                 width={300}
                 height={300}
+                priority
                 className="mx-[10%] md:mx-0"
               />
             </div>
           </div>
-        </Link>
+        </div>
       </section>
     </div>
   );
 };
 
-export default page;
+export default Page;

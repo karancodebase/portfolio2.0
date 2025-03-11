@@ -112,7 +112,7 @@ const Contact = () => {
   };
 
   return (
-    <div className=" my-16">
+    <div>
       {/* links */}
       <section className="px-4 py-4 -b">
         <div className="py-2 flex flex-row gap-4 -b">

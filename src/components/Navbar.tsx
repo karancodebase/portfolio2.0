@@ -45,15 +45,15 @@ export function Navbar() {
   if (!isMounted) return null;
 
   return (
-    <div className="py-6 relative">
+    <div className="py-2 relative">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="border border-neutral-600 hover:border-neutral-400 rounded-xl hover:rounded-none 
-        duration-300 md:w-[80vw] w-[90vw] lg:w-[60vw] flex flex-row 
-        justify-between px-4 py-4 h-14 items-center z-50
-        backdrop-blur-3xl"
+        className="border-b
+        w-[95vw] flex flex-row 
+        justify-between px-4 h-14 items-center z-500
+        "
       >
         <div className="flex">
           <Link href="/">
@@ -204,6 +204,8 @@ export function Navbar() {
             </svg>
           </Link>
           {/* Desktop */}
+        </div>
+        <div className="flex flex-row gap-4 items-center">
           <div className="hidden md:flex items-center space-x-2 font-semibold">
             {[
               { href: "/", label: "Home" },
@@ -220,28 +222,26 @@ export function Navbar() {
               />
             ))}
           </div>
-        </div>
-        <div className="flex flex-row gap-4 items-center">
           <Link
             href="https://twitter.com/jaydattkaran"
             target="_blank"
             className="hidden md:flex"
           >
-            <Twitter className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
+            <Twitter className="w-6 h-6 hover:text-neutral-400 transition" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/jaydattkaran"
             target="_blank"
             className="hidden md:flex"
           >
-            <Linkedin className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
+            <Linkedin className="w-6 h-6 hover:text-neutral-400 transition" />
           </Link>
           <Link
             href="https://github.com/jaydattkaran"
             target="_blank"
             className="hidden md:flex"
           >
-            <Github className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
+            <Github className="w-6 h-6 hover:text-neutral-400 transition" />
           </Link>
           <Switch onClick={toggleTheme} />
           {/* Mobile menu button */}
@@ -261,9 +261,9 @@ export function Navbar() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div
-          className="md:hidden mobile-menu absolute top-[77%] left-0 w-full 
+          className="md:hidden mobile-menu absolute top-[4.1rem] left-4 w-[90vw] 
         backdrop-blur-3xl p-4 z-40 shadow-2xl transition-all duration-300
-        border-neutral-600 border-b border-r border-l"
+        border-neutral-600 border rounded-lg"
         >
           <div className="flex flex-col space-y-2">
             {[
@@ -326,16 +326,16 @@ function NavItem({
     <Link
       href={href}
       className={`
-        px-3 py-1 text-md relative inline-block
+        px-2 text-sm relative inline-block
         ${
           isActive
             ? ""
-            : "hover:text-neutral-600 dark:hover:text-neutral-400 duration-200"
+            : "hover:text-neutral-600 dark:text-neutral-400 text-neutral-300 dark:hover:text-neutral-400 duration-200"
         }
         after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
         after:w-0 after:h-0.5 after:bg-neutral-500 
         after:transition-all after:duration-300
-        hover:after:w-3/4
+        hover:after:w-2/4
       `}
       onClick={onClick}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}

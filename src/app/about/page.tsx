@@ -1,9 +1,14 @@
+import { Roboto } from "next/font/google";
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 export default function About() {
   return (
-    <div className=" my-16">
+    <div className={`${roboto.className}`}>
       {/* intro */}
       <section className="-b px-2">
-        <div className="flex flex-row gap-4 -b px-2 py-4">
+        <div className="flex flex-row gap-4 py-4">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div className="md:text-4xl text-2xl font-bold">Jaydatt Karan</div>
             <div className="md:text-xl font-semibold text-neutral-500">
@@ -11,13 +16,23 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="md:text-xl py-4 px-2 font-normal">
-          I don’t just code—I craft experiences. From <strong>full-stack</strong> applications to
-          AI-powered solutions and decentralized systems, I’m all about pushing
-          the boundaries of what’s possible. <br />
-          With a strong foundation in <strong>Web2</strong> , <strong>Web3</strong> , and <strong>AI</strong> , I bridge the gap
-          between innovation and real-world impact, ensuring that every project
-          I build is fast, scalable, and user-centric.
+        <div className="md:text-xl dark:text-neutral-400 text-neutral-600">
+          I don’t just code—I craft experiences. From{" "}
+          <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+            full-stack
+          </span>{" "}
+          applications to AI-powered solutions and decentralized systems, I’m
+          all about pushing the boundaries of what’s possible. <br />
+          With a strong foundation in <span>Web2</span> ,{" "}
+          <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+            Web3
+          </span>{" "}
+          , and{" "}
+          <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+            AI
+          </span>{" "}
+          , I bridge the gap between innovation and real-world impact, ensuring
+          that every project I build is fast, scalable, and user-centric.
         </div>
       </section>
 
@@ -28,13 +43,19 @@ export default function About() {
             <div className="md:text-3xl text-2xl font-bold">Education</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-xl font-medium">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div>
             🎓 Bachelor of Technology (B.Tech) in Computer
-            ScienceSpecialization: Artificial Intelligence & Data Science
+            ScienceSpecialization:{" "}
+            <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+              Artificial Intelligence & Data Science
+            </span>
           </div>
           <div>
-            📍 Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal (2022-2026)
+            📍 Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal{" "}
+            <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+              (2022-2026)
+            </span>
           </div>
         </div>
       </section>
@@ -77,7 +98,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-xl">
+        <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div>
             Tech should be seamless, intuitive, and empowering. I believe in:
           </div>
@@ -96,12 +117,15 @@ export default function About() {
             <div className="md:text-3xl text-2xl font-bold">What I Do 🛠️</div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-xl">
+        <div className="flex flex-col gap-4 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div>
             I specialize in crafting sleek UIs, scalable backends, and
             cutting-edge blockchain & AI projects. Whether it&apos;s AI-driven
-            assistants, decentralized wallets, or full-stack platforms, I
-            create, break, and refine ideas into reality.
+            assistants, decentralized wallets, or full-stack platforms,{" "}
+            <span className="dark:text-neutral-50 text-neutral-950 font-medium">
+              I create, break, and refine{" "}
+            </span>
+            ideas into reality.
           </div>
           <div>
             I thrive in fast-paced environments, love problem-solving, and

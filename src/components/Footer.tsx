@@ -16,7 +16,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <div className="mb-10 lg:w-[60vw] w-[90vw]">
+    <div className="mb-10 lg:w-[95vw] w-[90vw]">
       <div className="flex justify-between p-4">
         <div>
           <div className="flex gap-4 mb-2">
@@ -40,8 +40,8 @@ export const Footer = () => {
             {" "}
             {time}
           </div>
-          <div className="md:text-xl text-sm md:tracking-widest uppercase font-semibold">
-            Jaydatt Karan
+          <div className="md:text-lg text-sm md:tracking-widest font-semibold">
+           Site Designed with ❤️‍🔥
           </div>
         </div>
       </div>
