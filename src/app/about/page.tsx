@@ -1,22 +1,32 @@
-import { Roboto } from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
+
+const poppinBold = Poppins({
+  weight: "600",
+  preload: false,
+});
+const poppinExtraBold = Poppins({
+  weight: "800",
+  preload: false,
+});
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
 });
+
 export default function About() {
   return (
-    <div className={`${roboto.className}`}>
+    <div className={`${roboto.className} flex flex-col gap-4`}>
       {/* intro */}
-      <section className="-b px-2">
-        <div className="flex flex-row gap-4 py-4">
-          <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-4xl text-2xl font-bold">Jaydatt Karan</div>
-            <div className="md:text-xl font-semibold text-neutral-500">
-              Developer, Designer
-            </div>
-          </div>
+      <section className="md:mt-10 mt-4 px-2">
+        <div
+          className={`${poppinExtraBold.className} md:mt-6 mb-2
+          md:text-5xl text-3xl font-extrabold text-center`}
+        >
+          Hi, I&apos;m Jaydatt 👋
         </div>
-        <div className="md:text-xl dark:text-neutral-400 text-neutral-600">
+        <div
+          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600`}
+        >
           I don’t just code—I craft experiences. From{" "}
           <span className="dark:text-neutral-100 text-neutral-950 font-medium">
             full-stack
@@ -37,22 +47,18 @@ export default function About() {
       </section>
 
       {/* education */}
-      <section className="px-2 py-4 -b ">
-        <div className="py-2 flex flex-row gap-4 -b">
-          <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-3xl text-2xl font-bold">Education</div>
-          </div>
+      <section className="px-2 mt-8">
+        <div
+          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center`}
+        >
+          Education
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
-          <div>
-            🎓 Bachelor of Technology (B.Tech) in Computer
-            ScienceSpecialization:{" "}
-            <span className="dark:text-neutral-100 text-neutral-950 font-medium">
-              Artificial Intelligence & Data Science
-            </span>
+        <div className="flex flex-col gap-1 mt-4 dark:text-neutral-300 text-neutral-700">
+          <div className="md:text-xl text-center">
+            🎓 B.Tech in Computer Science
           </div>
-          <div>
-            📍 Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal{" "}
+          <div className="md:text-xl text-center">
+            📍 RGPV, Bhopal{" "}
             <span className="dark:text-neutral-100 text-neutral-950 font-medium">
               (2022-2026)
             </span>
@@ -61,15 +67,13 @@ export default function About() {
       </section>
 
       {/* tech */}
-      <section className="px-2 py-4 -b ">
-        <div className="py-2 flex flex-row gap-4 -b">
-          <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-3xl text-2xl font-bold">
-              Tech Arsenal ⚡
-            </div>
-          </div>
+      <section className="px-2 mt-8 flex flex-col items-center">
+        <div
+          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center`}
+        >
+          Tech Arsenal ⚡
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-xl">
+        <div className="flex flex-col gap-1 mt-4 md:text-xl">
           <div>
             <span className="font-semibold"> Frontend & UI/UX: </span> Next.js,
             React, TypeScript, Framer Motion
@@ -90,15 +94,13 @@ export default function About() {
       </section>
 
       {/* philosophy */}
-      <section className="px-2 py-4 -b ">
-        <div className="py-2 flex flex-row gap-4 -b">
-          <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-3xl text-2xl font-bold">
-              My Philosophy 🎯
-            </div>
-          </div>
+      <section className="px-2 mt-8 flex flex-col items-center">
+        <div
+          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center`}
+        >
+          My Philosophy 🎯
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
+        <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div>
             Tech should be seamless, intuitive, and empowering. I believe in:
           </div>
@@ -111,13 +113,17 @@ export default function About() {
       </section>
 
       {/* what */}
-      <section className="px-2 py-4 -b ">
-        <div className="py-2 flex flex-row gap-4 -b">
+      <section className="px-2 mt-8 flex flex-col items-center">
+        <div className="py-2 flex flex-row md:gap-4 gap-2">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-3xl text-2xl font-bold">What I Do 🛠️</div>
+            <div
+              className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center`}
+            >
+              What I Do 🛠️
+            </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
+        <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div>
             I specialize in crafting sleek UIs, scalable backends, and
             cutting-edge blockchain & AI projects. Whether it&apos;s AI-driven
@@ -136,10 +142,14 @@ export default function About() {
       </section>
 
       {/* resume */}
-      <section className="px-2 py-4">
-        <div className="py-2 flex flex-row gap-4 -b">
+      <section className="px-2 mt-8 flex flex-col items-center">
+        <div className="py-2 flex flex-row md:gap-4 gap-2">
           <div className="flex flex-col gap-0 justify-center items-start">
-            <div className="md:text-3xl text-2xl font-bold">Resume</div>
+            <div
+              className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center`}
+            >
+              Resume
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-4 md:text-xl">

@@ -16,8 +16,8 @@ export const Footer = () => {
   }, []);
 
   return (
-    <div className="mb-10 lg:w-[95vw] w-[90vw]">
-      <div className="flex justify-between p-4">
+    <div className="my-10 lg:w-[95vw] w-[97vw]">
+      <div className="flex justify-between p-2">
         <div>
           <div className="flex gap-4 mb-2">
             <Link href="https://twitter.com/jaydattkaran" target="_blank">
@@ -40,7 +40,7 @@ export const Footer = () => {
             {" "}
             {time}
           </div>
-          <div className="md:text-lg text-sm md:tracking-widest font-semibold">
+          <div className="md:text-lg text-sm md:tracking-widest md:font-semibold">
            Site Designed with ❤️‍🔥
           </div>
         </div>

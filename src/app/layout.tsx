@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -31,12 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}
+        className={`${roboto.className}
           relative antialiased`}
       >
         <main className="flex flex-col justify-between items-center ">
           <Navbar />
-          <div className="flex flex-col justify-center lg:max-w-[60vw] max-w-[90vw] items-center">
+          <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[90vw] items-center">
             {children}
           </div>
           <Footer />

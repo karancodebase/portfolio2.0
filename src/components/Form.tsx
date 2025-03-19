@@ -4,18 +4,6 @@ import { CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 interface FormData {
   email: string;
@@ -26,7 +14,6 @@ interface FormErrors {
   email?: string;
   message?: string;
 }
-
 const Toast = ({
   message,
   type,
@@ -50,7 +37,7 @@ const Toast = ({
   </div>
 );
 
-const Contact = () => {
+const Form = () => {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     message: "",
@@ -113,44 +100,8 @@ const Contact = () => {
       setIsLoading(false);
     }
   };
-
   return (
-    <div className={`${roboto.className}`}>
-      {/* links */}
-      <section className="px-4 py-4 -b">
-        <div className="md:text-4xl text-2xl font-bold">Let’s Connect</div>
-
-        <div className="flex flex-col gap-2 mt-4 md:text-xl">
-          <div>
-            Have an exciting idea? Want to collaborate? Or just up for an
-            interesting convo? I’d love to hear from you.
-          </div>
-          <div>📩 Email: karanjaydatt03@gmail.com</div>
-          <div>
-            🌍 Find me on:{" "}
-            <Link
-              href="https://www.linkedin.com/in/jaydattkaran"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold social-link text-cyan-500 hover:text-cyan-700 transition duration-200"
-            >
-              Linkedin{" "}
-            </Link>
-            |{" "}
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/jaydattkaran"
-              className="font-semibold social-link text-cyan-500 hover:text-cyan-700 transition duration-200"
-            >
-              {" "}
-              Twitter{" "}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* form */}
+    <div>
       <section className="px-4 py-4 -b">
         <div className="flex flex-col gap-2 mt-4 md:text-xl">
           <div>
@@ -160,7 +111,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               href="https://github.com/jaydattkaran"
               className="font-semibold social-link text-cyan-500 hover:text-cyan-700
-            duration-200"
+        duration-200"
             >
               {" "}
               Github{" "}
@@ -211,62 +162,8 @@ const Contact = () => {
         </div>
         {toast && <Toast message={toast.message} type={toast.type} />}
       </section>
-
-      {/* open to */}
-      <section className="px-2 mt-8">
-        <div className="md:text-4xl text-2xl font-bold">
-          💡 What I’m open to:
-        </div>
-        <div className="flex flex-col gap-2 mt-2 md:px-10 md:pb-2 md:text-xl md:max-w-[90vw]">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                Brainstorming bold ideas over coffee ☕
-              </AccordionTrigger>
-              <AccordionContent>
-                Always up for thought-provoking discussions—whether it&apos;s
-                about AI, Web3, or the next big thing. Let&apos;s exchange crazy
-                ideas, challenge perspectives, and spark something new.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                Exploring Web3, AI, and everything in between
-              </AccordionTrigger>
-              <AccordionContent>
-                Deep diving into the ever-evolving tech landscape. From smart
-                contracts to AI-driven automation, I love exploring how emerging
-                technologies shape the future. Let’s discuss innovations that
-                redefine industries.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                Collaborations that push the boundaries of innovation
-              </AccordionTrigger>
-              <AccordionContent>
-                Passionate about working on projects that challenge norms and
-                push boundaries. Whether it&apos;s a decentralized app, an AI
-                experiment, or a disruptive startup idea, I&apos;m all in for
-                building something impactful.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                Helping you with tech, startups, or just vibing about life
-              </AccordionTrigger>
-              <AccordionContent>
-                Need guidance on tech stacks, startup strategies, or just a
-                fresh perspective? I enjoy mentoring, sharing insights, and
-                brainstorming solutions that can help you move forward.
-                Sometimes, the best ideas come from casual convos!
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
     </div>
   );
 };
 
-export default Contact;
+export default Form;

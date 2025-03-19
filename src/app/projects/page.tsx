@@ -1,39 +1,50 @@
-"use client"
+"use client";
 import * as motion from "motion/react-client";
 import Project from "@/components/data/ProjectCard";
 import { projects } from "@/components/data/projects";
+import { Roboto, Poppins } from "next/font/google";
+
+const poppinBold = Poppins({
+  weight: "800",
+  preload: false,
+});
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Projects() {
   return (
-    <div>
+    <div className={`${roboto.className}`}>
       {/* intro */}
       <section className="px-2 py-2">
-        <div className="pb-6 flex flex-row gap-4 justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: -50 }} // Start from opacity 0 and slightly below
-            whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-            transition={{
-              duration: 0.7, // Speed of animation
-              delay: 0.3, // Delay to stagger animations (0.2s per box)
-              type: "spring", // Makes it feel more natural
-            }}
-            className="md:text-5xl text-2xl font-bold"
-          >
-            Jaydatt Karan
-          </motion.div>
+        <div
+          className={`${poppinBold.className} md:mt-6 mb-2
+          md:text-5xl text-3xl font-extrabold text-center`}
+        >
+          Hi, I&apos;m Jaydatt 👋
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.7 }}
-          className="md:text-xl"
+
+        <div
+          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600`}
         >
           A digital innovator on a mission to redefine the web & web3 landscape,
           one line of code at a time. When I’m not bending the digital world to
           my will, you’ll find me connecting with visionary creators and
           designing innovative solutions that push boundaries and redefine
           what’s possible.
-        </motion.div>
+        </div>
+        <div
+          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600 mt-2`}
+        >
+          Building intuitive, high-performance applications that push boundaries
+          is what drives me. I&apos;ve worked on projects like{" "}
+          <span className="dark:text-neutral-100 text-neutral-950 font-medium">
+            Aeris(AI chatbot), Fichain(Web3 innovation), and SengarBus(bus
+            booking platform)
+          </span>
+          -merging cutting-edge tech with real-world solutions.
+        </div>
       </section>
 
       {/* projects */}
@@ -49,7 +60,7 @@ export default function Projects() {
               key={index}
               className="box"
               initial={{ opacity: 0 }} // Start from opacity 0 and slightly below
-              whileInView={{ opacity: 1}} // Fade in and slide up
+              whileInView={{ opacity: 1 }} // Fade in and slide up
               transition={{
                 duration: 0.5, // Speed of animation
                 delay: index * 0.2, // Delay to stagger animations (0.2s per box)
