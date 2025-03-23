@@ -1,50 +1,105 @@
 "use client";
-import { Twitter, Linkedin, Github } from "lucide-react";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
-export const Footer = () => {
-  const [time, setTime] = useState(""); // Start empty to avoid hydration mismatch
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import React from "react";
+import { BackgroundGradientAnimation4 } from "./ui/Background3";
+import { BackgroundGradientAnimation3 } from "./ui/Background2";
+import {
+  BackgroundGradientAnimation1,
+  BackgroundGradientAnimation2,
+} from "./ui/Background1";
+
+const Footer = () => {
+  const boxRef = useRef(null);
+  
+  // Define a type for background components
+  type BackgroundComponent = React.ComponentType;
+
+  // Initialize state with `null` but allow a React component
+  const [RandomBackground, setRandomBackground] = useState<BackgroundComponent | null>(null);
 
   useEffect(() => {
-    const updateTime = () => setTime(new Date().toLocaleTimeString());
-    updateTime(); // Set initial time after mounting
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        boxRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: boxRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    });
 
-    const interval = setInterval(updateTime, 1000);
+    return () => ctx.revert();
+  }, []);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+  useEffect(() => {
+    const animations: BackgroundComponent[] = [
+      BackgroundGradientAnimation1,
+      BackgroundGradientAnimation2,
+      BackgroundGradientAnimation3,
+      BackgroundGradientAnimation4,
+    ];
+    
+    setRandomBackground(() => animations[Math.floor(Math.random() * animations.length)]);
   }, []);
 
   return (
-    <div className="my-10 lg:w-[95vw] w-[97vw]">
-      <div className="flex justify-between p-2">
-        <div>
-          <div className="flex gap-4 mb-2">
-            <Link href="https://twitter.com/jaydattkaran" target="_blank">
-              <Twitter className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/jaydattkaran"
-              target="_blank"
-            >
-              <Linkedin className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
-            </Link>
-            <Link href="https://github.com/jaydattkaran" target="_blank">
-              <Github className="w-6 lg:w-8 h-6 lg:h-8 hover:text-neutral-400 transition" />
-            </Link>
+    <footer
+      ref={boxRef}
+      className="w-full p-4 md:p-8 items-center justify-center h-full overflow-hidden z-50"
+    >
+      <div
+        className="sticky z-30 bottom-0 bg-[#3B82F6] rounded-[36px] left-0 w-full h-80 flex justify-center items-center overflow-hidden"
+        style={{ opacity: 1, transform: "none" }}
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 blur-[100px]">
+            {RandomBackground && <RandomBackground />}
           </div>
-          <div className="md:text-lg text-sm">© 2025 All rights reserved.</div>
-        </div>
-        <div className="flex flex-col justify-end">
-          <div className="flex justify-end md:text-lg md:tracking-widest font-semibold">
-            {" "}
-            {time}
-          </div>
-          <div className="md:text-lg text-sm md:tracking-widest md:font-semibold">
-           Site Designed with ❤️‍🔥
+          <div className="relative overflow-hidden w-full h-full flex justify-end px-12 text-right items-start py-12 text-white">
+            <div className="flex justify-between w-full sm:text-lg md:text-xl">
+              <p className="text-white/60 text-sm"></p>
+              <ul>
+                <li className="hover:underline cursor-pointer">
+                  <a target="_blank" href="https://x.com/jaydattkaran">
+                    X
+                  </a>
+                </li>
+                <li className="hover:underline cursor-pointer">
+                  <a target="_blank" href="https://github.com/jaydattkaran">
+                    Github
+                  </a>
+                </li>
+                <li className="hover:underline cursor-pointer">
+                  <a
+                    target="_blank"
+                    href="https://linkedin.com/in/jaydattkaran/"
+                  >
+                    Linkedin
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <h2 className="absolute -bottom-4 josefin-sans left-0 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
+              <span className="hidden sm:inline">JAYDATT</span>
+              <span className="inline sm:hidden">JAY</span>
+            </h2>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
+
+export default Footer;

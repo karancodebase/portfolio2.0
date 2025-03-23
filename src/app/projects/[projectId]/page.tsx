@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/components/data/projects";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 type Params = Promise<{ projectId: string }>;
 
@@ -15,8 +17,18 @@ export default async function ProjectPage({ params }: { params: Params }) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold">{project.title}</h1>
+    <div className="max-w-4xl mx-auto py-6">
+      <Link href="/">
+        <Button
+          variant="destructive"
+          className="group flex items-center"
+        >
+          <ArrowLeft className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out translate-x-[-5px]" />
+          Go Back!
+        </Button>
+      </Link>
+
+      <h1 className="text-3xl font-bold mt-4">{project.title}</h1>
       <Image
         src={project.image}
         alt={project.title}
@@ -33,11 +45,15 @@ export default async function ProjectPage({ params }: { params: Params }) {
         ))}
       </div>
 
-      <p className="mt-4 text-lg">{project.overview}</p>
+      <p className="mt-4 text-lg dark:text-neutral-400 text-neutral-600">
+        {project.overview}
+      </p>
 
       {project.problemStatement && (
         <div className="mt-6">
-          <h3 className="text-lg font-semibold">🚨 Problem Statement:</h3>
+          <h3 className="text-lg font-semibold tracking-widest">
+            🚨 Problem Statement:
+          </h3>
           <p className="text-gray-800 dark:text-gray-400 mt-2">
             {project.problemStatement}
           </p>
@@ -46,7 +62,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       {project.architecture && (
         <div className="mt-6">
-          <h3 className="text-lg font-semibold">🏗️ Architecture:</h3>
+          <h3 className="text-lg font-semibold tracking-widest">
+            🏗️ Architecture:
+          </h3>
           <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
             {Object.entries(project.architecture).map(([key, value], index) => (
               <li key={index}>
@@ -58,7 +76,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
       )}
 
       <div className="mt-6">
-        <h3 className="text-lg font-semibold">✨ Key Features:</h3>
+        <h3 className="text-lg font-semibold tracking-widest">
+          ✨ Key Features:
+        </h3>
         <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
           {project.keyFeatures.map((feature, index) => (
             <li key={index}>{feature}</li>
@@ -67,7 +87,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
       </div>
 
       <div className="mt-6">
-        <h3 className="text-lg font-semibold">🎯 Use Cases:</h3>
+        <h3 className="text-lg font-semibold tracking-widest">🎯 Use Cases:</h3>
         <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
           {project.useCases.map((useCase, index) => (
             <li key={index}>{useCase}</li>
@@ -77,7 +97,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       {project.challengesAndSolutions && (
         <div className="mt-6">
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold tracking-widest">
             🛠️ Challenges and Solutions:
           </h3>
           <div className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
@@ -97,7 +117,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       {project.learningOutcomes && (
         <div className="mt-6">
-          <h3 className="text-lg font-semibold">🎓 Learning Outcomes:</h3>
+          <h3 className="text-lg font-semibold tracking-widest">
+            🎓 Learning Outcomes:
+          </h3>
           <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
             {project.learningOutcomes.map((outcome, index) => (
               <li key={index}>{outcome}</li>
@@ -108,7 +130,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       {project.futureImprovements && (
         <div className="mt-6">
-          <h3 className="text-lg font-semibold">🚀 Future Improvements:</h3>
+          <h3 className="text-lg font-semibold tracking-widest">
+            🚀 Future Improvements:
+          </h3>
           <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
             {project.futureImprovements.map((improvement, index) => (
               <li key={index}>{improvement}</li>

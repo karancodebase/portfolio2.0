@@ -177,11 +177,9 @@ export const showcase = [
         "Next.js",
         "Gemini API",
         "Tailwind CSS",
-        "Redis",
-        "PostgreSQL",
       ],
       description:
-        "An intelligent chatbot designed to provide real-time, context-aware responses using Google's Gemini API, built for seamless and efficient communication.",
+        "An AI chatbot using Google's Gemini API for real-time, context-aware responses.",
       overview:
         "Aeris is an AI-powered chatbot that enhances user interactions with natural language understanding. It leverages Google's Gemini API to deliver fast, accurate, and contextually relevant responses. Built with a modern tech stack, including Next.js and TypeScript, it ensures a scalable and responsive experience.",
       problemStatement:
@@ -283,12 +281,12 @@ interface SearchResult {
             <div>
               <div className="flex justify-between">
                 <div className="font-semibold md:text-lg">{title}</div>
-                <div className="flex gap-4 justify-end md:text-md text-sm">
+                <div className="flex gap-3 justify-end md:text-md text-sm">
                   <Link
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-neutral-500 duration-200"
+                    className="hover:text-neutral-200 text-neutral-400 duration-200"
                   >
                     <Github />
                   </Link>
@@ -296,13 +294,13 @@ interface SearchResult {
                     href={website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-neutral-500 duration-200"
+                    className="hover:text-neutral-200 text-neutral-400 duration-200"
                   >
                     <Globe />
                   </Link>
                 </div>
               </div>
-              <div className="md:text-md text-sm mb-4 mt-2">{description}</div>
+              <div className="md:text-md text-sm dark:text-neutral-400 text-neutral-600 mb-4 mt-2">{description}</div>
               {tech.map((techItem) => (
                 <Badge key={techItem} variant="default" className="mb-1 mr-2">
                   {techItem}
