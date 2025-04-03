@@ -1,4 +1,5 @@
 import { Roboto, Poppins } from "next/font/google";
+import Link from "next/link";
 
 const poppinBold = Poppins({
   weight: "600",
@@ -159,8 +160,12 @@ export default function About() {
               className="font-semibold text-cyan-500 hover:text-cyan-700
             duration-200 social-link"
             >
-              {" "}
-              Download My Resume{" "}
+              <Link
+                href="https://drive.google.com/file/d/1-p4Nj5ojXT7GM7HLLR95tujhEUvHU2Np/view?usp=drive_link"
+                target="_blank"
+              >
+                Download My Resume{" "}
+              </Link>{" "}
             </span>
           </div>
         </div>

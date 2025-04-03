@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           variant="destructive"
           className="group flex items-center"
         >
-          <ArrowLeft className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out translate-x-[-5px]" />
+          <ArrowLeft className=" group-hover:translate-x-0 transition-all duration-300 ease-in-out translate-x-[-5px]" />
           Go Back!
         </Button>
       </Link>

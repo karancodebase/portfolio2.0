@@ -1,4 +1,72 @@
 export const projects = [
+  // sengarbus
+  {
+    id: "sengarbus",
+    image: "/sengarbus.jpeg",
+    title: "SengarBus - Online Bus Booking Platform",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Redis",
+      "Clerk",
+    ],
+    description:
+      "A web-based bus booking platform for Sengar Travels, allowing users to search, select seats, and book buses online.",
+    overview:
+      "SengarBus is an online ticket booking system designed for a seamless travel experience. Users can search for buses based on location and date, select seats dynamically, make online payments, and track buses in real-time.",
+    problemStatement:
+      "Traditional bus booking methods are inefficient and lack real-time tracking. SengarBus streamlines the process with an intuitive online platform.",
+    architecture: {
+      Frontend:
+        "Built with Next.js and TypeScript for a scalable and responsive UI.",
+      Backend: "Node.js and Express.js handle API requests efficiently.",
+      Database: "PostgreSQL is used for structured data storage.",
+      SessionManagement:
+        "Redis is used for session storage with a hybrid approach.",
+      Authentication: "Clerk is used for secure user authentication.",
+    },
+    keyFeatures: [
+      "User authentication with Clerk",
+      "Dynamic seat selection with real-time availability",
+      "Live bus tracking during the journey",
+      "Multi-vendor platform for different bus operators",
+      "Secure online payment integration",
+      "Search functionality for buses based on route and date",
+    ],
+    challengesAndSolutions: [
+      {
+        challenge: "Managing session storage efficiently.",
+        solution: "Implemented Redis for scalable session handling.",
+      },
+      {
+        challenge: "Ensuring secure online transactions.",
+        solution: "Integrated a secure payment gateway with encryption.",
+      },
+    ],
+    learningOutcomes: [
+      "Deepened understanding of full-stack web development.",
+      "Enhanced knowledge of Redis for session management.",
+      "Improved integration of real-time tracking features.",
+    ],
+    futureImprovements: [
+      "Adding mobile app support for seamless access.",
+      "Enhancing real-time tracking accuracy with GPS integration.",
+      "Implementing a loyalty program for frequent travelers.",
+    ],
+    screenshots: ["/sengarbus1.jpg", "/sengarbus2.jpg"],
+    useCases: [
+      "Travelers booking buses online",
+      "Bus operators managing their fleet and routes",
+      "Admins tracking bookings and revenue in real-time",
+    ],
+    github: "https://github.com/jaydattkaran/sengarbus",
+    website: "https://sengarbus.vercel.app",
+  },
+
   // wallet
   {
     id: "wallet",
@@ -121,7 +189,7 @@ export const projects = [
     architecture: {
       Frontend: "React Native for cross-platform mobile compatibility.",
       Backend: "Node.js with Firebase for handling real-time interactions.",
-      Storage: "Cloud storage integration to handle photo uploads securely."
+      Storage: "Cloud storage integration to handle photo uploads securely.",
     },
     keyFeatures: [
       "Instant photo capture and sharing",
@@ -175,8 +243,7 @@ export const projects = [
       Frontend: "React.js with an intuitive UI for easy DeFi interactions.",
       Backend: "Node.js and MongoDB for gigs data management.",
       "Smart Contracts": "Solidity-based contracts deployed on Ethereum.",
-      "Wallet Integration": "Web3.js integration for seamless transactions."
-
+      "Wallet Integration": "Web3.js integration for seamless transactions.",
     },
     keyFeatures: [
       "Decentralized lending and borrowing with smart contracts",

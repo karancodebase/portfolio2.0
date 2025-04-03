@@ -21,27 +21,27 @@ const Footer = () => {
   // Initialize state with `null` but allow a React component
   const [RandomBackground, setRandomBackground] = useState<BackgroundComponent | null>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        boxRef.current,
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: boxRef.current,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-        }
-      );
-    });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.fromTo(
+  //       boxRef.current,
+  //       { opacity: 0, y: 100 },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 1,
+  //         scrollTrigger: {
+  //           trigger: boxRef.current,
+  //           start: "top 80%",
+  //           end: "top 50%",
+  //           scrub: true,
+  //         },
+  //       }
+  //     );
+  //   });
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   useEffect(() => {
     const animations: BackgroundComponent[] = [
@@ -60,7 +60,7 @@ const Footer = () => {
       className="w-full p-4 md:p-8 items-center justify-center h-full overflow-hidden z-50"
     >
       <div
-        className="sticky z-30 bottom-0 bg-[#3B82F6] rounded-[36px] left-0 w-full h-80 flex justify-center items-center overflow-hidden"
+        className="sticky z-30 bottom-0 bg-[#3B82F6] rounded-[36px] left-0 w-full h-[30vh] flex justify-center items-center overflow-hidden"
         style={{ opacity: 1, transform: "none" }}
       >
         <div className="absolute inset-0 overflow-hidden">
@@ -91,7 +91,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <h2 className="absolute -bottom-4 josefin-sans left-0 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
+            <h2 className="absolute bottom-0 josefin-sans left-2 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
               <span className="hidden sm:inline">JAYDATT</span>
               <span className="inline sm:hidden">JAY</span>
             </h2>

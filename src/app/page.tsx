@@ -17,7 +17,7 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-const Page = () => {
+const Page = ({ isActive }: { isActive?: boolean }) => {
   return (
     <div>
       {/* intro */}
@@ -51,8 +51,8 @@ const Page = () => {
               lifting weights, tweaking designs, or debating why tabs are
               superior to spaces.
             </span>{" "}
-            If you&apos;re building something cool in Web2/Web3, I&apos;d love to hear
-            about it!
+            If you&apos;re building something cool in Web2/Web3, I&apos;d love
+            to hear about it!
           </div>
           <div className="mt-10 flex gap-1 items-center dark:text-neutral-300 text-neutral-700 font-medium">
             Find me on:
@@ -89,8 +89,18 @@ const Page = () => {
           <br />
           <Link
             href="/about"
-            className="font-semibold hover:underline social-link text-cyan-500 hover:text-cyan-700
-            duration-200"
+            className={`
+              px-2 text-lg md:text-2xl relative inline-block
+              ${
+                isActive
+                  ? ""
+                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
+              }
+              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+              after:w-0 after:h-0.5 after:bg-cyan-500 
+              after:transition-all after:duration-300
+              hover:after:w-3/4
+            `}
           >
             {" "}
             Check out the About page!
@@ -135,8 +145,8 @@ const Page = () => {
           <div className="mt-2 text-center md:text-xl dark:text-neutral-400 text-neutral-600">
             I&apos;ve worked on a range of projects, from simple websites to
             complex web applications. <br />
-            Here are some of my favorites—dive into
-            the details by clicking on any project!
+            Here are some of my favorites—dive into the details by clicking on
+            any project!
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
@@ -155,8 +165,18 @@ const Page = () => {
           <br />
           <Link
             href="/projects"
-            className="font-semibold hover:underline social-link text-cyan-500 hover:text-cyan-700
-            duration-200"
+            className={`
+              px-2 text-lg md:text-2xl relative inline-block
+              ${
+                isActive
+                  ? ""
+                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
+              }
+              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+              after:w-0 after:h-0.5 after:bg-cyan-500 
+              after:transition-all after:duration-300
+              hover:after:w-3/4
+            `}
           >
             {" "}
             Head over to my Projects page!
@@ -194,8 +214,19 @@ const Page = () => {
           Not a fan of Twitter? No worries—{" "}
           <Link
             href="/contact"
-            className="font-semibold hover:underline social-link text-cyan-500 hover:text-cyan-700
-            duration-200"
+            
+            className={`
+              px-2 text-lg md:text-2xl relative inline-block
+              ${
+                isActive
+                  ? ""
+                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
+              }
+              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+              after:w-0 after:h-0.5 after:bg-cyan-500 
+              after:transition-all after:duration-300
+              hover:after:w-3/4
+            `}
           >
             {" "}
             hit up my contact page!{" "}

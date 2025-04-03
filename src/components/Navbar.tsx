@@ -43,21 +43,21 @@ export function Navbar() {
   if (!isMounted) return null;
 
   return (
-    <div className="py-2 relative">
+    <div className="pt-2 relative">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="border-b
         w-[95vw] flex flex-row 
-        justify-between px-4 h-14 items-center z-500
+        justify-between px-4 h-12 items-center z-500
         "
       >
         <div className="flex">
           <Link href="/">
             <svg
-              width="60"
-              height="60"
+              width="50"
+              height="50"
               viewBox="0 0 267 322"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -130,21 +130,21 @@ export function Navbar() {
             target="_blank"
             className="hidden md:flex"
           >
-            <Twitter className="w-6 h-6 hover:text-neutral-400 transition" />
+            <Twitter className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/jaydattkaran"
             target="_blank"
             className="hidden md:flex"
           >
-            <Linkedin className="w-6 h-6 hover:text-neutral-400 transition" />
+            <Linkedin className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
           </Link>
           <Link
             href="https://github.com/jaydattkaran"
             target="_blank"
             className="hidden md:flex"
           >
-            <Github className="w-6 h-6 hover:text-neutral-400 transition" />
+            <Github className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
           </Link>
           <ModeToggle />
 
