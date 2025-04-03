@@ -4,6 +4,7 @@ import { Twitter, Github, Linkedin } from "lucide-react";
 import { Roboto, Poppins } from "next/font/google";
 import SkillCard, { skills } from "@/components/data/Skills";
 import Project, { showcase } from "@/components/data/Showcase";
+import NavigationLink from "@/components/NavigationLink";
 const poppinBold = Poppins({
   weight: "600",
   preload: false,
@@ -17,7 +18,7 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-const Page = ({ isActive }: { isActive?: boolean }) => {
+const Page = () => {
   return (
     <div>
       {/* intro */}
@@ -87,24 +88,10 @@ const Page = ({ isActive }: { isActive?: boolean }) => {
         >
           Want to know more about what I do and how I got here?
           <br />
-          <Link
-            href="/about"
-            className={`
-              px-2 text-lg md:text-2xl relative inline-block
-              ${
-                isActive
-                  ? ""
-                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
-              }
-              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
-              after:w-0 after:h-0.5 after:bg-cyan-500 
-              after:transition-all after:duration-300
-              hover:after:w-3/4
-            `}
-          >
+          <NavigationLink href="/about">
             {" "}
             Check out the About page!
-          </Link>
+          </NavigationLink>
         </div>
       </section>
 
@@ -163,24 +150,9 @@ const Page = ({ isActive }: { isActive?: boolean }) => {
         >
           Want to see more?
           <br />
-          <Link
-            href="/projects"
-            className={`
-              px-2 text-lg md:text-2xl relative inline-block
-              ${
-                isActive
-                  ? ""
-                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
-              }
-              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
-              after:w-0 after:h-0.5 after:bg-cyan-500 
-              after:transition-all after:duration-300
-              hover:after:w-3/4
-            `}
-          >
-            {" "}
+          <NavigationLink href="/projects">
             Head over to my Projects page!
-          </Link>
+          </NavigationLink>
         </div>
       </section>
 
@@ -212,25 +184,10 @@ const Page = ({ isActive }: { isActive?: boolean }) => {
           md:text-2xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
         >
           Not a fan of Twitter? No worries—{" "}
-          <Link
-            href="/contact"
-            
-            className={`
-              px-2 text-lg md:text-2xl relative inline-block
-              ${
-                isActive
-                  ? ""
-                  : "font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200"
-              }
-              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
-              after:w-0 after:h-0.5 after:bg-cyan-500 
-              after:transition-all after:duration-300
-              hover:after:w-3/4
-            `}
-          >
+          <NavigationLink href="/contact">
             {" "}
             hit up my contact page!{" "}
-          </Link>
+          </NavigationLink>
         </div>
       </section>
     </div>
