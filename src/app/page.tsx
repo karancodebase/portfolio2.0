@@ -59,14 +59,14 @@ const Page = () => {
             Find me on:
             <span className="dark:text-neutral-400 text-neutral-950 font-medium flex flex-wrap gap-1">
               <Link
-                href="https://twitter.com/jaydattkaran"
+                href="https://x.com/karandefinitely"
                 target="_blank"
                 className="social-link px-2 py-1 rounded hover:bg-neutral-800 text-neutral-100 transition duration-200"
               >
                 <Twitter className="w-5 md:w-6 md:h-6 h-5 mb-1" />
               </Link>{" "}
               <Link
-                href="https://github.com/jaydattkaran"
+                href="https://github.com/karancodebase"
                 target="_blank"
                 className="social-link px-2 py-1 rounded hover:bg-neutral-800 text-neutral-100 transition duration-200"
               >
@@ -171,7 +171,7 @@ const Page = () => {
             Have an exciting idea? Want to collaborate? Or just up for an
             interesting convo? Just shoot me a dm{" "}
             <span className="text-blue-500 hover:underline duration-200">
-              <Link href="https://twitter.com/jaydattkaran" target="_blank">
+              <Link href="https://x.com/karandefinitely" target="_blank">
                 with a direct question on twitter
               </Link>{" "}
             </span>

@@ -72,12 +72,12 @@ const Footer = () => {
               <p className="text-white/60 text-sm"></p>
               <ul>
                 <li className="hover:underline cursor-pointer">
-                  <a target="_blank" href="https://x.com/jaydattkaran">
+                  <a target="_blank" href="https://x.com/karandefinitely">
                     X
                   </a>
                 </li>
                 <li className="hover:underline cursor-pointer">
-                  <a target="_blank" href="https://github.com/jaydattkaran">
+                  <a target="_blank" href="https://github.com/karancodebase">
                     Github
                   </a>
                 </li>
@@ -87,6 +87,14 @@ const Footer = () => {
                     href="https://linkedin.com/in/jaydattkaran/"
                   >
                     Linkedin
+                  </a>
+                </li>
+                <li className="hover:underline cursor-pointer">
+                  <a
+                    target="_blank"
+                    href="https://bento.me/jaydatt"
+                  >
+                    Bento
                   </a>
                 </li>
               </ul>

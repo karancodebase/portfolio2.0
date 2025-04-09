@@ -109,7 +109,7 @@ const Form = () => {
             <Link
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/jaydattkaran"
+              href="https://github.com/karancodebase"
               className="font-semibold social-link text-cyan-500 hover:text-cyan-700
         duration-200"
             >

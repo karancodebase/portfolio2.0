@@ -126,7 +126,7 @@ export function Navbar() {
             ))}
           </div>
           <Link
-            href="https://twitter.com/jaydattkaran"
+            href="https://x.com/karandefinitely"
             target="_blank"
             className="hidden md:flex"
           >
@@ -140,7 +140,7 @@ export function Navbar() {
             <Linkedin className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
           </Link>
           <Link
-            href="https://github.com/jaydattkaran"
+            href="https://github.com/karancodebase"
             target="_blank"
             className="hidden md:flex"
           >
@@ -188,10 +188,10 @@ export function Navbar() {
               <div className="flex space-x-4">
                 {[
                   {
-                    href: "https://twitter.com/jaydattkaran",
+                    href: "https://x.com/karandefinitely",
                     label: "Twitter",
                   },
-                  { href: "https://github.com/jaydattkaran", label: "Github" },
+                  { href: "https://github.com/karancodebase", label: "Github" },
                   {
                     href: "https://www.linkedin.com/in/jaydattkaran",
                     label: "LinkedIn",

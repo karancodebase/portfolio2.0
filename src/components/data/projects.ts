@@ -63,7 +63,7 @@ export const projects = [
       "Bus operators managing their fleet and routes",
       "Admins tracking bookings and revenue in real-time",
     ],
-    github: "https://github.com/jaydattkaran/sengarbus",
+    github: "https://github.com/karancodebase/sengarbus",
     website: "https://sengarbus.vercel.app",
   },
 
@@ -117,8 +117,8 @@ export const projects = [
       "Traders managing multiple wallets",
       "Users looking for a secure, lightweight alternative to traditional wallets",
     ],
-    github: "https://github.com/jaydattkaran/web_based_wallet",
-    website: "https://github.com/jaydattkaran/web_based_wallet",
+    github: "https://github.com/karancodebase/web_based_wallet",
+    website: "https://github.com/karancodebase/web_based_wallet",
   },
 
   // course-seller
@@ -170,8 +170,8 @@ export const projects = [
       "Institutes looking for an online learning management system",
       "Students seeking a structured online learning experience",
     ],
-    github: "https://github.com/jaydattkaran/course_seller",
-    website: "https://github.com/jaydattkaran/course_seller",
+    github: "https://github.com/karancodebase/course_seller",
+    website: "https://github.com/karancodebase/course_seller",
   },
 
   // instasnap
@@ -223,7 +223,7 @@ export const projects = [
       "Users wanting a fast and lightweight social media alternative",
       "Photography enthusiasts capturing spontaneous moments",
     ],
-    github: "https://github.com/jaydattkaran/instasnap_",
+    github: "https://github.com/karancodebase/instasnap_",
     website: "https://social-instasnap.netlify.app/",
   },
 
@@ -275,8 +275,8 @@ export const projects = [
       "Investors looking for yield farming opportunities",
       "Developers exploring DeFi integrations",
     ],
-    github: "https://github.com/jaydattkaran/fichain_fullstack",
-    website: "https://github.com/jaydattkaran/fichain_fullstack",
+    github: "https://github.com/karancodebase/fichain_fullstack",
+    website: "https://github.com/karancodebase/fichain_fullstack",
   },
 
   // musicova
@@ -327,7 +327,7 @@ export const projects = [
       "Music enthusiasts creating and managing playlists",
       "Developers exploring music streaming integrations",
     ],
-    github: "https://github.com/jaydattkaran/musicova",
+    github: "https://github.com/karancodebase/musicova",
     website: "https://musicova.netlify.app/",
   },
 
@@ -402,7 +402,7 @@ export const projects = [
       "Helping developers experiment with AI chatbot integrations.",
     ],
     screenshots: ["/screenshot1.jpg", "/screenshot2.jpg"],
-    github: "https://github.com/jaydattkaran/assistant",
+    github: "https://github.com/karancodebase/assistant",
     website: "https://aeris.jaydatt.xyz/",
   },
 ];

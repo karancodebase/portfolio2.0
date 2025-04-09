@@ -69,7 +69,7 @@ export const showcase = [
       "Bus operators managing their fleet and routes",
       "Admins tracking bookings and revenue in real-time",
     ],
-    github: "https://github.com/jaydattkaran/sengarbus",
+    github: "https://github.com/karancodebase/sengarbus",
     website: "https://sengarbus.vercel.app",
   },
 
@@ -122,113 +122,61 @@ export const showcase = [
       "Institutes looking for an online learning management system",
       "Students seeking a structured online learning experience",
     ],
-    github: "https://github.com/jaydattkaran/course_seller",
-    website: "https://github.com/jaydattkaran/course_seller",
+    github: "https://github.com/karancodebase/course_seller",
+    website: "https://github.com/karancodebase/course_seller",
   },
 
-  // // instasnap
-  // {
-  //   id: "instasnap",
-  //   image: "/social.jpg",
-  //   title: "Instasnap",
-  //   tech: ["React", "TypeScript", "Appwrite", "TailwindCSS"],
-  //   description:
-  //     "A social media application having features of create, edit, like & save post. Also a customised user profile dashboard.",
-  //   overview:
-  //     "InstaSnap is a real-time social media platform that allows users to instantly capture and share photos with their followers. With Firebase-powered real-time updates, users can experience instant social interactions.",
-  //   problemStatement:
-  //     "Many social media platforms delay updates or require manual refreshes for new content. InstaSnap bridges this gap by providing seamless, real-time photo sharing with instant visibility.",
-  //   architecture: {
-  //     Frontend: "React Native for cross-platform mobile compatibility.",
-  //     Backend: "Node.js with Firebase for handling real-time interactions.",
-  //     Storage: "Cloud storage integration to handle photo uploads securely.",
-  //   },
-  //   keyFeatures: [
-  //     "Instant photo capture and sharing",
-  //     "Live feed updates using Firebase Realtime Database",
-  //     "Secure authentication with Google and email sign-in",
-  //     "Story feature with auto-disappearing photos",
-  //     "Interactive UI with smooth animations",
-  //   ],
-  //   challengesAndSolutions: [
-  //     {
-  //       challenge: " Managing high-speed data updates for multiple users.",
-  //       solution:
-  //         " Implemented Firebase's real-time syncing and lazy loading for optimized performance.",
-  //     },
-  //     {
-  //       challenge: "Ensuring seamless media uploads",
-  //       solution: "Integrated a background upload queue to prevent UI lag.",
-  //     },
-  //   ],
-  //   learningOutcomes: [
-  //     "Mastered real-time data synchronization using Firebase.",
-  //     "Improved knowledge of React Native performance optimizations.",
-  //   ],
-  //   futureImprovements: [
-  //     "Implementing AI-powered image filters and auto-captioning",
-  //     "Introducing in-app messaging for user engagement.",
-  //   ],
-  //   screenshots: ["/course1.jpg", "/course2.jpg"],
-  //   useCases: [
-  //     "Influencers and content creators sharing instant updates",
-  //     "Users wanting a fast and lightweight social media alternative",
-  //     "Photography enthusiasts capturing spontaneous moments",
-  //   ],
-  //   github: "https://github.com/jaydattkaran/instasnap_",
-  //   website: "https://social-instasnap.netlify.app/",
-  // },
-
-  //fichain
+  // instasnap
   {
-    id: "fichain",
-    image: "/fichain.jpg",
-    title: "Fichain (decentralized fiverr)",
-    tech: ["React.js", "TailwindCSS", "MongoDB", "JavaScript"],
+    id: "instasnap",
+    image: "/social.jpg",
+    title: "Instasnap",
+    tech: ["React", "TypeScript", "Appwrite", "TailwindCSS"],
     description:
-      "Ecommerce application like fiverr has decentralized payment method",
+      "A social media application having features of create, edit, like & save post. Also a customised user profile dashboard.",
     overview:
-      "FiChain is a decentralized finance (DeFi) platform that allows users to lend and borrow cryptocurrencies securely using smart contracts. It ensures transparency and trust through blockchain-based lending mechanisms.",
+      "InstaSnap is a real-time social media platform that allows users to instantly capture and share photos with their followers. With Firebase-powered real-time updates, users can experience instant social interactions.",
     problemStatement:
-      "Traditional financial systems often have high interest rates, middlemen, and delays in processing loans. FiChain removes intermediaries, providing a direct, transparent, and secure lending and borrowing experience.",
+      "Many social media platforms delay updates or require manual refreshes for new content. InstaSnap bridges this gap by providing seamless, real-time photo sharing with instant visibility.",
     architecture: {
-      Frontend: "React.js with an intuitive UI for easy DeFi interactions.",
-      Backend: "Node.js and MongoDB for gigs data management.",
-      "Smart Contracts": "Solidity-based contracts deployed on Ethereum.",
-      "Wallet Integration": "Web3.js integration for seamless transactions.",
+      Frontend: "React Native for cross-platform mobile compatibility.",
+      Backend: "Node.js with Firebase for handling real-time interactions.",
+      Storage: "Cloud storage integration to handle photo uploads securely.",
     },
     keyFeatures: [
-      "Decentralized lending and borrowing with smart contracts",
-      "Secure and transparent transaction records on the blockchain",
-      "Collateralized loans to prevent default risks",
-      "Integrated wallet for direct Ethereum-based transactions",
+      "Instant photo capture and sharing",
+      "Live feed updates using Firebase Realtime Database",
+      "Secure authentication with Google and email sign-in",
+      "Story feature with auto-disappearing photos",
+      "Interactive UI with smooth animations",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Ensuring security in smart contracts.",
-        solution: "Used OpenZeppelin security libraries and rigorous testing.",
+        challenge: " Managing high-speed data updates for multiple users.",
+        solution:
+          " Implemented Firebase's real-time syncing and lazy loading for optimized performance.",
       },
       {
-        challenge: "High gas fees affecting usability.",
-        solution: "Implemented Layer 2 scaling solutions to reduce costs.",
+        challenge: "Ensuring seamless media uploads",
+        solution: "Integrated a background upload queue to prevent UI lag.",
       },
     ],
     learningOutcomes: [
-      "Strengthened understanding of smart contract security.",
-      "Gained experience in integrating blockchain transactions in web applications.",
+      "Mastered real-time data synchronization using Firebase.",
+      "Improved knowledge of React Native performance optimizations.",
     ],
     futureImprovements: [
-      "Expanding support for multiple blockchain networks beyond Ethereum",
-      "Introducing an automated risk assessment for better lending security",
+      "Implementing AI-powered image filters and auto-captioning",
+      "Introducing in-app messaging for user engagement.",
     ],
     screenshots: ["/course1.jpg", "/course2.jpg"],
     useCases: [
-      "Users seeking decentralized loan solutions",
-      "Investors looking for yield farming opportunities",
-      "Developers exploring DeFi integrations",
+      "Influencers and content creators sharing instant updates",
+      "Users wanting a fast and lightweight social media alternative",
+      "Photography enthusiasts capturing spontaneous moments",
     ],
-    github: "https://github.com/jaydattkaran/fichain_fullstack",
-    website: "https://github.com/jaydattkaran/fichain_fullstack",
+    github: "https://github.com/karancodebase/instasnap_",
+    website: "https://social-instasnap.netlify.app/",
   },
 
   // aeris
@@ -295,7 +243,7 @@ export const showcase = [
       "Helping developers experiment with AI chatbot integrations.",
     ],
     screenshots: ["/screenshot1.jpg", "/screenshot2.jpg"],
-    github: "https://github.com/jaydattkaran/assistant",
+    github: "https://github.com/karancodebase/assistant",
     website: "https://aeris.jaydatt.xyz/",
   },
 ];
