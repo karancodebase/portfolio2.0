@@ -230,16 +230,13 @@ function NavItem({
     <Link
       href={href}
       className={`
-        px-2 text-sm relative inline-block
+        px-2 py-1 text-sm font-light tracking-wide relative inline-block rounded dark:hover:bg-neutral-800 hover:bg-neutral-200 duration-200
         ${
           isActive
             ? ""
             : "hover:text-neutral-600 dark:text-neutral-400 text-neutral-300 dark:hover:text-neutral-400 duration-200"
         }
-        after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
-        after:w-0 after:h-0.5 after:bg-neutral-500 
-        after:transition-all after:duration-300
-        hover:after:w-2/4
+        
       `}
       onClick={onClick}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}

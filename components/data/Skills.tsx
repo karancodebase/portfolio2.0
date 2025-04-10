@@ -88,7 +88,7 @@ const SkillCard = ({ img, title }: Skills) => {
   return (
     <div>
       <section>
-        <div className="flex md:gap-2 gap-1 border py-1 bg-gray-900/30 md:px-4 px-2 items-center rounded-full">
+        <div className="flex md:gap-2 gap-1 border py-1 dark:bg-neutral-700/20 bg-neutral-800/20 md:px-4 px-2 items-center rounded-lg">
           <Image src={img} alt={`Background`} priority height={25} width={25} />
           <div className="md:text-lg text-sm items-center md:font-semibold">{title}</div>
         </div>

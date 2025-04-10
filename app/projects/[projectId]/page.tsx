@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/components/data/projects";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { projects } from "../../../components/data/projects";
+import { Badge } from "../../../components/ui/badge";
+import { Button } from "../../../components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 type Params = Promise<{ projectId: string }>;
