@@ -191,7 +191,7 @@ export default function Home() {
   return (
     <>
       <div
-        className={`${roboto.className} min-h-screen flex flex-col justify-center px-4 py-8 mt-10`}
+        className={`${roboto.className} min-h-screen flex flex-col justify-center px-4 py-8 `}
       >
         {/* Hero section */}
         <section className="mb-16">

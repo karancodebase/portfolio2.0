@@ -38,7 +38,7 @@ export default function RootLayout({
         >
           <main className="flex flex-col justify-between items-center">
             <Navbar />
-            <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[90vw] items-center">
+            <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[90vw] mt-20 items-center">
               {children}
             </div>
             <Footer />
