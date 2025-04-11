@@ -36,7 +36,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex flex-col justify-between items-center ">
+          <main className="flex flex-col justify-between items-center">
             <Navbar />
             <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[90vw] items-center">
               {children}

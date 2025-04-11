@@ -191,18 +191,18 @@ export default function Home() {
   return (
     <>
       <div
-        className={`${roboto.className} min-h-screen flex flex-col justify-center px-4 py-8`}
+        className={`${roboto.className} min-h-screen flex flex-col justify-center px-4 py-8 mt-10`}
       >
         {/* Hero section */}
         <section className="mb-16">
           <h1
-            className={`${poppinExtraBold.className} tracking-wider text-center md:text-6xl font-bold mb-4`}
+            className={`${poppinExtraBold.className} tracking-wider text-center md:text-6xl text-3xl font-bold mb-4`}
           >
             {displayedText}
           </h1>
           <div>
             <div>
-              <p className="hero-subtext leading-8 text-center md:text-2xl text-neutral-700 dark:text-neutral-300 mb-10 mt-6">
+              <p className="hero-subtext md:leading-8 leading-4 text-center md:text-2xl text-xs text-neutral-700 dark:text-neutral-300 mb-10 mt-6">
                 <span id="scramble1" className="hero-subtext-line"></span>{" "}
                 <br />
                 <span id="scramble2" className="hero-subtext-line"></span>{" "}
@@ -220,7 +220,7 @@ export default function Home() {
                 }}
               />
               {/* Text content */}
-              <p className="hero-subtext-2 text-lg md:text-xl dark:text-neutral-400 text-neutral-700 mb-6">
+              <p className="hero-subtext-2 text-lg md:text-xl text-sm dark:text-neutral-400 text-neutral-700 md:mb-6">
                 <span className="hero-subtext-liner">
                   If it&apos;s got code, I&apos;m probably tinkering with it.
                 </span>
@@ -249,11 +249,11 @@ export default function Home() {
                 height: "0px", // Initial height (start with no height)
               }}
             />
-            <h2 className="hero-subtext-liner text-3xl font-semibold text-neutral-800 dark:text-neutral-300 mb-4">
+            <h2 className="hero-subtext-liner md:text-3xl text-xl font-semibold text-neutral-800 dark:text-neutral-300 mb-4">
               When I&apos;m not knee-deep in code…
             </h2>
           </div>
-          <p className="hero-subtext-liner  text-lg dark:text-neutral-400 text-neutral-700 max-w-3xl">
+          <p className="hero-subtext-liner md:text-lg text-sm dark:text-neutral-400 text-neutral-700 max-w-3xl">
             I&apos;m probably either <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider">lifting weights, refining designs, or
             advocating for tabs over spaces.</span> Building something wild in <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> Web3?</span> Got a cool <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> side project?</span> Let&apos;s connect — I&apos;m always open
             to <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> side project?</span> and the occasional developer meme.
@@ -286,7 +286,7 @@ export default function Home() {
           </div>
           <div
             className={`${poppinBold.className} mt-6 hero-subtext-liner
-          md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
+          md:text-xl dark:text-neutral-300 text-neutral-800 text-md font-extrabold text-center`}
           >
             Wondering what I&apos;m all about or how I got started?
             <br />

@@ -213,7 +213,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* // philosophy section */}
+      {/* // achievements section */}
       <section
         className="px-2 mt-8 flex flex-col items-center"
         ref={philosophyRef}

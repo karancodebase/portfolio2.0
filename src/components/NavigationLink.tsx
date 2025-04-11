@@ -10,7 +10,7 @@ const NavigationLink = ({ href, children }: { href: string; children: React.Reac
     <Link
       href={href}
       className={`
-        px-2 text-lg md:text-2xl tracking-wide relative inline-block
+        px-2 md:text-lg md:text-2xl tracking-wide relative inline-block
         ${
           isActive
             ? "text-cyan-700 font-bold"

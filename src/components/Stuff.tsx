@@ -57,12 +57,12 @@ const Stuff = () => {
   return (
     <div className="py-16">
       <div
-        className={`${poppinBold.className} md:mb-2
+        className={`${poppinBold.className} mb-2
           md:text-5xl text-3xl font-extrabold `}
       >
         Stuff I&apos;ve Built
       </div>
-      <div className="text-lg dark:text-neutral-300 text-neutral-700">
+      <div className="md:text-lg text-sm dark:text-neutral-300 text-neutral-700">
         I&apos;ve cooked up all kinds of stuff — from “hello world” sites to
         beasts with APIs, auth, and attitude. These are the bangers. Click
         around, snoop a bit.

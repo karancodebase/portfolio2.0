@@ -78,7 +78,7 @@ const Toolkit = () => {
       {/* Title */}
       <div
         ref={titleRef}
-        className={`${poppinBold.className} md:mb-2
+        className={`${poppinBold.className} mb-2
           md:text-5xl text-3xl font-extrabold`}
         style={{ opacity: 0 }}
       >
@@ -88,7 +88,7 @@ const Toolkit = () => {
       {/* Text */}
       <div
         ref={textRef1}
-        className="text-xl mb-4"
+        className="md:text-xl text-sm mb-4"
         style={{ opacity: 0 }}
       >
         The <span className="font-bold tracking-wider">builder kit</span> that powers my projects.
@@ -98,7 +98,7 @@ const Toolkit = () => {
       {/* Skill Cards Grid */}
       <div
         ref={iconsRef}
-        className="grid grid-cols-3 gap-6 mb-6"
+        className="grid grid-cols-3 md:gap-6 gap-2 mb-6"
       >
         {skills.map((skill, index) => (
           <div key={index} className="skill-card opacity-0">
@@ -110,7 +110,7 @@ const Toolkit = () => {
       {/* Text */}
       <div
         ref={textRef2}
-        className="text-xl mb-4"
+        className="md:text-xl text-sm mb-4"
         style={{ opacity: 0 }}
       >
         From crafting sleek UIs with Next.js and Tailwind to deploying smart

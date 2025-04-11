@@ -62,13 +62,13 @@ const Contact = () => {
     <div className="py-20">
       <div
         ref={titleRef}
-        className={`${poppinBold.className} md:mb-3
-          md:text-4xl text-3xl font-extrabold`}
+        className={`${poppinBold.className} mb-3
+          md:text-4xl text-2xl font-extrabold`}
         style={{ opacity: 0 }}
       >
         Got a cool project or idea? Let&apos;s chat!
       </div>
-      <div className="text-xl mb-4">
+      <div className="md:text-xl text-sm mb-4">
         <span className="hero-subtext-liner">
           Cooking up something cool? Let&apos;s talk.
         </span>{" "}
@@ -84,7 +84,7 @@ const Contact = () => {
         </span>{" "}
         <br />
       </div>
-      <div className="text-xl mb-4 hero-subtext-liner" style={{ opacity: 0 }}>
+      <div className="md:text-xl mb-4 hero-subtext-liner" style={{ opacity: 0 }}>
         📩 Slide into <Link href="https://x.com/karandefinitely" className="text-cyan-500 hover:text-cyan-700 duration-200 hover:underline">
               {" "}
               @karandefinitely

@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </Button>
       </Link>
 
-      <h1 className="text-3xl font-bold mt-4">{project.title}</h1>
+      <h1 className="md:text-3xl text-xl font-bold mt-4">{project.title}</h1>
       <Image
         src={project.image}
         alt={project.title}
@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         ))}
       </div>
 
-      <p className="mt-4 text-lg dark:text-neutral-400 text-neutral-600">
+      <p className="mt-4 md:text-lg dark:text-neutral-400 text-neutral-600">
         {project.overview}
       </p>
 
