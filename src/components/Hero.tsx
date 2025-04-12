@@ -143,7 +143,7 @@ export default function Home() {
       },
       {
         element: "#scramble3",
-        text: "Web2, Web3, Solana, Arweave — all part of the chaos.",
+        text: "Web2, Web3, Solana — all part of the chaos.",
       },
     ];
 
