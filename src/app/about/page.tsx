@@ -259,7 +259,7 @@ export default function About() {
               rel="noopener noreferrer"
               className={`${poppinBold.className} font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200`}
             >
-              Download FIle
+              Resume
             </Link>
             📄 and get the quick lowdown.
           </div>
