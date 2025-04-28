@@ -40,8 +40,8 @@ export const skills = [
   },
   {
     id: 7,
-    img: "./ethereum-cryptocurrency-svgrepo-com.svg",
-    title: "Ethereum",
+    img: "./solana.svg",
+    title: "Solana",
   },
   {
     id: 8,

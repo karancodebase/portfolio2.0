@@ -139,7 +139,7 @@ export default function Home() {
       },
       {
         element: "#scramble2",
-        text: "mostly lives in terminal + Figma + Twitter.",
+        text: "mostly lives in terminal and Twitter.",
       },
       {
         element: "#scramble3",

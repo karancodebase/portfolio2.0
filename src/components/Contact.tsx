@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import NavigationLink from "./NavigationLink";
 const poppinBold = Poppins({
   weight: "600",
   preload: false,
@@ -36,7 +37,6 @@ const Contact = () => {
             { opacity: 0, y: 30 },
             { opacity: 1, y: 0, duration: 1 }
           );
-
         }
       });
     };
@@ -57,7 +57,6 @@ const Contact = () => {
     };
   }, []);
 
-
   return (
     <div className="py-20">
       <div
@@ -74,21 +73,40 @@ const Contact = () => {
         </span>{" "}
         <br />
         <span className="hero-subtext-liner">
-        Whether you&apos;re building the next big thing or just wanna debate tabs vs spaces, I’m all ears.
-
+          Whether you&apos;re building the next big thing or just wanna debate
+          tabs vs spaces, I’m all ears.
         </span>{" "}
         <br />
         <span className="hero-subtext-liner">
-          I&apos;ll reply somewhere between debugging Rust and questioning my life
-          choices in <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">package.json</span> .
+          I&apos;ll reply somewhere between debugging Rust and questioning my
+          life choices in{" "}
+          <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">
+            package.json
+          </span>{" "}
+          .
         </span>{" "}
         <br />
       </div>
-      <div className="md:text-xl mb-4 hero-subtext-liner" style={{ opacity: 0 }}>
-        📩 Slide into <Link href="https://x.com/karandefinitely" className="text-cyan-500 hover:text-cyan-700 duration-200 hover:underline">
-              {" "}
-              @karandefinitely
-            </Link> on Twitter — DMs are open (for now).
+      <div
+        className="md:text-xl mb-4 hero-subtext-liner"
+        style={{ opacity: 0 }}
+      >
+        📩 Slide into{" "}
+        <Link
+          href="https://x.com/karandefinitely"
+          className="text-cyan-500 hover:text-cyan-700 duration-200 hover:underline"
+        >
+          {" "}
+          @karandefinitely
+        </Link>{" "}
+        on Twitter — DMs are open (for now).
+      </div>
+      <div
+        className={`${poppinBold.className} mt-10 hero-subtext-liner
+          md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
+      >
+        Not a fan of Twitter? No worries—{" "}
+        <NavigationLink href="/contact">hit up my contact page!</NavigationLink>
       </div>
     </div>
   );

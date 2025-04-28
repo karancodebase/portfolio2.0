@@ -152,7 +152,10 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div className="hero-subtext-liner">
-            Build full-stack apps that work even when I forget to <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">.env</span> 
+            Build full-stack apps that work even when I forget to{" "}
+            <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">
+              .env
+            </span>
           </div>
           <div className="hero-subtext-liner">
             Break things, fix them, and then blog about it like a hero
@@ -187,28 +190,29 @@ export default function About() {
         </div>
       </section>
 
-
       {/* // tech section */}
       <section className="px-2 mt-8 flex flex-col items-center" ref={techRef}>
         <div
           className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
         >
-         Stacks & Snacks
+          Stacks & Snacks
         </div>
         <div className="flex flex-col gap-1 mt-4 md:text-xl">
           <div className="hero-subtext-liner">
-            <span className="font-semibold"> Frontend: </span> Next.js, TailwindCSS, Typescript
+            <span className="font-semibold"> Frontend: </span> Next.js,
+            TailwindCSS, Typescript
           </div>
           <div className="hero-subtext-liner">
-            <span className="font-semibold"> Backend & APIs: </span>Node.js, Express (no Prisma, I like it raw)
+            <span className="font-semibold"> Backend & APIs: </span>Node.js,
+            Express (no Prisma, I like it raw)
           </div>
           <div className="hero-subtext-liner">
-            <span className="font-semibold"> Blockchain & Web3: </span>{" "}
-            Solana, Rust, Solidity
+            <span className="font-semibold"> Blockchain & Web3: </span> Solana,
+            Rust, Solidity
           </div>
           <div className="hero-subtext-liner">
-            <span className="font-semibold"> Dev Fuel: </span>{" "}
-            Masala Chai, late-night lo-fi, and a dream
+            <span className="font-semibold"> Dev Fuel: </span> Masala Chai,
+            late-night lo-fi, and a dream
           </div>
         </div>
       </section>
@@ -225,12 +229,11 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div className="hero-subtext-liner">
-          🛠️ Built multiple full-stack apps solo
+            🛠️ Built multiple full-stack apps solo
           </div>
           <div className="hero-subtext-liner">
-          🔥 Broke production and fixed it like a hero
+            🔥 Broke production and fixed it like a hero
           </div>
-          
         </div>
       </section>
 
@@ -246,18 +249,20 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div className="hero-subtext-liner">
-          Want to see how I turned chaos into code?
+            Want to see how I turned chaos into code?
           </div>
           <div className="hero-subtext-liner">
-          Hit up my   <Link
-                href="https://drive.google.com/file/d/1-p4Nj5ojXT7GM7HLLR95tujhEUvHU2Np/view?usp=drive_link"
-                target="_blank"
-                className="hover:text-cyan-700 text-cyan-400 hover:underline duration-200"
-              >
-                Resume {" "}
-              </Link> 📄 and get the quick lowdown.
+            Hit up my{" "}
+            <Link
+              href="./jaydatt_karan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${poppinBold.className} font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200`}
+            >
+              Download FIle
+            </Link>
+            📄 and get the quick lowdown.
           </div>
-          
         </div>
       </section>
     </div>

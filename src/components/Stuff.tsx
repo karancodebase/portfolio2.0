@@ -82,7 +82,7 @@ const Stuff = () => {
         className={`${poppinBold.className} mt-10 hero-subtext-liner
           md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
       >
-        Still nosy? Smash that Stuff page
+        Still nosy? Smash that 
         <NavigationLink href="/projects"> Stuff page</NavigationLink>
         for the full menu.
       </div>
