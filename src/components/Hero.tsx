@@ -264,23 +264,23 @@ export default function Home() {
               <Link
                 href="https://x.com/karandefinitely"
                 target="_blank"
-                className="social-link px-2 py-1 rounded hover:bg-neutral-800 text-neutral-100 transition duration-200"
+                className="social-link px-2 py-1 rounded dark:hover:bg-neutral-800 hover:bg-neutral-400 text-neutral-100 transition duration-200"
               >
-                <Twitter className="w-5 md:w-6 md:h-6 h-5 mb-1" />
+                <Twitter className="w-5 md:w-6 md:h-6 h-5 mb-1 dark:text-neutral-300 text-neutral-800 " />
               </Link>{" "}
               <Link
                 href="https://github.com/karancodebase"
                 target="_blank"
-                className="social-link px-2 py-1 rounded hover:bg-neutral-800 text-neutral-100 transition duration-200"
+                className="social-link px-2 py-1 rounded dark:hover:bg-neutral-800 hover:bg-neutral-400 text-neutral-100 transition duration-200"
               >
-                <Github className="w-5 md:w-6 md:h-6 h-5 mb-1" />
+                <Github className="w-5 md:w-6 md:h-6 h-5 mb-1 dark:text-neutral-300 text-neutral-800 " />
               </Link>{" "}
               <Link
                 href="https://linkedin.com/in/jaydattkaran"
                 target="_blank"
-                className="social-link px-2 py-1 rounded hover:bg-neutral-800 text-neutral-100 transition duration-200"
+                className="social-link px-2 py-1 rounded dark:hover:bg-neutral-800 hover:bg-neutral-400 text-neutral-100 transition duration-200"
               >
-                <Linkedin className="w-5 md:w-6 md:h-6 h-5 mb-1" />
+                <Linkedin className="w-5 md:w-6 md:h-6 h-5 mb-1 dark:text-neutral-300 text-neutral-800 " />
               </Link>
             </span>
           </div>

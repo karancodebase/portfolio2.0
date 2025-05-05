@@ -73,57 +73,76 @@ export const showcase = [
     website: "https://sengarbus.vercel.app",
   },
 
-  // course-seller
+  // buddyfi
   {
-    id: "course-seller",
-    image: "/course.jpg",
-    title: "Course Seller Application",
-    tech: ["JavaScript", "React.js", "MongoDB", "TailwindCSS"],
+    id: "buddyfi",
+    image: "/buddyfi.png",
+    title: "BuddyFi - Web3 Hackathon Team Matching Platform",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Solana",
+      "Rust",
+      "IPFS",
+      "Pinata",
+      "Phantom Wallet",
+    ],
     description:
-      "A course-selling application with separate dashboards for users and admins, providing a seamless online learning experience.",
+      "A decentralized matching platform for developers to find hackathon teammates using Solana and wallet-based authentication.",
     overview:
-      "This platform enables instructors to create and sell online courses while students can purchase and learn at their own pace. It features separate dashboards for users and admins to manage content and track progress.",
+      "BuddyFi is a Web3-native matchmaking platform tailored for hackathon participants. It leverages wallet login and on-chain data to create and match user profiles based on skills, interests, and availability. Profiles are stored on IPFS for decentralization, and core interactions are handled via Solana smart contracts.",
     problemStatement:
-      "Educators often lack a dedicated platform to create and sell courses efficiently. This application provides a structured solution with payment integration and course management features.",
+      "Finding compatible teammates for hackathons is often a manual, inefficient process. BuddyFi solves this by enabling decentralized, profile-based matching with on-chain transparency.",
     architecture: {
-      Frontend: "Built with React.js for dynamic user interactions.",
-      Backend: "Express.js and MongoDB for course data management.",
-      Authentication: "JWT-based authentication for users and admins.",
-      Payments: "Integrated Stripe for secure transactions.",
+      Frontend: "Next.js and TypeScript provide a responsive and modern UI.",
+      Backend:
+        "Minimal backend; most logic is handled via Solana smart contracts written in Rust.",
+      OnChainStorage:
+        "Solana programs store minimal references and interaction metadata.",
+      DecentralizedStorage:
+        "IPFS (via Pinata) is used for storing detailed profile data.",
+      Authentication:
+        "Phantom wallet is used for secure Web3 login and transaction signing.",
     },
     keyFeatures: [
-      "Instructor dashboard for course creation and analytics",
-      "Student dashboard with enrolled courses and progress tracking",
-      "Secure payment integration for course purchases",
-      "Responsive and modern UI with easy navigation",
+      "Wallet-based login via Phantom",
+      "On-chain profile creation and linking",
+      "IPFS-stored developer profiles (skills, interests, availability)",
+      "Dashboard displaying user profile and GitHub streak data",
+      "Milestone-based NFT badge rewards",
+      "Foundation for swipe-based teammate matching",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Ensuring secure content management.",
+        challenge: "Storing profile data on-chain affordably.",
         solution:
-          "Implemented role-based access control for instructors and students.",
+          "Used IPFS to store metadata and kept only minimal data on-chain.",
       },
       {
-        challenge: "Handling high user engagement.",
-        solution: "Optimized database queries for fast content delivery.",
+        challenge: "Integrating wallet-based auth with smooth UX.",
+        solution: "Implemented Phantom wallet connect with fallback handling.",
       },
     ],
     learningOutcomes: [
-      "Enhanced knowledge of e-commerce payment gateways.",
-      "Improved database optimization for large-scale applications.",
+      "Gained experience working with Solana smart contracts in Rust.",
+      "Understood decentralized storage patterns using IPFS and Pinata.",
+      "Built end-to-end dApp with wallet login and on-chain interactions.",
     ],
     futureImprovements: [
-      "Adding live session support for instructors.",
-      "Implementing AI-based course recommendations.",
+      "Swipe-based matching for team formation",
+      "Gamified cNFTs for engagement and rewards",
+      "Mobile wallet support including Okto",
+      "Open-source contributor profiles and public dashboards",
     ],
-    screenshots: ["/course1.jpg", "/course2.jpg"],
+    screenshots: ["/buddyfi1.jpg", "/buddyfi2.jpg"],
     useCases: [
-      "Independent educators and content creators",
-      "Institutes looking for an online learning management system",
-      "Students seeking a structured online learning experience",
+      "Developers finding teammates for hackathons",
+      "Hackathon organizers facilitating team formation",
+      "Users building public developer identities on-chain",
     ],
-    github: "https://github.com/karancodebase/course_seller",
-    website: "https://github.com/karancodebase/course_seller",
+    github: "https://github.com/karancodebase/buddyfi",
+    website: "https://buddyfi.vercel.app",
   },
 
   // instasnap
