@@ -88,18 +88,15 @@ const Toolkit = () => {
       {/* Text */}
       <div
         ref={textRef1}
-        className="md:text-xl text-sm mb-4"
+        className="md:text-xl text-sm mb-4 dark:text-neutral-400 text-neutral-700"
         style={{ opacity: 0 }}
       >
-        The <span className="font-bold tracking-wider">builder kit</span> that powers my projects.
-        You know the good stuff:
+        The <span className="text-neutral-100 tracking-wider">builder kit</span> that
+        powers my projects. You know the good stuff:
       </div>
 
       {/* Skill Cards Grid */}
-      <div
-        ref={iconsRef}
-        className="grid grid-cols-3 md:gap-6 gap-2 mb-6"
-      >
+      <div ref={iconsRef} className="grid grid-cols-3 md:gap-6 gap-2 mb-6">
         {skills.map((skill, index) => (
           <div key={index} className="skill-card opacity-0">
             <SkillCard {...skill} />
@@ -113,9 +110,8 @@ const Toolkit = () => {
         className="md:text-xl text-sm mb-4"
         style={{ opacity: 0 }}
       >
-        From crafting sleek UIs with Next.js and Tailwind to deploying smart
-        contracts on Solana with Rust, I’m all about using the right tool for
-        the job — and the fun that comes with learning new ones.
+        I build fast, clean, and scalable projects — from sleek UIs to smart
+        contracts. Always using the right tool for the job.
       </div>
     </div>
   );

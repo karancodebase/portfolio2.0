@@ -5,73 +5,6 @@ import { Github, Globe } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export const showcase = [
-  // sengarbus
-  {
-    id: "sengarbus",
-    image: "/sengarbus.jpeg",
-    title: "SengarBus - Online Bus Booking Platform",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "TailwindCSS",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL",
-      "Redis",
-      "Clerk",
-    ],
-    description:
-      "A web-based bus booking platform for Sengar Travels, allowing users to search, select seats, and book buses online.",
-    overview:
-      "SengarBus is an online ticket booking system designed for a seamless travel experience. Users can search for buses based on location and date, select seats dynamically, make online payments, and track buses in real-time.",
-    problemStatement:
-      "Traditional bus booking methods are inefficient and lack real-time tracking. SengarBus streamlines the process with an intuitive online platform.",
-    architecture: {
-      Frontend:
-        "Built with Next.js and TypeScript for a scalable and responsive UI.",
-      Backend: "Node.js and Express.js handle API requests efficiently.",
-      Database: "PostgreSQL is used for structured data storage.",
-      SessionManagement:
-        "Redis is used for session storage with a hybrid approach.",
-      Authentication: "Clerk is used for secure user authentication.",
-    },
-    keyFeatures: [
-      "User authentication with Clerk",
-      "Dynamic seat selection with real-time availability",
-      "Live bus tracking during the journey",
-      "Multi-vendor platform for different bus operators",
-      "Secure online payment integration",
-      "Search functionality for buses based on route and date",
-    ],
-    challengesAndSolutions: [
-      {
-        challenge: "Managing session storage efficiently.",
-        solution: "Implemented Redis for scalable session handling.",
-      },
-      {
-        challenge: "Ensuring secure online transactions.",
-        solution: "Integrated a secure payment gateway with encryption.",
-      },
-    ],
-    learningOutcomes: [
-      "Deepened understanding of full-stack web development.",
-      "Enhanced knowledge of Redis for session management.",
-      "Improved integration of real-time tracking features.",
-    ],
-    futureImprovements: [
-      "Adding mobile app support for seamless access.",
-      "Enhancing real-time tracking accuracy with GPS integration.",
-      "Implementing a loyalty program for frequent travelers.",
-    ],
-    screenshots: ["/sengarbus1.jpg", "/sengarbus2.jpg"],
-    useCases: [
-      "Travelers booking buses online",
-      "Bus operators managing their fleet and routes",
-      "Admins tracking bookings and revenue in real-time",
-    ],
-    github: "https://github.com/karancodebase/sengarbus",
-    website: "https://sengarbus.vercel.app",
-  },
 
   // buddyfi
   {
@@ -142,60 +75,75 @@ export const showcase = [
       "Users building public developer identities on-chain",
     ],
     github: "https://github.com/karancodebase/buddyfi",
-    website: "https://buddyfi.vercel.app",
+    website: "https://buddyfi.xyz",
   },
 
-  // instasnap
+  // sengarbus
   {
-    id: "instasnap",
-    image: "/social.jpg",
-    title: "Instasnap",
-    tech: ["React", "TypeScript", "Appwrite", "TailwindCSS"],
+    id: "sengarbus",
+    image: "/sengarbus.jpeg",
+    title: "SengarBus - Online Bus Booking Platform",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Redis",
+      "Clerk",
+    ],
     description:
-      "A social media application having features of create, edit, like & save post. Also a customised user profile dashboard.",
+      "A web-based bus booking platform for Sengar Travels, allowing users to search, select seats, and book buses online.",
     overview:
-      "InstaSnap is a real-time social media platform that allows users to instantly capture and share photos with their followers. With Firebase-powered real-time updates, users can experience instant social interactions.",
+      "SengarBus is an online ticket booking system designed for a seamless travel experience. Users can search for buses based on location and date, select seats dynamically, make online payments, and track buses in real-time.",
     problemStatement:
-      "Many social media platforms delay updates or require manual refreshes for new content. InstaSnap bridges this gap by providing seamless, real-time photo sharing with instant visibility.",
+      "Traditional bus booking methods are inefficient and lack real-time tracking. SengarBus streamlines the process with an intuitive online platform.",
     architecture: {
-      Frontend: "React Native for cross-platform mobile compatibility.",
-      Backend: "Node.js with Firebase for handling real-time interactions.",
-      Storage: "Cloud storage integration to handle photo uploads securely.",
+      Frontend:
+        "Built with Next.js and TypeScript for a scalable and responsive UI.",
+      Backend: "Node.js and Express.js handle API requests efficiently.",
+      Database: "PostgreSQL is used for structured data storage.",
+      SessionManagement:
+        "Redis is used for session storage with a hybrid approach.",
+      Authentication: "Clerk is used for secure user authentication.",
     },
     keyFeatures: [
-      "Instant photo capture and sharing",
-      "Live feed updates using Firebase Realtime Database",
-      "Secure authentication with Google and email sign-in",
-      "Story feature with auto-disappearing photos",
-      "Interactive UI with smooth animations",
+      "User authentication with Clerk",
+      "Dynamic seat selection with real-time availability",
+      "Live bus tracking during the journey",
+      "Multi-vendor platform for different bus operators",
+      "Secure online payment integration",
+      "Search functionality for buses based on route and date",
     ],
     challengesAndSolutions: [
       {
-        challenge: " Managing high-speed data updates for multiple users.",
-        solution:
-          " Implemented Firebase's real-time syncing and lazy loading for optimized performance.",
+        challenge: "Managing session storage efficiently.",
+        solution: "Implemented Redis for scalable session handling.",
       },
       {
-        challenge: "Ensuring seamless media uploads",
-        solution: "Integrated a background upload queue to prevent UI lag.",
+        challenge: "Ensuring secure online transactions.",
+        solution: "Integrated a secure payment gateway with encryption.",
       },
     ],
     learningOutcomes: [
-      "Mastered real-time data synchronization using Firebase.",
-      "Improved knowledge of React Native performance optimizations.",
+      "Deepened understanding of full-stack web development.",
+      "Enhanced knowledge of Redis for session management.",
+      "Improved integration of real-time tracking features.",
     ],
     futureImprovements: [
-      "Implementing AI-powered image filters and auto-captioning",
-      "Introducing in-app messaging for user engagement.",
+      "Adding mobile app support for seamless access.",
+      "Enhancing real-time tracking accuracy with GPS integration.",
+      "Implementing a loyalty program for frequent travelers.",
     ],
-    screenshots: ["/course1.jpg", "/course2.jpg"],
+    screenshots: ["/sengarbus1.jpg", "/sengarbus2.jpg"],
     useCases: [
-      "Influencers and content creators sharing instant updates",
-      "Users wanting a fast and lightweight social media alternative",
-      "Photography enthusiasts capturing spontaneous moments",
+      "Travelers booking buses online",
+      "Bus operators managing their fleet and routes",
+      "Admins tracking bookings and revenue in real-time",
     ],
-    github: "https://github.com/karancodebase/instasnap_",
-    website: "https://social-instasnap.netlify.app/",
+    github: "https://github.com/karancodebase/sengarbus",
+    website: "https://sengarbus.vercel.app",
   },
 
   // aeris
@@ -265,6 +213,60 @@ export const showcase = [
     github: "https://github.com/karancodebase/assistant",
     website: "https://aeris.jaydatt.xyz/",
   },
+
+  // instasnap
+  {
+    id: "instasnap",
+    image: "/social.jpg",
+    title: "Instasnap",
+    tech: ["React", "TypeScript", "Appwrite", "TailwindCSS"],
+    description:
+      "A social media application having features of create, edit, like & save post. Also a customised user profile dashboard.",
+    overview:
+      "InstaSnap is a real-time social media platform that allows users to instantly capture and share photos with their followers. With Firebase-powered real-time updates, users can experience instant social interactions.",
+    problemStatement:
+      "Many social media platforms delay updates or require manual refreshes for new content. InstaSnap bridges this gap by providing seamless, real-time photo sharing with instant visibility.",
+    architecture: {
+      Frontend: "React Native for cross-platform mobile compatibility.",
+      Backend: "Node.js with Firebase for handling real-time interactions.",
+      Storage: "Cloud storage integration to handle photo uploads securely.",
+    },
+    keyFeatures: [
+      "Instant photo capture and sharing",
+      "Live feed updates using Firebase Realtime Database",
+      "Secure authentication with Google and email sign-in",
+      "Story feature with auto-disappearing photos",
+      "Interactive UI with smooth animations",
+    ],
+    challengesAndSolutions: [
+      {
+        challenge: " Managing high-speed data updates for multiple users.",
+        solution:
+          " Implemented Firebase's real-time syncing and lazy loading for optimized performance.",
+      },
+      {
+        challenge: "Ensuring seamless media uploads",
+        solution: "Integrated a background upload queue to prevent UI lag.",
+      },
+    ],
+    learningOutcomes: [
+      "Mastered real-time data synchronization using Firebase.",
+      "Improved knowledge of React Native performance optimizations.",
+    ],
+    futureImprovements: [
+      "Implementing AI-powered image filters and auto-captioning",
+      "Introducing in-app messaging for user engagement.",
+    ],
+    screenshots: ["/course1.jpg", "/course2.jpg"],
+    useCases: [
+      "Influencers and content creators sharing instant updates",
+      "Users wanting a fast and lightweight social media alternative",
+      "Photography enthusiasts capturing spontaneous moments",
+    ],
+    github: "https://github.com/karancodebase/instasnap_",
+    website: "https://social-instasnap.netlify.app/",
+  },
+
 ];
 
 interface SearchResult {

@@ -117,7 +117,7 @@ export default function Projects() {
           </div>
         </div>
         <div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-4"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4"
           ref={containerRef}
         >
           {projects.map((project, index) => (

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -7,6 +8,7 @@ import { Roboto, Poppins } from "next/font/google";
 import NavigationLink from "./NavigationLink";
 import { Twitter, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "./ui/badge";
 
 const poppinBold = Poppins({
   weight: "600",
@@ -40,7 +42,6 @@ class TextScramble {
   frameRequest: number;
   frame: number;
   resolve: (() => void) | null;
-
 
   constructor(el: HTMLElement) {
     this.el = el;
@@ -77,7 +78,7 @@ class TextScramble {
 
     for (let i = 0, n = this.queue.length; i < n; i++) {
       const { from, to, start, end } = this.queue[i];
-      let {char} = this.queue[i];
+      let { char } = this.queue[i];
 
       if (this.frame >= end) {
         complete++;
@@ -135,15 +136,15 @@ export default function Home() {
     const phrases = [
       {
         element: "#scramble1",
-        text: "just a dev who builds cool sh*t and ships it fast.",
+        text: "Full-time dev. Part-time gym bro. Occasional meme dealer.",
       },
       {
         element: "#scramble2",
-        text: "mostly lives in terminal and Twitter.",
+        text: "I code. I lift. I ship.",
       },
       {
         element: "#scramble3",
-        text: "Web2, Web3, Solana — all part of the chaos.",
+        text: "That’s it. That’s the bio.",
       },
     ];
 
@@ -178,7 +179,6 @@ export default function Home() {
           { opacity: 1, y: 0, duration: 1, delay: index * 0.3 }
         );
       });
-      
     }
     gsap.to(line2Ref.current, {
       height: "35px",
@@ -191,48 +191,23 @@ export default function Home() {
   return (
     <>
       <div
-        className={`${roboto.className} min-h-screen flex flex-col justify-center px-4 py-8 `}
+        className={`${roboto.className} py-14 flex flex-col justify-center px-4 `}
       >
         {/* Hero section */}
-        <section className="mb-16">
+        <section className="mb-10">
           <h1
-            className={`${poppinExtraBold.className} tracking-wider text-center md:text-6xl text-3xl font-bold mb-4`}
+            className={`${poppinExtraBold.className} tracking-wider text-center md:text-6xl text-3xl font-bold`}
           >
             {displayedText}
           </h1>
           <div>
             <div>
-              <p className="hero-subtext md:leading-8 leading-4 text-center md:text-2xl text-xs text-neutral-700 dark:text-neutral-300 mb-10 mt-6">
+              <p className="hero-subtext md:leading-8 leading-4 md:text-2xl text-xs text-neutral-700 dark:text-neutral-400 mt-6">
                 <span id="scramble1" className="hero-subtext-line"></span>{" "}
                 <br />
                 <span id="scramble2" className="hero-subtext-line"></span>{" "}
                 <br />
                 <span id="scramble3" className="hero-subtext-line"></span>
-              </p>
-            </div>
-            <div className="flex gap-3 mt-10">
-              <div
-                ref={lineRef}
-                className="dark:bg-neutral-300 bg-neutral-500 rounded"
-                style={{
-                  width: "4px",
-                  height: "0px", // Initial height (start with no height)
-                }}
-              />
-              {/* Text content */}
-              <p className="hero-subtext-2 text-lg md:text-xl text-sm dark:text-neutral-400 text-neutral-700 md:mb-6">
-                <span className="hero-subtext-liner">
-                  If it&apos;s got code, I&apos;m probably tinkering with it.
-                </span>
-                <br />
-                <span className="hero-subtext-liner">
-                  Whether it&apos;s a <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider">decentralized app on Solana</span>  or my <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider">fifth coffee</span> of the day,
-                </span>
-                <br />
-                <span className="hero-subtext-liner">
-                  I&apos;m <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider">building and shipping</span>  it all. Welcome to the chaos.
-                </span>
-                <br />
               </p>
             </div>
           </div>
@@ -241,25 +216,62 @@ export default function Home() {
         {/* About Section */}
         <section id="about">
           <div className="flex gap-3">
-            <div
-              ref={line2Ref}
-              className="dark:bg-neutral-300 bg-neutral-500 rounded"
-              style={{
-                width: "4px",
-                height: "0px", // Initial height (start with no height)
-              }}
-            />
-            <h2 className="hero-subtext-liner md:text-3xl text-xl font-semibold text-neutral-800 dark:text-neutral-300 mb-4">
-              When I&apos;m not knee-deep in code…
+           
+            <h2 className="hero-subtext-liner md:text-2xl text-xl text-neutral-800 dark:text-neutral-300 mb-4">
+              Solana, Web3, Web2 — I&apos;m everywhere and nowhere.
             </h2>
           </div>
-          <p className="hero-subtext-liner md:text-lg text-sm dark:text-neutral-400 text-neutral-700 max-w-3xl">
-            I&apos;m probably either <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider">lifting weights, refining designs, or
-            advocating for tabs over spaces.</span> Building something wild in <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> Web3?</span> Got a cool <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> side project?</span> Let&apos;s connect — I&apos;m always open
-            to <span className="font-semibold dark:text-neutral-200 text-neutral-800 tracking-wider"> side project?</span> and the occasional developer meme.
+          <p className="hero-subtext-liner md:text-xl text-sm dark:text-neutral-400 text-neutral-700 max-w-3xl">
+            <span className="dark:text-neutral-200 text-neutral-800 tracking-wider">
+              Projects, PRs, pre-workout
+            </span>{" "}
+            — all part of the daily stack. <br />
+            messing with{" "}
+            <span>
+              <Badge variant="outline" className="mr-2 tracking-wider">
+                <img
+                  src="./nextjs-svgrepo-com.svg"
+                  alt="Next.js"
+                  width={18}
+                  height={18}
+                  className="mr-1"
+                />
+                Next.js
+              </Badge>
+              <Badge variant="outline" className="mr-2 tracking-wider">
+                <img
+                  src="./nodejs-logo-svgrepo-com.svg"
+                  alt="NestJS"
+                  width={18}
+                  height={18}
+                  className="mr-1"
+                />
+                NodeJS
+              </Badge>
+              <Badge variant="outline" className="mr-2 tracking-wider">
+                <img
+                  src="./typescript-16-svgrepo-com.svg"
+                  alt="Prisma"
+                  width={18}
+                  height={18}
+                  className="mr-1"
+                />
+                TypeScript
+              </Badge>
+              <Badge variant="outline" className="mr-2  tracking-wider">
+                <img
+                  src="./solana.svg"
+                  alt="Solana"
+                  width={20}
+                  height={20}
+                  className="mr-1"
+                />
+                Solana
+              </Badge>
+            </span>
           </p>
-          <div className="mt-10 hero-subtext-liner flex gap-1 text-lg items-center dark:text-neutral-300 text-neutral-800 font-semibold tracking-wider">
-            Find me online:
+          <div className="mt-10 hero-subtext-liner flex gap-1 items-center dark:text-neutral-200 text-neutral-800 tracking-wider">
+            <span className="h-3 w-3 bg-green-600 rounded-full mr-1"></span> Open to new gigs. Got bugs, ideas? Ping me: 
             <span className="dark:text-neutral-400 text-neutral-950 font-medium flex flex-wrap gap-1">
               <Link
                 href="https://x.com/karandefinitely"
@@ -286,14 +298,12 @@ export default function Home() {
           </div>
           <div
             className={`${poppinBold.className} mt-6 hero-subtext-liner
-          md:text-xl dark:text-neutral-300 text-neutral-800 text-md font-extrabold text-center`}
+          md:text-xl dark:text-neutral-400 text-neutral-800 text-md font-semibold text-center`}
           >
-            Wondering what I&apos;m all about or how I got started?
+            Backstory? Bugs? Biceps?
             <br />
-            <NavigationLink href="/about">
-              {" "}
-              The About page has the story.
-            </NavigationLink>
+            <NavigationLink href="/about">About page</NavigationLink>has the
+            lore.
           </div>
         </section>
       </div>

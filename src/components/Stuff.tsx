@@ -55,7 +55,7 @@ const Stuff = () => {
   }, []);
 
   return (
-    <div className="py-16">
+    <div className="py-14">
       <div
         className={`${poppinBold.className} mb-2
           md:text-5xl text-3xl font-extrabold `}
@@ -63,9 +63,8 @@ const Stuff = () => {
         Stuff I&apos;ve Built
       </div>
       <div className="md:text-lg text-sm dark:text-neutral-300 text-neutral-700">
-        I&apos;ve cooked up all kinds of stuff — from “hello world” sites to
-        beasts with APIs, auth, and attitude. These are the bangers. Click
-        around, snoop a bit.
+        From tiny “hello world”s to full-stack beasts with APIs, auth, and
+        attitude — here are the bangers. Click around and explore.
       </div>
 
       <div
@@ -82,7 +81,7 @@ const Stuff = () => {
         className={`${poppinBold.className} mt-10 hero-subtext-liner
           md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
       >
-        Still nosy? Smash that 
+        Still nosy? Smash that
         <NavigationLink href="/projects"> Stuff page</NavigationLink>
         for the full menu.
       </div>

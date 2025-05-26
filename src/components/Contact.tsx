@@ -67,20 +67,20 @@ const Contact = () => {
       >
         Got a cool project or idea? Let&apos;s chat!
       </div>
-      <div className="md:text-xl text-sm mb-4">
+      <div className="md:text-xl text-neutral-700 dark:text-neutral-400 text-sm mb-4">
         <span className="hero-subtext-liner">
-          Cooking up something cool? Let&apos;s talk.
+          Got a cool project or idea? I&apos;m all ears —
         </span>{" "}
         <br />
-        <span className="hero-subtext-liner">
-          Whether you&apos;re building the next big thing or just wanna debate
-          tabs vs spaces, I’m all ears.
+        <span className="hero-subtext-liner text-neutral-800 dark:text-neutral-200">
+          whether you&apos;re building the next big thing or just debating tabs vs
+          spaces.
         </span>{" "}
         <br />
-        <span className="hero-subtext-liner">
-          I&apos;ll reply somewhere between debugging Rust and questioning my
-          life choices in{" "}
-          <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">
+        <span className="hero-subtext-liner ">
+          I usually reply somewhere between debugging Rust and questioning my
+          life choices in {" "}
+          <span className="bg-red-800/20 text-neutral-800 dark:text-neutral-200 text-[0.9em] px-2 py-1 rounded-lg">
             package.json
           </span>{" "}
           .
@@ -91,22 +91,21 @@ const Contact = () => {
         className="md:text-xl mb-4 hero-subtext-liner"
         style={{ opacity: 0 }}
       >
-        📩 Slide into{" "}
+        📩 DMs open at{" "}
         <Link
           href="https://x.com/karandefinitely"
           className="text-cyan-500 hover:text-cyan-700 duration-200 hover:underline"
         >
           {" "}
           @karandefinitely
-        </Link>{" "}
-        on Twitter — DMs are open (for now).
+        </Link>
       </div>
       <div
         className={`${poppinBold.className} mt-10 hero-subtext-liner
           md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
       >
-        Not a fan of Twitter? No worries—{" "}
-        <NavigationLink href="/contact">hit up my contact page!</NavigationLink>
+        Prefer email? Hit up the
+        <NavigationLink href="/contact">contact page!</NavigationLink>
       </div>
     </div>
   );

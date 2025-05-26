@@ -3,6 +3,7 @@ import { Roboto, Poppins } from "next/font/google";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
+import PhotoHighlights from "@/components/PhotoHighlights";
 
 const poppinBold = Poppins({
   weight: "600",
@@ -263,6 +264,25 @@ export default function About() {
             </Link>
             📄 and get the quick lowdown.
           </div>
+        </div>
+      </section>
+
+
+      {/* // glimps section */}
+      <section
+        className="px-2 mt-8 flex flex-col items-center"
+        ref={philosophyRef}
+      >
+        <div
+          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
+        >
+          📸 Photo Highlights
+        </div>
+        <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
+          <div className="hero-subtext-liner">
+            Some snapshots from the builder&apos;s journey — shipping features, hackathons, and occasionally remembering to document the fun.
+          </div>
+         <PhotoHighlights/>
         </div>
       </section>
     </div>

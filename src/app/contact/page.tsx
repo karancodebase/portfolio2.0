@@ -194,17 +194,8 @@ const Contact = () => {
               {" "}
               Github{" "}
             </Link>
-            — come snoop on the builds 👀
           </div>
-          <div>
-            <span className="animate-lines">
-              Got something to say? Drop a message below.
-            </span>{" "}
-            <br />
-            <span className="animate-lines">
-              Let’s build weird, ambitious, world-shaking things. 💥
-            </span>
-          </div>
+        
           <div className="md:px-10 md:py-4">
             <form
               onSubmit={handleSubmit}

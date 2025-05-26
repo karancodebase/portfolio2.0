@@ -81,14 +81,7 @@ const Footer = () => {
                     Github
                   </a>
                 </li>
-                <li className="hover:underline cursor-pointer">
-                  <a
-                    target="_blank"
-                    href="https://linkedin.com/in/jaydattkaran/"
-                  >
-                    Linkedin
-                  </a>
-                </li>
+                
                 <li className="hover:underline cursor-pointer">
                   <a
                     target="_blank"
@@ -97,14 +90,7 @@ const Footer = () => {
                     Bento
                   </a>
                 </li>
-                <li className="hover:underline cursor-pointer">
-                  <a
-                    target="_blank"
-                    href="https://peerlist.io/jaydatt"
-                  >
-                    Peerlist
-                  </a>
-                </li>
+               
               </ul>
             </div>
             <h2 className="absolute bottom-0 josefin-sans left-2 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
