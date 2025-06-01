@@ -191,7 +191,7 @@ export default function Home() {
   return (
     <>
       <div
-        className={`${roboto.className} py-14 flex flex-col justify-center px-4 `}
+        className={`${roboto.className} py-14 flex flex-col justify-center`}
       >
         {/* Hero section */}
         <section className="mb-10">
@@ -202,7 +202,7 @@ export default function Home() {
           </h1>
           <div>
             <div>
-              <p className="hero-subtext md:leading-8 leading-4 md:text-2xl text-xs text-neutral-700 dark:text-neutral-400 mt-6">
+              <p className="hero-subtext md:leading-8 leading-5 md:text-2xl text-lg text-neutral-700 dark:text-neutral-400 mt-6">
                 <span id="scramble1" className="hero-subtext-line"></span>{" "}
                 <br />
                 <span id="scramble2" className="hero-subtext-line"></span>{" "}
@@ -215,12 +215,10 @@ export default function Home() {
 
         {/* About Section */}
         <section id="about">
-          <div className="flex gap-3">
-           
-            <h2 className="hero-subtext-liner md:text-2xl text-xl text-neutral-800 dark:text-neutral-300 mb-4">
+            <h2 className="hero-subtext-liner md:text-xl text-sm text-neutral-800 dark:text-neutral-300 mb-1">
               Solana, Web3, Web2 — I&apos;m everywhere and nowhere.
             </h2>
-          </div>
+          
           <p className="hero-subtext-liner md:text-xl text-sm dark:text-neutral-400 text-neutral-700 max-w-3xl">
             <span className="dark:text-neutral-200 text-neutral-800 tracking-wider">
               Projects, PRs, pre-workout
@@ -270,8 +268,8 @@ export default function Home() {
               </Badge>
             </span>
           </p>
-          <div className="mt-10 hero-subtext-liner flex gap-1 items-center dark:text-neutral-200 text-neutral-800 tracking-wider">
-            <span className="h-3 w-3 bg-green-600 rounded-full mr-1"></span> Open to new gigs. Got bugs, ideas? Ping me: 
+          <div className="mt-10 hero-subtext-liner flex md:flex-row flex-col gap-1 items-center dark:text-neutral-200 text-neutral-800 tracking-wider">
+            <span className="hidden md:block h-3 w-3 bg-green-600 rounded-full mr-1"></span> Open to new gigs. Got bugs, ideas? Ping me: 
             <span className="dark:text-neutral-400 text-neutral-950 font-medium flex flex-wrap gap-1">
               <Link
                 href="https://x.com/karandefinitely"
