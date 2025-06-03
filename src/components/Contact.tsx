@@ -65,14 +65,14 @@ const Contact = () => {
           md:text-4xl text-2xl font-extrabold`}
         style={{ opacity: 0 }}
       >
-        Got a cool project or idea? Let&apos;s chat!
+        Let&apos;s chat!
       </div>
       <div className="md:text-xl text-neutral-700 dark:text-neutral-400 text-sm mb-4">
         <span className="hero-subtext-liner">
           Got a cool project or idea? I&apos;m all ears —
         </span>{" "}
         <br />
-        <span className="hero-subtext-liner text-neutral-800 dark:text-neutral-200">
+        <span className="hero-subtext-liner">
           whether you&apos;re building the next big thing or just debating tabs vs
           spaces.
         </span>{" "}
