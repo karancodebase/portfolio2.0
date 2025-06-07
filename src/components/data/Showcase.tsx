@@ -1,272 +1,274 @@
-import Image from "next/image";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { Github, Globe } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
+import { Poppins } from "next/font/google";
+import { Edu_SA_Beginner } from 'next/font/google'
+const poppinBold = Poppins({
+  weight: "600",
+  preload: false,
+});
+const eduBeginner = Edu_SA_Beginner({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const showcase = [
-
-  // buddyfi
+  //buddyfi
   {
     id: "buddyfi",
     image: "/buddyfi.png",
-    title: "BuddyFi - Web3 Hackathon Team Matching Platform",
+    title: "BuddyFi – Decentralized Hackathon Team Matching Platform",
     tech: [
       "Next.js",
-      "TypeScript",
       "TailwindCSS",
-      "Solana",
+      "TypeScript",
+      "Solana Web3",
       "Rust",
-      "IPFS",
-      "Pinata",
-      "Phantom Wallet",
+      "IPFS (Pinata)",
     ],
     description:
-      "A decentralized matching platform for developers to find hackathon teammates using Solana and wallet-based authentication.",
+      "A Web3-powered matchmaking platform for hackathon developers to find teammates based on skills, interests, and availability using Solana blockchain.",
     overview:
-      "BuddyFi is a Web3-native matchmaking platform tailored for hackathon participants. It leverages wallet login and on-chain data to create and match user profiles based on skills, interests, and availability. Profiles are stored on IPFS for decentralization, and core interactions are handled via Solana smart contracts.",
+      "BuddyFi connects developers for hackathons by matching profiles stored on-chain and on IPFS. Users authenticate with Phantom wallet, create profiles with skills and interests, and swipe to find compatible team members. The platform leverages Solana smart contracts to store references and create a decentralized social graph.",
     problemStatement:
-      "Finding compatible teammates for hackathons is often a manual, inefficient process. BuddyFi solves this by enabling decentralized, profile-based matching with on-chain transparency.",
+      "Finding compatible hackathon teammates is often difficult and centralized, lacking transparency and trust. BuddyFi decentralizes team formation with on-chain profile storage and verifiable matchmaking.",
     architecture: {
-      Frontend: "Next.js and TypeScript provide a responsive and modern UI.",
-      Backend:
-        "Minimal backend; most logic is handled via Solana smart contracts written in Rust.",
-      OnChainStorage:
-        "Solana programs store minimal references and interaction metadata.",
-      DecentralizedStorage:
-        "IPFS (via Pinata) is used for storing detailed profile data.",
-      Authentication:
-        "Phantom wallet is used for secure Web3 login and transaction signing.",
+      Frontend: "Next.js + TailwindCSS for smooth, responsive user experience.",
+      WalletIntegration:
+        "Phantom wallet connection to sign transactions and authenticate users.",
+      OnChain:
+        "Solana smart contracts (written in Rust) handle profile references, matchmaking, and team formation logic.",
+      Storage:
+        "IPFS (via Pinata) stores user profile metadata like skills, interests, and bio.",
     },
     keyFeatures: [
-      "Wallet-based login via Phantom",
-      "On-chain profile creation and linking",
-      "IPFS-stored developer profiles (skills, interests, availability)",
-      "Dashboard displaying user profile and GitHub streak data",
-      "Milestone-based NFT badge rewards",
-      "Foundation for swipe-based teammate matching",
+      "Wallet-based login and profile creation",
+      "Decentralized storage of profile metadata on IPFS",
+      "Swipe-based team matching algorithm",
+      "On-chain recording of social graph connections",
+      "Dashboard displaying matched teammates and badges",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Storing profile data on-chain affordably.",
+        challenge:
+          "Handling user data storage in a decentralized way while maintaining fast UX.",
         solution:
-          "Used IPFS to store metadata and kept only minimal data on-chain.",
+          "Split metadata storage on IPFS with on-chain references for lightweight, trustable data.",
       },
       {
-        challenge: "Integrating wallet-based auth with smooth UX.",
-        solution: "Implemented Phantom wallet connect with fallback handling.",
+        challenge:
+          "Building a seamless wallet connection flow with transaction signing.",
+        solution:
+          "Integrated Phantom wallet SDK with clear UI feedback for users during sign steps.",
       },
     ],
     learningOutcomes: [
-      "Gained experience working with Solana smart contracts in Rust.",
-      "Understood decentralized storage patterns using IPFS and Pinata.",
-      "Built end-to-end dApp with wallet login and on-chain interactions.",
+      "In-depth experience with Solana Rust smart contract development.",
+      "Practical knowledge of integrating IPFS with blockchain metadata references.",
+      "Improved understanding of Web3 UX patterns and wallet integration.",
     ],
     futureImprovements: [
-      "Swipe-based matching for team formation",
-      "Gamified cNFTs for engagement and rewards",
-      "Mobile wallet support including Okto",
-      "Open-source contributor profiles and public dashboards",
+      "Add gamification with cNFT badges for contributions",
+      "Enable public profiles and reputation scores",
+      "Mobile app support and multi-wallet integration",
     ],
     screenshots: ["/buddyfi1.jpg", "/buddyfi2.jpg"],
     useCases: [
-      "Developers finding teammates for hackathons",
-      "Hackathon organizers facilitating team formation",
-      "Users building public developer identities on-chain",
+      "Hackathon participants seeking teammates",
+      "Developer communities organizing team formation",
+      "Decentralized social graph and collaboration",
     ],
     github: "https://github.com/karancodebase/buddyfi",
-    website: "https://buddyfi.xyz",
+    website: "https://buddyfi.io",
   },
 
-  // sengarbus
+  //devira
   {
-    id: "sengarbus",
-    image: "/sengarbus.jpeg",
-    title: "SengarBus - Online Bus Booking Platform",
+    id: "devira",
+    image: "/devira.png",
+    title: "Devira – GitHub Streak to NFT Reward System",
     tech: [
       "Next.js",
       "TypeScript",
       "TailwindCSS",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL",
-      "Redis",
-      "Clerk",
+      "Arbitrum Stylus",
+      "Rust",
+      "GitHub API",
+      "NFT.Storage",
     ],
     description:
-      "A web-based bus booking platform for Sengar Travels, allowing users to search, select seats, and book buses online.",
+      "A Web3 reward platform that converts developer GitHub streaks into collectible NFTs using Arbitrum and Rust-based smart contracts.",
     overview:
-      "SengarBus is an online ticket booking system designed for a seamless travel experience. Users can search for buses based on location and date, select seats dynamically, make online payments, and track buses in real-time.",
+      "Devira tracks developers' GitHub streaks and milestones. When a milestone is achieved, the system mints and airdrops a custom NFT to the user's wallet. It gamifies coding consistency using Arbitrum Stylus smart contracts and stores metadata on decentralized platforms like NFT.Storage.",
     problemStatement:
-      "Traditional bus booking methods are inefficient and lack real-time tracking. SengarBus streamlines the process with an intuitive online platform.",
+      "While developers consistently contribute to open-source, there's rarely a tangible reward for daily commitment. Devira turns that effort into permanent digital collectibles.",
     architecture: {
       Frontend:
-        "Built with Next.js and TypeScript for a scalable and responsive UI.",
-      Backend: "Node.js and Express.js handle API requests efficiently.",
-      Database: "PostgreSQL is used for structured data storage.",
-      SessionManagement:
-        "Redis is used for session storage with a hybrid approach.",
-      Authentication: "Clerk is used for secure user authentication.",
+        "Built with Next.js and TypeScript for responsive UI and GitHub heatmap visualization.",
+      Backend:
+        "Minimal backend for fetching streak data and managing claim logic.",
+      SmartContracts:
+        "Arbitrum Stylus with Rust handles badge minting and eligibility verification.",
+      DataFetch: "GitHub API used to track contribution streaks.",
+      Storage:
+        "NFT.Storage is used to store badge metadata in a decentralized way.",
     },
     keyFeatures: [
-      "User authentication with Clerk",
-      "Dynamic seat selection with real-time availability",
-      "Live bus tracking during the journey",
-      "Multi-vendor platform for different bus operators",
-      "Secure online payment integration",
-      "Search functionality for buses based on route and date",
+      "GitHub heatmap streak analysis",
+      "Custom NFT airdrop on milestone achievements",
+      "On-chain badge minting via Arbitrum Stylus",
+      "Wallet-based claim flow for dev rewards",
+      "Public developer dashboard with streak data",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Managing session storage efficiently.",
-        solution: "Implemented Redis for scalable session handling.",
+        challenge: "Parsing and analyzing GitHub activity accurately.",
+        solution: "Built a GitHub heatmap parser with caching and edge cases.",
       },
       {
-        challenge: "Ensuring secure online transactions.",
-        solution: "Integrated a secure payment gateway with encryption.",
+        challenge: "Efficient on-chain NFT minting from frontend triggers.",
+        solution:
+          "Used lightweight Rust-based contracts and conditional claim logic to keep costs low.",
       },
     ],
     learningOutcomes: [
-      "Deepened understanding of full-stack web development.",
-      "Enhanced knowledge of Redis for session management.",
-      "Improved integration of real-time tracking features.",
+      "Learned how to integrate GitHub API with on-chain reward systems.",
+      "Built efficient Rust smart contracts on Arbitrum Stylus.",
+      "Improved UX around NFT claiming from milestone logic.",
     ],
     futureImprovements: [
-      "Adding mobile app support for seamless access.",
-      "Enhancing real-time tracking accuracy with GPS integration.",
-      "Implementing a loyalty program for frequent travelers.",
+      "Add leaderboards and developer profiles",
+      "Enable off-chain badge previews before claim",
+      "Support POAP or soulbound badge formats",
     ],
-    screenshots: ["/sengarbus1.jpg", "/sengarbus2.jpg"],
+    screenshots: ["/devira1.jpg", "/devira2.jpg"],
     useCases: [
-      "Travelers booking buses online",
-      "Bus operators managing their fleet and routes",
-      "Admins tracking bookings and revenue in real-time",
+      "Developers celebrating open-source consistency",
+      "Communities gamifying contributions",
+      "Hackathon or OSS organizers rewarding activity",
     ],
-    github: "https://github.com/karancodebase/sengarbus",
-    website: "https://sengarbus.vercel.app",
+    github: "https://github.com/karancodebase/devira",
+    website: "https://devira.xyz",
   },
-
   // aeris
   {
-    id: "aibot",
-    image: "/aibot.jpg",
-    title: "Aeris – AI-Powered Chatbot",
-    tech: ["TypeScript", "Next.js", "Gemini API", "Tailwind CSS"],
+    id: "aeris",
+    image: "/aeris.png",
+    title: "Aeris – AI Chatbot Using Gemini API",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "OpenAI API", "Gemini API"],
     description:
-      "An AI chatbot using Google's Gemini API for real-time, context-aware responses.",
+      "A conversational AI chatbot that uses the Gemini API for advanced natural language understanding and generation, tailored for personalized user interactions.",
     overview:
-      "Aeris is an AI-powered chatbot that enhances user interactions with natural language understanding. It leverages Google's Gemini API to deliver fast, accurate, and contextually relevant responses. Built with a modern tech stack, including Next.js and TypeScript, it ensures a scalable and responsive experience.",
+      "Aeris is a next-gen AI chatbot built to leverage the Gemini API’s capabilities to provide contextual, human-like conversations. The platform is designed for seamless integration with web interfaces and delivers intelligent responses in real-time.",
     problemStatement:
-      "Users often struggle to get precise, contextual AI responses in real-time. Aeris bridges this gap by integrating advanced AI capabilities with a robust frontend and backend architecture.",
+      "Current chatbots lack contextual awareness and natural conversational flow. Aeris addresses these issues by harnessing Gemini API’s advanced AI models to enhance chat quality.",
     architecture: {
       Frontend:
-        "Built with Next.js and TypeScript for fast rendering and scalability.",
+        "Next.js and TailwindCSS provide a smooth UI with real-time message streaming.",
       Backend:
-        "Uses Node.js and Express.js for handling API requests efficiently.",
-      Database:
-        "PostgreSQL for user data persistence and Redis for temporary chat history.",
-      "AI Integration": "Google's Gemini API for advanced AI-driven responses.",
-      StateManagement:
-        "Session-based storage to maintain context in conversations.",
+        "API routes proxy requests securely to Gemini API with rate limiting and session management.",
+      AIIntegration:
+        "Gemini API handles the conversational intelligence and contextual response generation.",
     },
     keyFeatures: [
-      "Real-time AI-powered responses with natural language processing.",
-      "Context-aware conversations with session-based storage.",
-      "High-performance, scalable architecture using Next.js.",
-      "Supports various query types, from casual questions to technical assistance.",
+      "Real-time chat interface with typing indicators",
+      "Context-aware AI responses powered by Gemini API",
+      "Session management for ongoing conversations",
+      "Customizable prompts and conversation flow",
     ],
     challengesAndSolutions: [
       {
-        challenge:
-          "AI only responded to single messages, lacking conversation memory.",
+        challenge: "Managing latency and rate limits of external AI APIs.",
         solution:
-          "Implemented Redis session storage to maintain temporary chat history.",
-      },
-      {
-        challenge: "Handling API rate limits and response delays.",
-        solution:
-          "Optimized API requests with caching mechanisms to reduce redundant calls.",
+          "Implemented efficient request queueing and caching strategies.",
       },
       {
         challenge:
-          "Deploying an AI chatbot with cost-effective infrastructure.",
+          "Providing natural conversational context over multiple turns.",
         solution:
-          "Used a free API version and efficient cloud hosting to minimize costs.",
+          "Maintained session context with prompt engineering and stateful backend.",
       },
     ],
     learningOutcomes: [
-      "Deepened knowledge of AI chatbot integrations and API handling.",
-      "Improved understanding of session management and data storage.",
-      "Enhanced frontend performance optimization with Next.js.",
+      "Hands-on experience integrating Gemini API into a React app.",
+      "Improved skills in managing API rate limits and latency.",
+      "Built robust chat UI with real-time updates and smooth UX.",
     ],
     futureImprovements: [
-      "Adding voice-based interaction capabilities.",
-      "Expanding AI training for more personalized responses.",
-      "Implementing user authentication for persistent chat history.",
+      "Add voice interaction support",
+      "Integrate with messaging platforms (Slack, Discord)",
+      "Enable multi-language support",
     ],
+    screenshots: ["/aeris1.jpg", "/aeris2.jpg"],
     useCases: [
-      "Automating customer support for businesses.",
-      "Providing AI-driven instant assistance to users.",
-      "Helping developers experiment with AI chatbot integrations.",
+      "Customer support chatbots",
+      "Personal AI assistants",
+      "Interactive educational tools",
     ],
-    screenshots: ["/screenshot1.jpg", "/screenshot2.jpg"],
-    github: "https://github.com/karancodebase/assistant",
-    website: "https://aeris.jaydatt.xyz/",
+    github: "https://github.com/karancodebase/aeris",
+    website: "https://aeris.chat",
   },
-
   // instasnap
   {
     id: "instasnap",
-    image: "/social.jpg",
-    title: "Instasnap",
-    tech: ["React", "TypeScript", "Appwrite", "TailwindCSS"],
+    image: "/instasnap.png",
+    title: "InstaSnap – Instagram-like UI Clone",
+    tech: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Zustand"],
     description:
-      "A social media application having features of create, edit, like & save post. Also a customised user profile dashboard.",
+      "A responsive, performance-optimized clone of Instagram’s core UI — built for experimenting with design systems, transitions, and feed mechanics.",
     overview:
-      "InstaSnap is a real-time social media platform that allows users to instantly capture and share photos with their followers. With Firebase-powered real-time updates, users can experience instant social interactions.",
+      "InstaSnap is a front-end experiment that recreates key Instagram features like posts, stories, and profiles using modern tooling. It’s a sandbox project to explore responsive layouts, state management, animation with Framer Motion, and component composition using Zustand.",
     problemStatement:
-      "Many social media platforms delay updates or require manual refreshes for new content. InstaSnap bridges this gap by providing seamless, real-time photo sharing with instant visibility.",
+      "Social app interfaces are often performance-heavy and design-complex. InstaSnap simplifies and replicates these flows for prototyping and learning.",
     architecture: {
-      Frontend: "React Native for cross-platform mobile compatibility.",
-      Backend: "Node.js with Firebase for handling real-time interactions.",
-      Storage: "Cloud storage integration to handle photo uploads securely.",
+      Frontend:
+        "Next.js and TailwindCSS power the structure and styling for rapid iteration.",
+      StateManagement:
+        "Zustand is used for local app state like feed, likes, and views.",
+      Animation:
+        "Framer Motion handles transitions, modals, and scroll animations.",
+      Routing:
+        "App router structure allows clean route-based component loading.",
     },
     keyFeatures: [
-      "Instant photo capture and sharing",
-      "Live feed updates using Firebase Realtime Database",
-      "Secure authentication with Google and email sign-in",
-      "Story feature with auto-disappearing photos",
-      "Interactive UI with smooth animations",
+      "Mock post feed and like/save interactions",
+      "Story bar with animations and modals",
+      "Responsive layout for mobile and desktop",
+      "Framer Motion-powered transitions",
+      "Local state management with Zustand",
     ],
     challengesAndSolutions: [
       {
-        challenge: " Managing high-speed data updates for multiple users.",
+        challenge: "Recreating Instagram-like UI with minimal bundle size.",
         solution:
-          " Implemented Firebase's real-time syncing and lazy loading for optimized performance.",
+          "Used Tailwind and component-level optimization with Zustand.",
       },
       {
-        challenge: "Ensuring seamless media uploads",
-        solution: "Integrated a background upload queue to prevent UI lag.",
+        challenge: "Smooth animations without UI jank.",
+        solution: "Used Framer Motion variants and lazy loading.",
       },
     ],
     learningOutcomes: [
-      "Mastered real-time data synchronization using Firebase.",
-      "Improved knowledge of React Native performance optimizations.",
+      "Improved understanding of atomic UI design patterns.",
+      "Mastered Framer Motion’s variants and layout transitions.",
+      "Experimented with state management patterns in component libraries.",
     ],
     futureImprovements: [
-      "Implementing AI-powered image filters and auto-captioning",
-      "Introducing in-app messaging for user engagement.",
+      "Add story creation and upload flow",
+      "Integrate mock authentication for user profiles",
+      "Explore decentralized media storage using Arweave",
     ],
-    screenshots: ["/course1.jpg", "/course2.jpg"],
+    screenshots: ["/instasnap1.jpg", "/instasnap2.jpg"],
     useCases: [
-      "Influencers and content creators sharing instant updates",
-      "Users wanting a fast and lightweight social media alternative",
-      "Photography enthusiasts capturing spontaneous moments",
+      "Front-end devs exploring Instagram’s UX patterns",
+      "UI/UX experimentation for design systems",
+      "Showcase app for animations and responsive UI",
     ],
-    github: "https://github.com/karancodebase/instasnap_",
-    website: "https://social-instasnap.netlify.app/",
+    github: "https://github.com/karancodebase/instasnap",
+    website: "https://instasnap.vercel.app",
   },
-
 ];
 
 interface SearchResult {
@@ -285,24 +287,12 @@ const Project = ({
   description,
   github,
   website,
-  image,
   id,
 }: SearchResult) => {
   const router = useRouter();
 
   return (
     <div className="relative border cardhover border-neutral-900 hover:border-neutral-400 glass-box duration-200 rounded-lg px-4 py-4 overflow-hidden group">
-      {/* Background Image (Hidden by Default) */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <Image
-          src={image}
-          alt={`${title} Background`}
-          fill
-          priority
-          className="opacity-40 object-cover"
-        />
-      </div>
-
       <div
         onClick={() => router.push(`/projects/${id}`)}
         className="relative z-10 block"
@@ -310,27 +300,9 @@ const Project = ({
         <div className="flex flex-row lg:flex-col lg:gap-2 gap-4">
           <div>
             <div className="flex justify-between">
-              <div className="font-semibold md:text-lg">{title}</div>
-              <div className="flex gap-3 justify-end md:text-md text-sm">
-                <Link
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-200 text-neutral-400 duration-200"
-                >
-                  <Github />
-                </Link>
-                <Link
-                  href={website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-200 text-neutral-400 duration-200"
-                >
-                  <Globe />
-                </Link>
-              </div>
+              <div className={`${poppinBold.className} md:text-lg`}>{title}</div>
             </div>
-            <div className="md:text-md text-sm dark:text-neutral-400 text-neutral-600 mb-4 mt-2">
+            <div className={`${eduBeginner.className} md:text-md dark:text-neutral-400 text-neutral-600 mb-4 mt-2`}>
               {description}
             </div>
             {tech.map((techItem) => (
@@ -338,6 +310,30 @@ const Project = ({
                 {techItem}
               </Badge>
             ))}
+            <div className="flex gap-3 md:text-md text-sm mt-4">
+              <Link
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-200 text-neutral-400 duration-200"
+              >
+                <Button variant={"secondary"} className="flex items-center gap-1">
+                  <Github className="h-5 w-5"/>
+                  <span>GitHub</span>
+                </Button>
+              </Link>
+              <Link
+                href={website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-200 text-neutral-400 duration-200"
+              >
+                <Button variant={"secondary"}  className="flex gap-1 items-center">
+                  <Globe className="h-5 w-5"/>
+                  <span>Live View</span>
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

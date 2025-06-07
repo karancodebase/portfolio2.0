@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Link from "next/link";
 import * as motion from "motion/react-client";
 import { Menu, X } from "lucide-react";
@@ -8,9 +8,9 @@ import { ModeToggle } from "./ui/theme";
 import { Twitter, Linkedin, Github } from "lucide-react";
 
 export function Navbar() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -35,34 +35,34 @@ export function Navbar() {
   }, [lastScrollY]);
 
   // Function to close the mobile menu
-  const closeMenu = () => setIsMenuOpen(false);
+  // const closeMenu = () => setIsMenuOpen(false);
 
   // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
-      if (
-        target &&
-        !target.closest(".mobile-menu") &&
-        !target.closest(".menu-button")
-      ) {
-        closeMenu();
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     const target = event.target as HTMLElement | null;
+  //     if (
+  //       target &&
+  //       !target.closest(".mobile-menu") &&
+  //       !target.closest(".menu-button")
+  //     ) {
+  //       closeMenu();
+  //     }
+  //   };
 
-    if (isMenuOpen) {
-      document.addEventListener("click", handleClickOutside);
-    } else {
-      document.removeEventListener("click", handleClickOutside);
-    }
+  //   if (isMenuOpen) {
+  //     document.addEventListener("click", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("click", handleClickOutside);
+  //   }
 
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [isMenuOpen]);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  //   return () => document.removeEventListener("click", handleClickOutside);
+  // }, [isMenuOpen]);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
-  if (!isMounted) return null;
+  // if (!isMounted) return null;
 
   return (
     <nav
@@ -136,7 +136,7 @@ export function Navbar() {
             {/* Desktop */}
           </div>
           <div className="flex flex-row gap-4 items-center">
-            <div className="hidden md:flex items-center space-x-2 font-semibold">
+            {/* <div className="hidden md:flex items-center space-x-2 font-semibold">
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
@@ -148,10 +148,10 @@ export function Navbar() {
                   href={item.href}
                   label={item.label}
                   isActive={pathname === item.href}
-                  onClick={closeMenu}
+                  // onClick={closeMenu}
                 />
               ))}
-            </div>
+            </div> */}
             <Link
               href="https://x.com/karandefinitely"
               target="_blank"
@@ -196,7 +196,7 @@ export function Navbar() {
         backdrop-blur-3xl p-4 z-40 shadow-2xl transition-all duration-300
         border-neutral-600 border rounded-lg"
           >
-            <div className="flex flex-col space-y-2">
+            {/* <div className="flex flex-col space-y-2">
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
@@ -236,7 +236,7 @@ export function Navbar() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
@@ -244,37 +244,37 @@ export function Navbar() {
   );
 }
 
-function NavItem({
-  href,
-  label,
-  isActive,
-  onClick,
-}: {
-  href: string;
-  label: string;
-  isActive?: boolean;
-  onClick?: () => void;
-}) {
-  const isExternal = href.startsWith("http");
+// function NavItem({
+//   href,
+//   label,
+//   isActive,
+//   onClick,
+// }: {
+//   href: string;
+//   label: string;
+//   isActive?: boolean;
+//   onClick?: () => void;
+// }) {
+//   const isExternal = href.startsWith("http");
 
-  return (
-    <Link
-      href={href}
-      className={`
-        px-2 py-1 text-sm font-light tracking-wide relative inline-block rounded dark:hover:bg-neutral-800 hover:bg-neutral-200 duration-200
-        ${
-          isActive
-            ? ""
-            : "hover:text-neutral-600 dark:text-neutral-400 text-neutral-300 dark:hover:text-neutral-400 duration-200"
-        }
+//   return (
+//     <Link
+//       href={href}
+//       className={`
+//         px-2 py-1 text-sm font-light tracking-wide relative inline-block rounded dark:hover:bg-neutral-800 hover:bg-neutral-200 duration-200
+//         ${
+//           isActive
+//             ? ""
+//             : "hover:text-neutral-600 dark:text-neutral-400 text-neutral-300 dark:hover:text-neutral-400 duration-200"
+//         }
         
-      `}
-      onClick={onClick}
-      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    >
-      {label}
-    </Link>
-  );
-}
+//       `}
+//       onClick={onClick}
+//       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+//     >
+//       {label}
+//     </Link>
+//   );
+// }
 
 export default Navbar;

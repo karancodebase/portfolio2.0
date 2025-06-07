@@ -4,11 +4,21 @@ import gsap from "gsap";
 import Project, { showcase } from "./data/Showcase";
 import { Poppins } from "next/font/google";
 import NavigationLink from "./NavigationLink";
+import { Edu_SA_Beginner } from 'next/font/google'
+import { Delius } from 'next/font/google'
 
 const poppinBold = Poppins({
   weight: "600",
   preload: false,
 });
+const eduBeginner = Edu_SA_Beginner({
+  weight: '400',
+  subsets: ['latin'],
+})
+const delius = Delius({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 const Stuff = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -58,18 +68,19 @@ const Stuff = () => {
     <div className="py-14">
       <div
         className={`${poppinBold.className} mb-2
-          md:text-5xl text-3xl font-extrabold `}
+          md:text-4xl text-3xl text-neutral-300`}
       >
-        Stuff I&apos;ve Built
+        Not convinced yet?
       </div>
-      <div className="md:text-lg text-sm dark:text-neutral-300 text-neutral-700">
-        From tiny “hello world”s to full-stack beasts with APIs, auth, and
-        attitude — here are the bangers. Click around and explore.
+      <div className={`${eduBeginner.className} lg:tracking-wide md:text-xl text-neutral-400`}>
+        That’s fair. I could keep talking about what I do —
+        but the best way to get it is to see it in action. <br />
+        Here are a few projects that speak louder than bios ever could.
       </div>
 
       <div
         ref={containerRef}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10"
+        className="grid grid-cols-1 gap-4 mt-10"
       >
         {showcase.map((item, index) => (
           <div key={index} className="project-card opacity-0">
@@ -78,8 +89,8 @@ const Stuff = () => {
         ))}
       </div>
       <div
-        className={`${poppinBold.className} mt-10 hero-subtext-liner
-          md:text-xl dark:text-neutral-300 text-neutral-800 text-lg font-extrabold text-center`}
+        className={`${delius.className} mt-10 hero-subtext-liner
+          md:text-xl text-neutral-300 font-extrabold text-center`}
       >
         Still nosy? Smash that
         <NavigationLink href="/projects"> Stuff page</NavigationLink>
