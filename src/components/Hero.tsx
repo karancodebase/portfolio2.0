@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { Badge } from "./ui/badge";
+import Link from "next/link";
+import { Github, HandCoins, Linkedin, Twitter } from "lucide-react";
 import { Vast_Shadow } from "next/font/google";
 import { Edu_SA_Beginner } from "next/font/google";
 import { Delius } from "next/font/google";
-import { Badge } from "./ui/badge";
-import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
 
 const eduBeginner = Edu_SA_Beginner({
   weight: "400",
@@ -22,11 +22,11 @@ const vastShadow = Vast_Shadow({
 
 const Hero = () => {
   return (
-    <main className="w-[90vw] lg:w-[50vw]">
+    <main className="w-[90vw] lg:w-[50vw] mt-10">
       <div
-        className={`${delius.className} tracking-wider mt-1 mx-2 text-neutral-500`}
+        className={`${delius.className} flex gap-2 tracking-wider mt-1 mx-2 text-neutral-500`}
       >
-        Hey It&apos;s me
+        Hey It&apos;s me <HandCoins />
       </div>
       <div className="flex gap-2 items-end">
         <h1 className={`${vastShadow.className} md:text-5xl text-4xl`}>Jaydatt</h1>
@@ -60,17 +60,6 @@ const Hero = () => {
           Next.js
         </Badge>
         ,{" "}
-        <Badge variant="outline" className="mr-2  tracking-wider">
-          <img
-            src="./solana.svg"
-            alt="Solana"
-            width={20}
-            height={20}
-            className="mr-1"
-          />
-          Solana
-        </Badge>
-        ,{" "}
         <Badge variant="outline" className="mr-2 tracking-wider">
           <img
             src="./typescript-16-svgrepo-com.svg"
@@ -92,7 +81,30 @@ const Hero = () => {
           />
           NodeJS
         </Badge>
-        , <span className="text-neutral-100">Rust</span> and anything that
+        ,{" "}
+        <Badge variant="outline" className="mr-2 tracking-wider">
+          <img
+            src="./rust.svg"
+            alt="Rust"
+            width={18}
+            height={18}
+            className="mr-1"
+          />
+          Rust
+        </Badge>
+        
+        ,{" "}
+        <Badge variant="outline" className="mr-2  tracking-wider">
+          <img
+            src="./solana.svg"
+            alt="Solana"
+            width={20}
+            height={20}
+            className="mr-1"
+          />
+          Solana
+        </Badge>
+        and anything that
         smells like <span className="text-neutral-100">decentralization</span>.
       </div>
       <div
@@ -105,7 +117,7 @@ const Hero = () => {
       <div
         className={`${eduBeginner.className} tracking-wider md:text-xl text-neutral-400`}
       >
-        Freelancer? Sometimes. Builder? Always.
+        Freelancer? Sometimes. Builder? <span className="text-neutral-100 hover:text-neutral-400 cursor-pointer duration-200"><Link href="/about">Always</Link></span>.
       </div>
       <div>
         <div

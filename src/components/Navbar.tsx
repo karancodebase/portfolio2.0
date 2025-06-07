@@ -1,16 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-// import { usePathname } from "next/navigation";
 import Link from "next/link";
 import * as motion from "motion/react-client";
-import { Menu, X } from "lucide-react";
-import { ModeToggle } from "./ui/theme";
 import { Twitter, Linkedin, Github } from "lucide-react";
 
 export function Navbar() {
-  // const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isMounted, setIsMounted] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -34,57 +28,28 @@ export function Navbar() {
     };
   }, [lastScrollY]);
 
-  // Function to close the mobile menu
-  // const closeMenu = () => setIsMenuOpen(false);
-
-  // Close menu when clicking outside
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     const target = event.target as HTMLElement | null;
-  //     if (
-  //       target &&
-  //       !target.closest(".mobile-menu") &&
-  //       !target.closest(".menu-button")
-  //     ) {
-  //       closeMenu();
-  //     }
-  //   };
-
-  //   if (isMenuOpen) {
-  //     document.addEventListener("click", handleClickOutside);
-  //   } else {
-  //     document.removeEventListener("click", handleClickOutside);
-  //   }
-
-  //   return () => document.removeEventListener("click", handleClickOutside);
-  // }, [isMenuOpen]);
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
-  // if (!isMounted) return null;
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full shadow-sm z-50 transition-transform duration-300 ${
+      className={`fixed top-0 lg:left-[15vw] md:left-10  w-full shadow-sm z-50 transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="relative">
+      <div className="relative mt-2">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="border-b
-        w-[100vw] flex flex-row 
-        justify-between md:px-10 px-4 md:h-16 h-14 pt-4 backdrop-blur-xl transition-all duration-300 items-center z-500
+          className="md:border border-b
+        w-[100vw] md:w-[90vw] lg:w-[70vw] flex flex-row rounded-lg
+        justify-between px-4 pt-1 backdrop-blur-xl transition-all duration-300 items-center z-500
         "
         >
           <div className="flex">
             <Link href="/">
               <svg
-                width="50"
-                height="50"
+                width="40"
+                height="40"
                 viewBox="0 0 267 322"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,145 +101,34 @@ export function Navbar() {
             {/* Desktop */}
           </div>
           <div className="flex flex-row gap-4 items-center">
-            {/* <div className="hidden md:flex items-center space-x-2 font-semibold">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About" },
-                { href: "/projects", label: "Projects" },
-                { href: "/contact", label: "Contact" },
-              ].map((item) => (
-                <NavItem
-                  key={item.href}
-                  href={item.href}
-                  label={item.label}
-                  isActive={pathname === item.href}
-                  // onClick={closeMenu}
-                />
-              ))}
-            </div> */}
             <Link
               href="https://x.com/karandefinitely"
               target="_blank"
-              className="hidden md:flex"
+              className=" md:flex"
             >
               <Twitter className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/jaydattkaran"
               target="_blank"
-              className="hidden md:flex"
+              className=" md:flex"
             >
               <Linkedin className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
             </Link>
             <Link
               href="https://github.com/karancodebase"
               target="_blank"
-              className="hidden md:flex"
+              className=" md:flex"
             >
               <Github className="w-6 h-6 hover:text-neutral-400 text-neutral-300 transition" />
             </Link>
-            <ModeToggle />
 
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden menu-button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
           </div>
         </motion.div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div
-            className="md:hidden mobile-menu absolute top-[4.1rem] left-4 w-[90vw] 
-        backdrop-blur-3xl p-4 z-40 shadow-2xl transition-all duration-300
-        border-neutral-600 border rounded-lg"
-          >
-            {/* <div className="flex flex-col space-y-2">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About" },
-                { href: "/projects", label: "Projects" },
-                { href: "/contact", label: "Contact" },
-              ].map((item) => (
-                <NavItem
-                  key={item.href}
-                  href={item.href}
-                  label={item.label}
-                  isActive={pathname === item.href}
-                  onClick={closeMenu}
-                />
-              ))}
-              <div className="pt-4 border-t border-gray-700">
-                <div className="flex space-x-4">
-                  {[
-                    {
-                      href: "https://x.com/karandefinitely",
-                      label: "Twitter",
-                    },
-                    {
-                      href: "https://github.com/karancodebase",
-                      label: "Github",
-                    },
-                    {
-                      href: "https://www.linkedin.com/in/jaydattkaran",
-                      label: "LinkedIn",
-                    },
-                  ].map((item) => (
-                    <NavItem
-                      key={item.href}
-                      href={item.href}
-                      label={item.label}
-                      onClick={closeMenu}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div> */}
-          </div>
-        )}
       </div>
     </nav>
   );
 }
 
-// function NavItem({
-//   href,
-//   label,
-//   isActive,
-//   onClick,
-// }: {
-//   href: string;
-//   label: string;
-//   isActive?: boolean;
-//   onClick?: () => void;
-// }) {
-//   const isExternal = href.startsWith("http");
-
-//   return (
-//     <Link
-//       href={href}
-//       className={`
-//         px-2 py-1 text-sm font-light tracking-wide relative inline-block rounded dark:hover:bg-neutral-800 hover:bg-neutral-200 duration-200
-//         ${
-//           isActive
-//             ? ""
-//             : "hover:text-neutral-600 dark:text-neutral-400 text-neutral-300 dark:hover:text-neutral-400 duration-200"
-//         }
-        
-//       `}
-//       onClick={onClick}
-//       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-//     >
-//       {label}
-//     </Link>
-//   );
-// }
 
 export default Navbar;

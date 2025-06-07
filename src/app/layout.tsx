@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-// import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ThemeProvider } from "next-themes";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex flex-col justify-between items-center">
-            {/* <Navbar /> */}
+            <Navbar />
             <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[90vw] mt-20 items-center">
               {children}
             </div>

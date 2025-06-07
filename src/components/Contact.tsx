@@ -20,7 +20,7 @@ const poppinBold = Poppins({
 
 const Contact = () => {
   return (
-    <div className="py-20">
+    <div className="py-14">
       <div
         className={`${poppinBold.className} mb-3
           md:text-4xl text-xl text-neutral-300`}
