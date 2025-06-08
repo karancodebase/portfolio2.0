@@ -68,7 +68,7 @@ export const projects = [
       "Users building public developer identities on-chain",
     ],
     github: "https://github.com/karancodebase/buddyfi",
-    website: "https://buddyfi.vercel.app",
+    website: "https://buddyfi.xyz",
   },
 
   // sengarbus

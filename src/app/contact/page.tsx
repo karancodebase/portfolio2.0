@@ -128,16 +128,16 @@ const Contact = () => {
   };
 
   return (
-    <div className={`${delius.className} py-10`}>
+    <div className={`${delius.className} md:py-10`}>
       {/* links */}
-      <section className="px-4 py-4 -b">
+      <section className="md:px-4 py-4 -b">
         <div
           className={`${poppinBold.className}  md:text-4xl text-2xl text-neutral-300`}
         >
           Let&apos;s Connect & Cook Up Some Code Magic
         </div>
 
-        <div className="flex flex-col gap-2 mt-10 md:text-xl">
+        <div className="flex flex-col gap-2 md:mt-4 mt-2 md:text-xl">
           <div>
             <span className="text-neutral-400">
               Got a brainwave at 2AM? A startup dream? Or just vibing with clean
@@ -146,7 +146,7 @@ const Contact = () => {
             <br />
             <span className="text-neutral-400">I&apos;m your guy — hit me up.</span>
           </div>
-          <div className="text-neutral-300 mt-4">
+          <div className="text-neutral-300 md:mt-4 mt-2">
             📩 Shoot me a mail → <Link href="mailto:karanjaydatt03@gmail.com" className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] dark:hover:text-neutral-400 hover:text-neutral-700 duration-200 px-2 py-1 rounded-lg">karanjaydatt03@gmail.com</Link> 
           </div>
           <div className="text-neutral-300">
@@ -174,7 +174,7 @@ const Contact = () => {
       </section>
 
       {/* form */}
-      <section className="px-4 py-4 -b">
+      <section className="md:px-4">
         <div className="flex flex-col gap-2 md:text-xl">
           <div className="text-neutral-300">
             🛠 Code playground →{" "}
@@ -190,7 +190,7 @@ const Contact = () => {
             </Link>
           </div>
         
-          <div className="md:px-10 md:py-4">
+          <div className="md:px-10">
             <form
               onSubmit={handleSubmit}
               className=" glass-box space-y-6 bg-transparent p-6 mt-10 rounded-xl "

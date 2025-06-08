@@ -81,7 +81,7 @@ export const showcase = [
       "Decentralized social graph and collaboration",
     ],
     github: "https://github.com/karancodebase/buddyfi",
-    website: "https://buddyfi.io",
+    website: "https://buddyfi.xyz",
   },
 
   //devira
@@ -208,7 +208,7 @@ export const showcase = [
       "Interactive educational tools",
     ],
     github: "https://github.com/karancodebase/aeris",
-    website: "https://aeris.chat",
+    website: "https://aeris.jaydatt.xyz",
   },
   // instasnap
   {
@@ -306,7 +306,7 @@ const Project = ({
               {description}
             </div>
             {tech.map((techItem) => (
-              <Badge key={techItem} variant="default" className="mb-1 mr-2">
+              <Badge key={techItem} variant="outline" className="mb-1 mr-2">
                 {techItem}
               </Badge>
             ))}

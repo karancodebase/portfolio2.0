@@ -1,10 +1,20 @@
 "use client";
-import { Roboto, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 import PhotoHighlights from "@/components/PhotoHighlights";
+import { Edu_SA_Beginner } from "next/font/google";
+import { Delius } from "next/font/google";
 
+const eduBeginner = Edu_SA_Beginner({
+  weight: "400",
+  subsets: ["latin"],
+});
+const delius = Delius({
+  weight: "400",
+  subsets: ["latin"],
+});
 const poppinBold = Poppins({
   weight: "600",
   preload: false,
@@ -13,10 +23,7 @@ const poppinExtraBold = Poppins({
   weight: "800",
   preload: false,
 });
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
+
 
 export default function About() {
   // Refs to track sections
@@ -108,17 +115,17 @@ export default function About() {
   }, []);
 
   return (
-    <div className={`${roboto.className} flex flex-col gap-4 mb-10`}>
+    <div className={`${eduBeginner.className} flex flex-col gap-4 mb-10`}>
       {/* // intro section */}
       <section className="md:mt-10 mt-4 px-2" ref={introRef}>
         <div
           className={`${poppinExtraBold.className} md:mt-6 mb-2
-    md:text-5xl text-3xl font-extrabold text-center hero-subtext-liner`}
+    md:text-5xl text-3xl text-neutral-300 font-extrabold text-center hero-subtext-liner`}
         >
           The Origin Story
         </div>
         <div
-          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
+          className={`${delius.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
         >
           Once upon a Git commit, a curious human named jaydatt peeked into
           console.log(&quot;Hello, World!&quot;) — and boom, a new tab in life
@@ -126,14 +133,14 @@ export default function About() {
           snacks.
         </div>
         <div
-          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
+          className={`${delius.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
         >
           He started as a regular developer, just vibin’ with HTML and CSS like
           it was 2012. But soon, JavaScript whispered, &quot;Hey kid, wanna
           break things in style?&quot;
         </div>
         <div
-          className={`${roboto.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
+          className={`${delius.className} md:text-xl dark:text-neutral-400 text-neutral-600 hero-subtext-liner`}
         >
           And just like that, he was full-stack deep, building projects, side
           quests, and maybe a few existential questions in between.
@@ -145,13 +152,13 @@ export default function About() {
         <div className="py-2 flex flex-row md:gap-4 gap-2">
           <div className="flex flex-col gap-0 justify-center items-start">
             <div
-              className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
+              className={`${delius.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
             >
               What I Actually Do
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
+        <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
           <div className="hero-subtext-liner">
             Build full-stack apps that work even when I forget to{" "}
             <span className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] px-2 py-1 rounded-lg">
@@ -170,35 +177,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* // mission section */}
-      <section className="px-2 mt-8 flex flex-col items-center" ref={whatRef}>
-        <div className="py-2 flex flex-row md:gap-4 gap-2">
-          <div className="flex flex-col gap-0 justify-center items-start">
-            <div
-              className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
-            >
-              Mission?
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
-          <div className="hero-subtext-liner">
-            To keep learning, keep building, and maybe one day...
-          </div>
-          <div className="hero-subtext-liner">
-            Make a framework no one asked for but everyone secretly loves.
-          </div>
-        </div>
-      </section>
+    
 
       {/* // tech section */}
       <section className="px-2 mt-8 flex flex-col items-center" ref={techRef}>
         <div
-          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
+          className={`${delius.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
         >
           Stacks & Snacks
         </div>
-        <div className="flex flex-col gap-1 mt-4 md:text-xl">
+        <div className={`${delius.className} flex flex-col gap-1 mt-4 md:text-xl`}>
           <div className="hero-subtext-liner">
             <span className="font-semibold"> Frontend: </span> Next.js,
             TailwindCSS, Typescript
@@ -218,25 +206,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* // achievements section */}
-      <section
-        className="px-2 mt-8 flex flex-col items-center"
-        ref={philosophyRef}
-      >
-        <div
-          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
-        >
-          Achievements (aka Loot Collected)
-        </div>
-        <div className="flex flex-col gap-1 mt-4 md:text-xl dark:text-neutral-300 text-neutral-700">
-          <div className="hero-subtext-liner">
-            🛠️ Built multiple full-stack apps solo
-          </div>
-          <div className="hero-subtext-liner">
-            🔥 Broke production and fixed it like a hero
-          </div>
-        </div>
-      </section>
+    
 
       {/* // resume section */}
       <section
@@ -244,7 +214,7 @@ export default function About() {
         ref={philosophyRef}
       >
         <div
-          className={`${poppinBold.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
+          className={`${delius.className} md:text-3xl text-2xl font-bold text-center hero-subtext-liner`}
         >
           Resume 📄
         </div>
@@ -258,7 +228,7 @@ export default function About() {
               href="./jaydatt_karan.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${poppinBold.className} font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200`}
+              className={`${delius.className} font-semibold social-link text-cyan-500 hover:text-cyan-700 duration-200`}
             >
               Resume
             </Link>

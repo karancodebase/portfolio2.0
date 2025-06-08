@@ -24,9 +24,9 @@ const Hero = () => {
   return (
     <main className="w-[90vw] lg:w-[50vw] mt-10">
       <div
-        className={`${delius.className} flex gap-2 tracking-wider mt-1 mx-2 text-neutral-500`}
+        className={`${delius.className} flex gap-1 tracking-wider mt-1 mx-2 text-neutral-500`}
       >
-        Hey It&apos;s me <HandCoins />
+        Hey It&apos;s me <HandCoins className="h-5 w-5"/>
       </div>
       <div className="flex gap-2 items-end">
         <h1 className={`${vastShadow.className} md:text-5xl text-4xl`}>Jaydatt</h1>

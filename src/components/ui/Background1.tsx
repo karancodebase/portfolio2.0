@@ -18,13 +18,15 @@ interface BackgroundGradientAnimationProps {
 }
 
 export const BackgroundGradientAnimation1 = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
-  secondColor = "221, 74, 255",
-  thirdColor = "100, 220, 255",
-  fourthColor = "200, 50, 50",
-  fifthColor = "180, 180, 50",
+  gradientBackgroundStart = "rgba(20, 20, 20, 0.93)", // dark gray, almost black
+  gradientBackgroundEnd = "rgba(0, 0, 0, 0.82)", // pure black with opacity
+
+  firstColor = "255, 255, 255", // white
+  secondColor = "200, 200, 200", // light gray
+  thirdColor = "150, 150, 150", // medium gray
+  fourthColor = "100, 100, 100", // dark gray
+  fifthColor = "50, 50, 50", // very dark gray
+
   size = "80%",
   children,
   className,
@@ -435,13 +437,15 @@ export const BackgroundGradientAnimation1 = ({
 };
 
 export const BackgroundGradientAnimation2 = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
-  secondColor = "221, 74, 255",
-  thirdColor = "100, 220, 255",
-  fourthColor = "200, 50, 50",
-  fifthColor = "180, 180, 50",
+  gradientBackgroundStart = "rgba(20, 20, 20, 0.93)", // dark gray, almost black
+  gradientBackgroundEnd = "rgba(0, 0, 0, 0.82)", // pure black with opacity
+
+  firstColor = "255, 255, 255", // white
+  secondColor = "200, 200, 200", // light gray
+  thirdColor = "150, 150, 150", // medium gray
+  fourthColor = "100, 100, 100", // dark gray
+  fifthColor = "50, 50, 50", // very dark gray
+
   size = "80%",
   blendingValue = "hard-light",
   children,
