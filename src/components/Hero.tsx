@@ -21,12 +21,13 @@ const vastShadow = Vast_Shadow({
 });
 
 const Hero = () => {
+  
   return (
     <main className="w-[90vw] lg:w-[50vw] mt-10">
       <div
-        className={`${delius.className} flex gap-1 tracking-wider mt-1 mx-2 text-neutral-500`}
+        className={`${delius.className} flex gap-1 tracking-wider mt-1 mx-2 text-sm text-neutral-500`}
       >
-        Hey It&apos;s me <HandCoins className="h-5 w-5"/>
+        Hey It&apos;s me <HandCoins className="h-4 w-4"/>
       </div>
       <div className="flex gap-2 items-end">
         <h1 className={`${vastShadow.className} md:text-5xl text-4xl`}>Jaydatt</h1>
@@ -110,7 +111,7 @@ const Hero = () => {
       <div
         className={`${delius.className} tracking-wider md:text-xl mt-3 text-neutral-400`}
       >
-        When I’m not coding, you’ll find me hunting down the next big{" "}
+        When it’s not coding, you’ll find me hunting down the next big{" "}
         <span className="text-neutral-100">blockchain hackathon</span> or
         geeking out over <span className="text-neutral-100">NFTs</span> .
       </div>
@@ -123,7 +124,7 @@ const Hero = () => {
         <div
           className={`${eduBeginner.className} tracking-wider md:text-xl mt-4 text-neutral-300 flex items-center gap-2`}
         >
-          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-green-400 animate-blink rounded-full"></div>
           <p>Open to new gigs. Let’s make something cool!</p>
         </div>
          <span className="text-neutral-400 font-medium flex flex-wrap gap-2 mt-2 mx-4">
