@@ -1,11 +1,71 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-import { projects } from "../../../components/data/projects";
+import { projects } from "../../../data/project";
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
-import { ArrowLeft } from "lucide-react";
-
+import {
+  ArrowLeft,
+  Github,
+  ExternalLink,
+  Heart,
+  Zap,
+  Users,
+  Shield,
+  Sparkles,
+  Rocket,
+  Code,
+  Database,
+  Wallet,
+  Globe,
+  TrendingUp,
+  PieChart,
+  Bell,
+  Monitor,
+  Server,
+  History,
+  Smartphone,
+  Brain,
+  CreditCard,
+  PenTool,
+  BookOpen,
+  Edit,
+  Save,
+  Share,
+  Download,
+  Mic,
+  ImageIcon,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+const iconMap = {
+  Wallet,
+  Users,
+  Database,
+  Sparkles,
+  Globe,
+  Shield,
+  Rocket,
+  Code,
+  Zap,
+  Heart,
+  TrendingUp,
+  PieChart,
+  Bell,
+  Monitor,
+  Server,
+  History,
+  Smartphone,
+  Brain,
+  CreditCard,
+  PenTool,
+  BookOpen,
+  Edit,
+  Save,
+  Share,
+  Download,
+  Mic,
+  Image: ImageIcon,
+};
 type Params = Promise<{ projectId: string }>;
 
 export default async function ProjectPage({ params }: { params: Params }) {
@@ -16,167 +76,294 @@ export default async function ProjectPage({ params }: { params: Params }) {
     return notFound();
   }
 
+  const getIcon = (iconName: string) => {
+    const IconComponent = iconMap[iconName as keyof typeof iconMap];
+    return IconComponent || Code;
+  };
+
   return (
-    <div className="max-w-4xl mx-auto py-6">
-      <Link href="/">
+    <div
+    className={`min-h-screen bg-gradient-to-br text-white overflow-hidden`}
+  >
+    <div className="relative z-10 mx-auto md:px-4 px-2 md:py-8">
+      {/* Header */}
+      <div
+        className={`transition-all duration-1000`}
+      >
+        <Link href="/">
         <Button
-          variant="destructive"
-          className="group flex items-center"
-        >
-          <ArrowLeft className=" group-hover:translate-x-0 transition-all duration-300 ease-in-out translate-x-[-5px]" />
+          variant="ghost"
+          className="mb-6 text-purple-300 hover:text-white hover:bg-blue-800/50 transition-all duration-300"
+          
+          >
+          <ArrowLeft className="w-4 h-4 mr-2" />
           Go Back!
         </Button>
-      </Link>
+          </Link>
 
-      <h1 className="md:text-3xl text-xl font-bold mt-4">{project.title}</h1>
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={800}
-        height={400}
-        className="rounded-lg mt-4"
-      />
-
-      <div className="mt-4">
-        {project.tech.map((tech, index) => (
-          <Badge key={index} variant="default" className="mb-1 mr-2">
-            {tech}
-          </Badge>
-        ))}
-      </div>
-
-      <p className="mt-4 md:text-lg dark:text-neutral-400 text-neutral-600">
-        {project.overview}
-      </p>
-
-      {project.problemStatement && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold tracking-widest">
-            🚨 Problem Statement:
-          </h3>
-          <p className="text-gray-800 dark:text-gray-400 mt-2">
-            {project.problemStatement}
+        <div className="text-center mb-12">
+          <h1 className={`text-5xl md:text-7xl font-black mb-4`}>
+            {project.title}
+          </h1>
+          <p className="text-sm md:text-2xl text-blue-200 font-medium">
+            {project.subtitle}
           </p>
         </div>
-      )}
+      </div>
 
-      {project.architecture && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold tracking-widest">
-            🏗️ Architecture:
-          </h3>
-          <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-            {Object.entries(project.architecture).map(([key, value], index) => (
-              <li key={index}>
-                <strong>{key}:</strong> {value}
-              </li>
-            ))}
-          </ul>
+      {/* Hero Section with Mockup */}
+      <div
+        className={`grid lg:grid-cols-1 gap-12 items-center mb-16 transition-all duration-1000 delay-300 `}
+      >
+        <div className="space-y-6">
+          <div className="grid grid-cols-2 gap-4">
+            {project.features.map((feature, index) => {
+              const IconComponent = getIcon(feature.icon);
+              return (
+                <Card
+                  key={index}
+                  className={`bg-gradient-to-br from-blue-800/30 to-neutral-800/30 border-blue-500/30 backdrop-blur-sm transition-all duration-500 hover:scale-105`}
+                >
+                  <CardContent className="p-4 text-center">
+                    <IconComponent className="w-8 h-8 mx-auto mb-2 text-purple-300" />
+                    <h3 className="font-bold text-sm mb-1">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-purple-200">{feature.desc}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
-      )}
-
-      <div className="mt-6">
-        <h3 className="text-lg font-semibold tracking-widest">
-          ✨ Key Features:
-        </h3>
-        <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-          {project.keyFeatures.map((feature, index) => (
-            <li key={index}>{feature}</li>
-          ))}
-        </ul>
       </div>
 
-      <div className="mt-6">
-        <h3 className="text-lg font-semibold tracking-widest">🎯 Use Cases:</h3>
-        <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-          {project.useCases.map((useCase, index) => (
-            <li key={index}>{useCase}</li>
+      {/* Tech Stack */}
+      <div
+        className={`mb-16 transition-all duration-1000 delay-500`}
+      >
+        <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-2">
+          <Code className="w-6 h-6" />
+          Tech Stack That Rocks
+        </h2>
+        <div className="flex flex-wrap justify-center gap-3">
+          {project.techStack.map((tech, index) => (
+            <Badge
+              key={index}
+              className={` md:px-4 md:py-2 text-sm font-semibold hover:scale-110 transition-transform duration-300 cursor-pointer`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {tech.name}
+            </Badge>
           ))}
-        </ul>
+        </div>
       </div>
 
-      {project.challengesAndSolutions && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold tracking-widest">
-            🛠️ Challenges and Solutions:
-          </h3>
-          <div className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-            {project.challengesAndSolutions.map(
-              ({ challenge, solution }, index) => (
-                <div key={index} className="mb-2">
+      {/* Problem Statement */}
+      <Card className="mb-12 bg-gradient-to-r from-red-900/30 to-orange-900/30 border-red-500/30 backdrop-blur-sm">
+        <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl font-bold mb-4 flex items-center gap-3">
+            {project.problemStatement.emoji} {project.problemStatement.title}
+          </h2>
+          <p className="md:text-lg text-orange-100 leading-relaxed">
+            {project.problemStatement.content}
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Architecture */}
+      <Card className="mb-12 bg-gradient-to-r from-blue-900/30 to-purple-900/30 border-blue-500/30 backdrop-blur-sm">
+        <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl font-bold mb-6 flex items-center gap-3">
+            {project.architecture.title}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {project.architecture.sections.map((section, index) => {
+              const IconComponent = getIcon(section.icon);
+              return (
+                <div key={index} className="flex items-start gap-3">
+                  <IconComponent
+                    className={`w-6 h-6 mt-1`}
+                  />
                   <div>
-                    <strong>🔴 {challenge}:</strong>
+                    <h3
+                      className={`font-semibold `}
+                    >
+                      {section.title}
+                    </h3>
+                    <p className="md:text-md text-sm">
+                      {section.description}
+                    </p>
                   </div>
-                  <div>✅ {solution}</div>
                 </div>
-              )
-            )}
+              );
+            })}
           </div>
-        </div>
-      )}
+        </CardContent>
+      </Card>
 
-      {project.learningOutcomes && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold tracking-widest">
-            🎓 Learning Outcomes:
-          </h3>
-          <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-            {project.learningOutcomes.map((outcome, index) => (
-              <li key={index}>{outcome}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Key Features */}
+      <Card className="mb-12 bg-gradient-to-r from-green-900/30 to-teal-900/30 border-green-500/30 backdrop-blur-sm">
+        <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl  font-bold mb-6 flex items-center gap-3">
+            {project.keyFeatures.title}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <ul className="space-y-3">
+              {project.keyFeatures.features
+                .slice(0, Math.ceil(project.keyFeatures.features.length / 2))
+                .map((feature, index) => {
+                  const IconComponent = getIcon(feature.icon);
+                  return (
+                    <li key={index} className="flex md:text-md text-sm items-center gap-3">
+                      <IconComponent className={`w-5 h-5`} />
+                      <span>{feature.text}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+            <ul className="space-y-3">
+              {project.keyFeatures.features
+                .slice(Math.ceil(project.keyFeatures.features.length / 2))
+                .map((feature, index) => {
+                  const IconComponent = getIcon(feature.icon);
+                  return (
+                    <li key={index} className="flex items-center gap-3">
+                      <IconComponent className={`w-5 h-5`} />
+                      <span>{feature.text}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
 
-      {project.futureImprovements && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold tracking-widest">
-            🚀 Future Improvements:
-          </h3>
-          <ul className="list-disc list-inside mt-2 text-gray-800 dark:text-gray-400">
-            {project.futureImprovements.map((improvement, index) => (
-              <li key={index}>{improvement}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* {project.screenshots && project.screenshots.length > 0 && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold">Screenshots:</h3>
-          <div className="grid grid-cols-2 gap-4 mt-2">
-            {project.screenshots.map((screenshot, index) => (
-              <Image
-                key={index}
-                src={screenshot}
-                alt={`Screenshot ${index + 1}`}
-                width={400}
-                height={250}
-                className="rounded-lg"
-              />
+      {/* Challenges & Solutions */}
+      <Card className="mb-12 bg-gradient-to-r from-yellow-900/30 to-red-900/30 border-yellow-500/30 backdrop-blur-sm">
+        <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl font-bold mb-6 flex items-center gap-3">
+            {project.challenges.title}
+          </h2>
+          <div className="space-y-4">
+            {project.challenges.items.map((item, index) => (
+              <div key={index}>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-3"></div>
+                  <div>
+                    <span className="text-red-300 font-semibold">
+                      Challenge:{" "}
+                    </span>
+                    <span className="md:ml-2 md:text-md text-sm">{item.challenge}</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 md:ml-5">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <div>
+                    <span className="text-green-300 font-semibold">
+                      Solution:{" "}
+                    </span>
+                    <span className="md:ml-2 md:text-md text-sm">{item.solution}</span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      )} */}
+        </CardContent>
+      </Card>
 
-      <div className="mt-6 flex gap-4">
-        <Link
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-900 text-white px-4 py-2 rounded-lg"
-        >
-          GitHub Repo
-        </Link>
-        <Link
-          href={project.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg"
-        >
-          Live Demo
-        </Link>
+      {/* Learning Outcomes */}
+      <Card className="mb-12 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 border-indigo-500/30 backdrop-blur-sm">
+        <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl font-bold mb-6 flex items-center gap-3">
+            {project.learningOutcomes.title}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {project.learningOutcomes.outcomes.map((outcome, index) => {
+              const IconComponent = getIcon(outcome.icon);
+              return (
+                <div key={index} className="text-center">
+                  <IconComponent
+                    className={`w-12 h-12 mx-auto mb-3`}
+                  />
+                  <h3 className="font-semibold mb-2">{outcome.title}</h3>
+                  <p
+                    className={`text-sm`}
+                  >
+                    {outcome.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Future Plans */}
+      <Card className="mb-12 bg-gradient-to-r from-pink-900/30 to-purple-900/30 border-pink-500/30 backdrop-blur-sm">
+       <CardContent className="md:p-8 p-4">
+          <h2 className="md:text-3xl text-2xl font-bold mb-6 flex items-center gap-3">
+            {project.futurePlans.title}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <ul className="space-y-3">
+              {project.futurePlans.plans
+                .slice(0, Math.ceil(project.futurePlans.plans.length / 2))
+                .map((plan, index) => {
+                  const IconComponent = getIcon(plan.icon);
+                  return (
+                    <li key={index} className="flex items-center gap-3">
+                      <IconComponent className={`w-5 h-5`} />
+                      <span className="md:text-md text-sm">{plan.text}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+            <ul className="space-y-3">
+              {project.futurePlans.plans
+                .slice(Math.ceil(project.futurePlans.plans.length / 2))
+                .map((plan, index) => {
+                  const IconComponent = getIcon(plan.icon);
+                  return (
+                    <li key={index} className="flex items-center gap-3">
+                      <IconComponent className={`w-5 h-5`} />
+                      <span className="md:text-md text-sm">{plan.text}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* CTA Buttons */}
+      <div className="my-6 flex gap-4 justfiy-center">
+        {project.links.github && (
+          <Link
+            href={project.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant={"outline"}>
+              <Github />
+              GitHub Repo
+            </Button>
+          </Link>
+        )}
+        {project.links.demo && (
+          <Link
+            href={project.links.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant={"secondary"}>
+              <ExternalLink />
+              Live Demo
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
+  </div>
   );
 }
