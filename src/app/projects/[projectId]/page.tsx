@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         <Link href="/">
         <Button
           variant="ghost"
-          className="mb-6 text-purple-300 hover:text-white hover:bg-blue-800/50 transition-all duration-300"
+          className="mb-6 dark:text-blue-300 text-blue-800 hover:text-white hover:bg-blue-800/50 transition-all duration-300"
           
           >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -102,10 +102,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
           </Link>
 
         <div className="text-center mb-12">
-          <h1 className={`text-5xl md:text-7xl font-black mb-4`}>
+          <h1 className={`text-5xl md:text-7xl font-black dark:text-white text-black mb-4`}>
             {project.title}
           </h1>
-          <p className="text-sm md:text-2xl text-blue-200 font-medium">
+          <p className="text-sm md:text-2xl dark:text-blue-200 text-blue-800 font-medium">
             {project.subtitle}
           </p>
         </div>
@@ -122,11 +122,11 @@ export default async function ProjectPage({ params }: { params: Params }) {
               return (
                 <Card
                   key={index}
-                  className={`bg-gradient-to-br from-blue-800/30 to-neutral-800/30 border-blue-500/30 backdrop-blur-sm transition-all duration-500 hover:scale-105`}
+                  className={`bg-gradient-to-br dark:from-blue-800/30 from-blue-800/90 dark:to-neutral-800/30 to-neutral-800/90 border-blue-500/30 backdrop-blur-sm transition-all duration-500 hover:scale-105`}
                 >
                   <CardContent className="p-4 text-center">
                     <IconComponent className="w-8 h-8 mx-auto mb-2 text-purple-300" />
-                    <h3 className="font-bold text-sm mb-1">
+                    <h3 className="font-bold text-sm mb-1 dark:text-black text-white">
                       {feature.title}
                     </h3>
                     <p className="text-xs text-purple-200">{feature.desc}</p>
@@ -142,7 +142,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
       <div
         className={`mb-16 transition-all duration-1000 delay-500`}
       >
-        <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-2">
+        <h2 className="text-2xl font-bold dark:text-white text-black text-center mb-6 flex items-center justify-center gap-2">
           <Code className="w-6 h-6" />
           Tech Stack That Rocks
         </h2>
@@ -160,12 +160,12 @@ export default async function ProjectPage({ params }: { params: Params }) {
       </div>
 
       {/* Problem Statement */}
-      <Card className="mb-12 bg-gradient-to-r from-red-900/30 to-orange-900/30 border-red-500/30 backdrop-blur-sm">
+      <Card className="mb-12 bg-gradient-to-r from-red-900/30 to-orange-900/30 border-red-500/30 backdrop-blur-sm ">
         <CardContent className="md:p-8 p-4">
           <h2 className="md:text-3xl text-2xl font-bold mb-4 flex items-center gap-3">
             {project.problemStatement.emoji} {project.problemStatement.title}
           </h2>
-          <p className="md:text-lg text-orange-100 leading-relaxed">
+          <p className="md:text-lg dark:text-white text-black leading-relaxed">
             {project.problemStatement.content}
           </p>
         </CardContent>
@@ -228,7 +228,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 .map((feature, index) => {
                   const IconComponent = getIcon(feature.icon);
                   return (
-                    <li key={index} className="flex items-center gap-3">
+                    <li key={index} className="flex md:text-md text-sm items-center gap-3">
                       <IconComponent className={`w-5 h-5`} />
                       <span>{feature.text}</span>
                     </li>
@@ -251,7 +251,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-3"></div>
                   <div>
-                    <span className="text-red-300 font-semibold">
+                    <span className="dark:text-red-300 text-red-800 font-semibold">
                       Challenge:{" "}
                     </span>
                     <span className="md:ml-2 md:text-md text-sm">{item.challenge}</span>
@@ -260,7 +260,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 <div className="flex items-start gap-3 md:ml-5">
                   <div className="w-2 h-2 bg-green-500 rounded-full mt-3"></div>
                   <div>
-                    <span className="text-green-300 font-semibold">
+                    <span className="dark:text-green-300 text-green-800 font-semibold">
                       Solution:{" "}
                     </span>
                     <span className="md:ml-2 md:text-md text-sm">{item.solution}</span>
@@ -356,7 +356,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={"secondary"}>
+            <Button variant={"outline"}>
               <ExternalLink />
               Live Demo
             </Button>

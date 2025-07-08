@@ -139,12 +139,12 @@ const Contact = () => {
 
         <div className="flex flex-col gap-2 md:mt-4 mt-2 md:text-xl">
           <div>
-            <span className="text-neutral-400">
+            <span className="dark:text-neutral-400 text-neutral-700">
               Got a brainwave at 2AM? A startup dream? Or just vibing with clean
               code and big ideas?
             </span>{" "}
             <br />
-            <span className="text-neutral-400">I&apos;m your guy — hit me up.</span>
+            <span className="dark:text-neutral-400 text-neutral-700">I&apos;m your guy — hit me up.</span>
           </div>
           <div className="text-neutral-300 md:mt-4 mt-2">
             📩 Shoot me a mail → <Link href="mailto:karanjaydatt03@gmail.com" className="dark:bg-neutral-800 bg-neutral-400 text-[0.9em] dark:hover:text-neutral-400 hover:text-neutral-700 duration-200 px-2 py-1 rounded-lg">karanjaydatt03@gmail.com</Link> 
@@ -244,7 +244,7 @@ const Contact = () => {
               <AccordionTrigger>
                 ☕ Big Ideas & Caffeinated Chats
               </AccordionTrigger>
-              <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl text-neutral-400`}>
+              <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl dark:text-neutral-400 text-neutral-700`}>
                 Got a wild thought at 3am? Let&apos;s riff on it. From AI to Web3
                 rabbit holes, I&apos;m always game for convos that bend brains and
                 spark new stuff.
@@ -254,7 +254,7 @@ const Contact = () => {
               <AccordionTrigger>
                 🧠 Tech Deep Dives & Futurist Rants
               </AccordionTrigger>
-              <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl text-neutral-400`}>
+              <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl dark:text-neutral-400 text-neutral-700`}>
                 Smart contracts, autonomous agents, AI everything — I live for
                 this. Let&apos;s break down what&apos;s next and how to build for it
                 before it goes mainstream.
@@ -264,7 +264,7 @@ const Contact = () => {
               <AccordionTrigger>
                 🚀 Collabs That Actually Push the Needle
               </AccordionTrigger>
-             <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl text-neutral-400`}>
+             <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl dark:text-neutral-400 text-neutral-700`}>
                 Tired of basic? Same. I&apos;m into projects that disrupt, rewire,
                 and flip the script. DApps, AI tools, startup MVPs — if it’s
                 bold, I&apos;m in.
@@ -272,7 +272,7 @@ const Contact = () => {
             </AccordionItem>
             <AccordionItem value="item-4" className="">
               <AccordionTrigger>📬 Real Talk, Real Help</AccordionTrigger>
-             <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl text-neutral-400`}>
+             <AccordionContent className={`${eduBeginner.className} tracking-wide md:text-xl dark:text-neutral-400 text-neutral-700`}>
                 Stuck on tech? Pivoting your startup? Or just need a fresh POV?
                 Let&apos;s vibe. I&apos;m here for code jams, founder therapy, or just
                 geeking out on life.
