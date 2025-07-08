@@ -302,7 +302,7 @@ const Project = ({
             <div className="flex justify-between">
               <div className={`${poppinBold.className} md:text-lg`}>{title}</div>
             </div>
-            <div className={`${eduBeginner.className} md:text-md dark:text-neutral-400 text-neutral-600 mb-4 mt-2`}>
+            <div className={`${eduBeginner.className} md:text-md dark:dark:text-neutral-400 text-neutral-700 text-neutral-600 mb-4 mt-2`}>
               {description}
             </div>
             {tech.map((techItem) => (
@@ -315,7 +315,7 @@ const Project = ({
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-neutral-200 text-neutral-400 duration-200"
+                className="hover:text-neutral-200 dark:text-neutral-400 text-neutral-700 duration-200"
               >
                 <Button variant={"secondary"} className="flex items-center gap-1">
                   <Github className="h-5 w-5"/>
@@ -326,7 +326,7 @@ const Project = ({
                 href={website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-neutral-200 text-neutral-400 duration-200"
+                className="hover:text-neutral-200 dark:text-neutral-400 text-neutral-700 duration-200"
               >
                 <Button variant={"secondary"}  className="flex gap-1 items-center">
                   <Globe className="h-5 w-5"/>

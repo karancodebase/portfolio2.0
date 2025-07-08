@@ -72,7 +72,7 @@ const Stuff = () => {
       >
         Not convinced yet?
       </div>
-      <div className={`${eduBeginner.className} lg:tracking-wide md:text-xl text-neutral-400`}>
+      <div className={`${eduBeginner.className} lg:tracking-wide md:text-xl dark:text-neutral-400 text-neutral-700`}>
         That’s fair. I could keep talking about what I do —
         but the best way to get it is to see it in action. <br />
         Here are a few projects that speak louder than bios ever could.

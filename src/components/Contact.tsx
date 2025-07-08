@@ -27,7 +27,7 @@ const Contact = () => {
       >
         Let&apos;s build something together!
       </div>
-      <div className={`${eduBeginner.className} md:text-xl text-neutral-700 dark:text-neutral-400 text-sm mb-4`}>
+      <div className={`${eduBeginner.className} md:text-xl text-neutral-700 dark:dark:text-neutral-400 text-neutral-700 text-sm mb-4`}>
           Got a wild idea? A collab proposal? Or just want to geek out about
           Web3?
        

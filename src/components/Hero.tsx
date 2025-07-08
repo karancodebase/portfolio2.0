@@ -25,30 +25,30 @@ const Hero = () => {
   return (
     <main className="w-[90vw] lg:w-[50vw] mt-10">
       <div
-        className={`${delius.className} flex gap-1 tracking-wider mt-1 mx-2 text-sm text-neutral-500`}
+        className={`${delius.className} flex gap-1 tracking-wider mt-1 mx-2 text-sm dark:text-neutral-400 text-neutral-700`}
       >
         Hey It&apos;s me <HandCoins className="h-4 w-4"/>
       </div>
       <div className="flex gap-2 items-end">
         <h1 className={`${vastShadow.className} md:text-5xl text-4xl`}>Jaydatt</h1>
         <span
-          className={`${eduBeginner.className} tracking-wider text-md text-neutral-400`}
+          className={`${eduBeginner.className} tracking-wider text-md dark:text-neutral-400 text-neutral-700`}
         >
           / @karandefinitely
         </span>
       </div>
       <div
-        className={`${eduBeginner.className} tracking-wide md:text-xl text-neutral-400 mt-4`}
+        className={`${eduBeginner.className} tracking-wide md:text-xl dark:text-neutral-400 mt-4`}
       >
         Yup, I&apos;m a developer — but not just pushing pixels or copy-pasting
         from Stack Overflow.
       </div>
       <div
-        className={`${delius.className} tracking-wider md:text-xl text-neutral-400 mt-2`}
+        className={`${delius.className} tracking-wider md:text-xl dark:text-neutral-400 text-neutral-700 mt-2`}
       >
         I&apos;m a full-stack{" "}
-        <span className="text-neutral-100">web3 nerd</span> crafting slick apps
-        and <span className="text-neutral-100">smart contracts</span>. currently
+        <span className="dark:text-neutral-100 text-black">web3 nerd</span> crafting slick apps
+        and <span className="dark:text-neutral-100 text-black">smart contracts</span>. currently
         messing with{" "}
         <Badge variant="outline" className="mr-2 tracking-wider">
           <img
@@ -106,19 +106,19 @@ const Hero = () => {
           Solana
         </Badge>
         and anything that
-        smells like <span className="text-neutral-100">decentralization</span>.
+        smells like <span className="dark:text-neutral-100 text-black">decentralization</span>.
       </div>
       <div
-        className={`${delius.className} tracking-wider md:text-xl mt-3 text-neutral-400`}
+        className={`${delius.className} tracking-wider md:text-xl mt-3 dark:text-neutral-400 text-neutral-700`}
       >
         When it’s not coding, you’ll find me hunting down the next big{" "}
-        <span className="text-neutral-100">blockchain hackathon</span> or
+        <span className="dark:text-neutral-100 text-black">blockchain hackathon</span> or
         geeking out over <span className="text-neutral-100">NFTs</span> .
       </div>
       <div
-        className={`${eduBeginner.className} tracking-wider md:text-xl text-neutral-400`}
+        className={`${eduBeginner.className} tracking-wider md:text-xl dark:text-neutral-400 text-neutral-700`}
       >
-        Freelancer? Sometimes. Builder? <span className="text-neutral-100 hover:text-neutral-400 cursor-pointer duration-200"><Link href="/about">Always</Link></span>.
+        Freelancer? Sometimes. Builder? <span className="dark:text-neutral-100 text-black hover:text-neutral-700  hover:dark:text-neutral-400 cursor-pointer duration-200"><Link href="/about">Always</Link></span>.
       </div>
       <div>
         <div
