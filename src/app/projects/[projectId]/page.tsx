@@ -126,7 +126,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 >
                   <CardContent className="p-4 text-center">
                     <IconComponent className="w-8 h-8 mx-auto mb-2 text-purple-300" />
-                    <h3 className="font-bold text-sm mb-1 dark:text-black text-white">
+                    <h3 className="font-bold text-sm mb-1 text-white">
                       {feature.title}
                     </h3>
                     <p className="text-xs text-purple-200">{feature.desc}</p>
