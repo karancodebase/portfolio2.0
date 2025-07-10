@@ -71,17 +71,17 @@ const Footer = () => {
             <div className="flex justify-between w-full text-base sm:text-lg md:text-xl">
               <p className="text-gray-400 text-xs sm:text-sm"></p>
               <ul className="">
-                <li className="hover:text-gray-300 transition-colors cursor-pointer">
+                <li className="hover:text-gray-300 hover:underline transition-colors cursor-pointer">
                   <a target="_blank" href="https://x.com/karandefinitely" className="text-white text-sm sm:text-base">
                     X
                   </a>
                 </li>
-                <li className="hover:text-gray-300 transition-colors cursor-pointer">
+                <li className="hover:text-gray-300 hover:underline transition-colors cursor-pointer">
                   <a target="_blank" href="https://github.com/karancodebase" className="text-white text-sm sm:text-base">
                     Github
                   </a>
                 </li>
-                <li className="hover:text-gray-300 transition-colors cursor-pointer">
+                <li className="hover:text-gray-300 hover:underline transition-colors cursor-pointer">
                   <a
                     target="_blank"
                     href="https://bento.me/jaydatt"
