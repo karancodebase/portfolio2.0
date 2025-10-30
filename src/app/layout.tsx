@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "../components/Navbar";
-import FooterNew from "../components/ui/FooterNew";
 
 const roboto = Roboto({
   weight: "400",
@@ -35,7 +34,6 @@ export default function RootLayout({
             <div className="flex flex-col justify-center lg:max-w-[50vw] max-w-[95vw] mt-20 items-center">
               {children}
             </div>
-            <FooterNew />
           </main>
         <Analytics />
       </body>
