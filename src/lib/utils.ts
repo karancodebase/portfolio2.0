@@ -4,14 +4,14 @@ export type ClassValue =
   | boolean
   | null
   | undefined
-  | { [key: string]: any }
+  | { [key: string]: unknown }
   | ClassValue[]
 
-export function clsx(...args: any[]): string {
+export function clsx(...args: Array<ClassValue | ClassValue[]>): string {
   const inputs = args.length === 1 && Array.isArray(args[0]) ? args[0] : args
   const classes: string[] = []
 
-  const handle = (item: any) => {
+  const handle = (item: ClassValue): void => {
     if (!item && item !== 0) return
     const t = typeof item
     if (t === 'string' || t === 'number') {
@@ -23,18 +23,19 @@ export function clsx(...args: any[]): string {
       return
     }
     if (t === 'object') {
-      for (const key in item) {
-        if (Object.prototype.hasOwnProperty.call(item, key) && item[key]) {
+      const obj = item as { [key: string]: unknown }
+      for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key) && obj[key]) {
           classes.push(key)
         }
       }
     }
   }
 
-  ;(inputs as any[]).forEach(handle)
+  ;(inputs as ClassValue[]).forEach(handle)
   return classes.join(' ')
 }
 
 export function cn(...inputs: ClassValue[]) {
-  return (clsx(inputs))
+  return clsx(...inputs)
 }

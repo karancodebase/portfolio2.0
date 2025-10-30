@@ -24,7 +24,6 @@ const poppinExtraBold = Poppins({
   preload: false,
 });
 
-
 export default function About() {
   // Refs to track sections
   const introRef = useRef<HTMLDivElement | null>(null);
@@ -114,6 +113,32 @@ export default function About() {
     }
   }, []);
 
+  useEffect(() => {
+    const node = introRef.current; // copy ref current here
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Animate intro section
+          gsap.fromTo(
+            introRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1 }
+          );
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.unobserve(node); // use the copied `node`
+      observer.disconnect();
+    };
+  }, []); // keep appropriate deps
+
   return (
     <div className={`${eduBeginner.className} flex flex-col gap-4 mb-10`}>
       {/* // intro section */}
@@ -177,8 +202,6 @@ export default function About() {
         </div>
       </section>
 
-    
-
       {/* // tech section */}
       <section className="px-2 mt-8 flex flex-col items-center" ref={techRef}>
         <div
@@ -205,8 +228,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-    
 
       {/* // resume section */}
       <section
@@ -237,7 +258,6 @@ export default function About() {
         </div>
       </section>
 
-
       {/* // glimps section */}
       <section
         className="px-2 mt-8 flex flex-col items-center"
@@ -252,7 +272,7 @@ export default function About() {
           <div className="hero-subtext-liner">
             Some snapshots from the builder&apos;s journey — shipping features, hackathons, and occasionally remembering to document the fun.
           </div>
-         <PhotoHighlights/>
+          <PhotoHighlights />
         </div>
       </section>
     </div>
