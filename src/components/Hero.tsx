@@ -118,7 +118,7 @@ const Hero = () => {
       <div
         className={`${eduBeginner.className} tracking-wider md:text-xl dark:text-neutral-400 text-neutral-700`}
       >
-        Freelancer? Sometimes. Builder? <span className="dark:text-neutral-100 text-black hover:text-neutral-700  hover:dark:text-neutral-400 cursor-pointer duration-200"><Link href="/about">Always</Link></span>.
+        Freelancer? Sometimes. Builder? <span className="dark:text-neutral-100 text-black hover:text-neutral-700  hover:dark:text-neutral-400 cursor-pointer duration-200"><Link href="/about" className="text-cyan-500 hover:text-cyan-700 duration-200 hover:underline" >Always</Link></span>.
       </div>
       <div>
         <div
